@@ -1,7 +1,6 @@
 * {
-  background-color: #282c34;
-}
-.App {
+  background-color: #39404e;
+
   color: aliceblue;
 }
 h1 {
@@ -12,16 +11,23 @@ ul li {
   display: inline;
   padding: 15px;
 }
+
 .nav {
+  display: flex;
   justify-content: space-between;
-  text-align: right;
-  max-width: 1200px;
+  text-align: center;
+  max-width: 1260px;
+}
+.logo {
+  margin-top: 3px;
+  margin-left: 45px;
 }
 
 .test {
-  margin-top: 15rem;
+  margin-top: 1rem;
   font-size: 6rem;
   text-align: center;
+  color: #39404e;
 }
 a {
   text-decoration: none;
