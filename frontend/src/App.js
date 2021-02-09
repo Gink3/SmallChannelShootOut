@@ -40,23 +40,13 @@ function App() {
 
 
 
-        {/* //////////////////////////// */}
-     {/*  <div className="container">
-        <div className="nav">
-        <h1 class="logo"><a href="#">Logo</a></h1>
-          <ul>
-            <li ><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Sign In</a></li>
-          </ul>
-        </div>
-        <hr className="line"/> */}
+      
         <h1 className="test">
           Hello World!
         </h1>
 
         
-     {/*  </div> */}
+    
     </>
   );
 }
