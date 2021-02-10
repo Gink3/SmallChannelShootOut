@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Nav, NavDropdown, Button, Form, FormControl} from 'react-bootstrap';
 
