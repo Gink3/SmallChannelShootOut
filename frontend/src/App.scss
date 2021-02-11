@@ -13,9 +13,7 @@ h1 {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-
   color: #39404e;
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -30,28 +28,28 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 6rem;
-
     box-shadow: -30px 40px 20px rgba(0, 0, 0, 0.3);
   }
-}
-.next {
-  width: 600px;
-  height: 200px;
-  border-radius: 9px;
-  margin: 30px 0;
-  background: $colorA;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 6rem;
-  transition: box-shadow 900ms;
 
-  &:hover {
-    background-color: lighten($colorA, 1%);
-    transition: box-shadow 500ms;
-    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.1),
-      15px 15px 15px 0 rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+  .next {
+    width: 600px;
+    height: 200px;
+    border-radius: 9px;
+    margin: 30px 0;
+    background: $colorA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    transition: box-shadow 900ms;
+
+    &:hover {
+      background-color: lighten($colorA, 1%);
+      transition: box-shadow 500ms;
+      box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.1),
+        15px 15px 15px 0 rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
   }
 }
 a {

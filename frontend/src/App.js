@@ -1,12 +1,18 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav, NavDropdown, Button, Form, FormControl,} from "react-bootstrap";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Makeacc from './pages/makeacc';
+import Home from './pages/home';
+
 
 function App() {
   return (
+    <Router>
+
     <>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Logo</Navbar.Brand>
+        <Navbar.Brand href="/">Logo</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
@@ -34,7 +40,7 @@ function App() {
             </Form>
           </Nav>
           <Nav>
-            <Button variant="outline-info" href="#make_acc">
+            <Button variant="outline-info" href="/signup">
               SIGN UP
             </Button>
             {/*  <Nav.Link href="#make_account">SIGN UP</Nav.Link> */}
@@ -45,11 +51,18 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
+      <Switch>
+       <Route path="/" exact component={Home}/>
+        <Route path="/signup" exact component={Makeacc}/>
+      </Switch>
+
       <div className="test-container">
         <h1 className="test">Hello World!</h1>
         <h1 className="next">Helloworld 2!</h1>
       </div>
     </>
+    </Router>
+
   );
 }
 
