@@ -9,8 +9,7 @@ import MakeAccount  from './pages/makeacc';
 import Home         from './pages/home';
 import Talk         from './pages/talk';
 import About        from './pages/about';
-import Makeacc      from './pages/makeacc';
-
+import Account      from './pages/account';
 
 function App() {
   return (
@@ -19,13 +18,13 @@ function App() {
         <NavigationBar/>
 
         <Router>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/signup" exact component={Makeacc} />
-          <Route path="/home" exact component={Home}/>
-          <Route path="/talk" exact component={Talk}/>
-          <Route path="/about" exact component={About}/>
-        </Switch>
+          <Switch>
+            <Route path="/signup"   exact component={MakeAccount} />
+            <Route path="/home"     exact component={Home}/>
+            <Route path="/talk"     exact component={Talk}/>
+            <Route path="/about"    exact component={About}/>
+            <Route path="/account"  exact component={Account}/>
+          </Switch>
         </Router>
         
       </>
