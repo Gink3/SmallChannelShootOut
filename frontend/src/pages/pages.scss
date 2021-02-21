@@ -5,25 +5,27 @@
   scroll-behavior: smooth;
 } */
 ///////////////////////
-$list-bg: rgb(70, 26, 26);
+$list-bg: lighten(blue, 22%);
 
 ////////////////
 .homebox {
-  // margin-left: 2.5rem;
   .like {
-    //display: flex;
+    border: none;
+    position: relative;
+    margin-top: 4rem;
+    margin-left: 8rem;
     background-color: $list-bg;
     .like-icon {
       background-color: $list-bg;
     }
     &:hover {
-      transform: scale(1.2) rotate(-50deg);
+      transform: scale(1.2);
     }
-    border: none;
-    position: relative;
-    margin-top: 4rem;
-    margin-left: 8rem;
+    &:active {
+      transform: scale(1.2) rotate(50deg);
+    }
   }
+
   li {
     padding: 15px 15px;
     background-color: $list-bg;
