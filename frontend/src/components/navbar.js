@@ -1,6 +1,6 @@
 import React from "react";
 import "./base.scss";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck } from "react-bootstrap";
 import homeIcon from "../images/homeicon.svg";
 import accountIcon from "../images/account-icon.png";
 
@@ -71,7 +71,7 @@ function nav() {
             "npm install react-bootstrap bootstrap" needed
             */}
             <DropdownButton drop="left" title="Account" className="nav btn-nav">
-              <Dropdown.Item>Your Account</Dropdown.Item>
+              <Dropdown.Item href="/account">Your Account</Dropdown.Item>
               <NavDropdown.Divider />
               <Dropdown.Item>Settings</Dropdown.Item>
             </DropdownButton>
