@@ -68,7 +68,7 @@ function nav() {
 
             {/* 
             This is Bootstrap.
-            "npm install react-bootstrap bootstrap" needed
+            "$npm install react-bootstrap bootstrap" needed
             */}
             <DropdownButton drop="left" title="Account" className="nav btn-nav">
               <Dropdown.Item href="/account">Your Account</Dropdown.Item>

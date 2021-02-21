@@ -1,7 +1,11 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col} from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
+
+{/* First things a user sees 
+    when they click onto the 
+    "Account" page. */}
 
 function account(){
     return(            
@@ -21,6 +25,9 @@ function account(){
 
             <Tab eventKey="editInfo" title="Edit Information">
                 <Tabs>
+                    <Tab eventKey="currentInfo" title="Current Information">
+                        {showCurrentInfo()}
+                    </Tab>
                     <Tab eventKey="changeEmail" title="Change E-Mail">
                         {changeEmail()}
                     </Tab>
@@ -41,6 +48,45 @@ function account(){
     );
 }
 
+{/* Current Information Tab */}
+function showCurrentInfo(){
+    return(
+        <>
+            <Form>
+                <Form.Group as={Row} controlId="formPlaintextEmail">
+                
+                {/* Current Username */}
+                <Form.Label column sm="2">
+                    Username
+                </Form.Label>
+                <Col sm="10">
+                    <Form.Control plaintext readOnly defaultValue="exampleUser123" />
+                </Col>
+
+                {/* Current Email */}
+                <Form.Label column sm="2">
+                    Email
+                </Form.Label>
+
+                <Col sm="10">
+                    <Form.Control plaintext readOnly defaultValue="email@example.com" />
+                </Col>
+
+                {/* Current Password */}
+                <Form.Label column sm="2">
+                    Password
+                </Form.Label>
+                <Col sm="10">
+                    <Form.Control plaintext readOnly defaultValue="password123" />
+                </Col>
+
+                </Form.Group>
+            </Form>
+        </>
+    );
+}
+
+{/* Change Email Tab */}
 function changeEmail(){
     return(
         <>
@@ -71,6 +117,7 @@ function changeEmail(){
     );
 }
 
+{/* Change Password Tab */}
 function changePassword(){
     return(
         <>
@@ -98,6 +145,7 @@ function changePassword(){
     );
 }
 
+{/* Change Username Tab */}
 function changeUsername(){
     return(
         <>
@@ -125,6 +173,7 @@ function changeUsername(){
     );
 }
 
+{/* Change Profile Picture Tab */}
 function changeProfilePic(){
     return(
         <>
