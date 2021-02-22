@@ -12,7 +12,7 @@ function account(){
     return(
         <>
         <Container fluid>
-        <Image src={accountIcon} roundedCircle height="180px" width="171px"/>
+        <Image src={accountIcon} className="header" roundedCircle height="171px" width="171px"/>
 
         &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
 
