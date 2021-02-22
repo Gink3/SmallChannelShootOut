@@ -2,6 +2,7 @@ import React from 'react';
 import accountIcon from "../images/account-icon.png";
 import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col} from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
+import "../style/account.scss";
 
 {/* First things a user sees 
     when they click onto the 
@@ -10,34 +11,34 @@ import thumbnail from "../images/thumbnail.png";
 function account(){
     return(            
         <>
-        <Image src={accountIcon} roundedCircle height="180px" width="171px"/>
+        <Image src={accountIcon} roundedCircle className="header" height="171px" width="171px"/>
 
         Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
         
         <Tabs>
-            <Tab eventKey="likedVideos" title="Liked Videos">
+            <Tab className="page-manager" eventKey="likedVideos" title="Liked Videos">
                 Liked videos go here.
             </Tab>
 
-            <Tab eventKey="votedVideos" title="Previously Voted For">
+            <Tab className="page-manager" eventKey="votedVideos" title="Previously Voted For">
                 Previously voted on videos go here.
             </Tab>
 
             <Tab eventKey="editInfo" title="Edit Information">
                 <Tabs>
-                    <Tab eventKey="currentInfo" title="Current Information">
+                    <Tab className="page-manager-curr-info" eventKey="currentInfo" title="Current Information">
                         {showCurrentInfo()}
                     </Tab>
-                    <Tab eventKey="changeEmail" title="Change E-Mail">
+                    <Tab className="page-manager" eventKey="changeEmail" title="Change E-Mail">
                         {changeEmail()}
                     </Tab>
-                    <Tab eventKey="changePassword" title="Change Password">
+                    <Tab className="page-manager" eventKey="changePassword" title="Change Password">
                         {changePassword()}
                     </Tab>
-                    <Tab eventKey="changeUsername" title="Change Username">
+                    <Tab className="page-manager" eventKey="changeUsername" title="Change Username">
                         {changeUsername()}
                     </Tab>
-                    <Tab eventKey="changeProfilePic" title="Change Profile Picture">
+                    <Tab className="page-manager" eventKey="changeProfilePic" title="Change Profile Picture">
                         {changeProfilePic()}
                     </Tab>
                 </Tabs>
