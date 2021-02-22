@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavigationBar from "./components/navbar";
-import { Navbar, Nav, NavDropdown, Button, Form, FormControl,} from "react-bootstrap";
+//import { Navbar, Nav, NavDropdown, Button, Form, FormControl,} from "react-bootstrap";
 
 import MakeAccount  from './pages/makeacc';
 import Home         from './pages/home';
@@ -13,7 +13,7 @@ import Account      from './pages/account';
 
 function App() {
   return (
-    
+
       <>
         <NavigationBar/>
 
@@ -26,7 +26,7 @@ function App() {
             <Route path="/account"  exact component={Account}/>
           </Switch>
         </Router>
-        
+
       </>
   );
 }

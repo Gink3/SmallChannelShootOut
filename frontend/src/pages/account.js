@@ -1,20 +1,22 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
 import "../style/account.scss";
 
-{/* First things a user sees 
-    when they click onto the 
+{/* First things a user sees
+    when they click onto the
     "Account" page. */}
 
 function account(){
-    return(            
+    return(
         <>
-        <Image src={accountIcon} roundedCircle className="header" height="171px" width="171px"/>
+        <Container fluid>
+        <Image src={accountIcon} roundedCircle height="180px" width="171px"/>
 
-        Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
-        
+        &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
+
+
         <Tabs>
             <Tab className="page-manager" eventKey="likedVideos" title="Liked Videos">
                 Liked videos go here.
@@ -43,9 +45,10 @@ function account(){
                     </Tab>
                 </Tabs>
             </Tab>
-        </Tabs>        
+        </Tabs>
+        </Container>
 
-        </>    
+        </>
     );
 }
 
@@ -55,7 +58,7 @@ function showCurrentInfo(){
         <>
             <Form>
                 <Form.Group as={Row} controlId="formPlaintextEmail">
-                
+
                 {/* Current Username */}
                 <Form.Label column sm="2">
                     Username

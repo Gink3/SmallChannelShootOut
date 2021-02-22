@@ -1,14 +1,43 @@
-/* * {
-  box-sizing: boarder-box;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-} */
-///////////////////////
 $list-bg: lighten(blue, 22%);
 
-////////////////
-.homebox {
+.home-card-box {
+  background-color: $list-bg;
+  border-radius: 9px;
+  margin-top: 7%;
+
+  cursor: pointer;
+  transition: box-shadow 500ms;
+  transition: transform 500ms ease;
+  box-shadow: -9px 9px 12px rgba(0, 0, 0, 0.7),
+    15px 2px 15px 0 rgba(0, 0, 0, 0.1);
+  &:hover {
+    transition: box-shadow 500ms;
+    border: 1px solid crimson;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
+    //zoom effect
+    -ms-transform: scale(0.98); // IE 9
+    -webkit-transform: scale(1.5); // Safari 3-8
+    transform: scale(1.02);
+    transition: transform 500ms ease;
+  }
+  $like-bg: lighten(#39404e, 10%); //bg for star button
+  .star {
+    border: none;
+    background-color: $like-bg;
+    .star-icon {
+      background-color: $like-bg;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(1.2) rotate(50deg);
+    }
+  }
+}
+
+////////////////Do not delete for now
+/* .homebox {
   .like {
     border: none;
     position: relative;
@@ -56,34 +85,4 @@ $list-bg: lighten(blue, 22%);
     flex-wrap: wrap;
     list-style-type: none;
   }
-  // This is for the home page test
-  /* ul li {
-    list-style-type: none;
-    display: inline-block;
-
-    background-color: rgb(10, 10, 12);
-    height: 15rem;
-    width: 28%;
-
-    border-radius: 9px;
-    padding: 150px;
-    margin: 2%;
-    cursor: pointer;
-    transition: box-shadow 500ms;
-    transition: transform 500ms ease;
-    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.1),
-      15px 15px 15px 0 rgba(0, 0, 0, 0.1);
-
-    &:hover {
-      background-color: lighten(black, 10%);
-      transition: box-shadow 500ms;
-      border: 1px solid white;
-      box-shadow: -30px 40px 20px rgba(0, 0, 0, 0.3);
-      //zoom
-      -ms-transform: scale(1.25); // IE 9
-      -webkit-transform: scale(1.5); // Safari 3-8
-      transform: scale(1.1);
-      transition: transform 500ms ease;
-    }
-  } */
-}
+} */
