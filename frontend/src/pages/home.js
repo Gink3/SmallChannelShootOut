@@ -1,19 +1,19 @@
 import React from 'react';
-import { Button, Card, CardDeck, Container, Row, Col, CardColumns } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardColumns } from "react-bootstrap";
 import './pages.scss';
 import starIcon from "../images/star-like.svg";
 import thumbnail from "../images/thumbnail.png";
 
 
 const cardbox=[
-  {image:thumbnail,  title:"Video 1 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 2 Title", subtitle:"Comedy Horror", text:"Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 3 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 4 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 5 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 6 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 7 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:thumbnail,  title:"Video 8 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 1 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
 
 
 ];
@@ -25,7 +25,15 @@ function Video(props) {
     <section>
       {props.cardbox.map((cards, i) => (
         <Card className="home-card-box" key={i}>
-          <Card.Img variant="top" src={cards.image} />
+           <Card.Img variant="top" src={thumbnail} />
+         {/*  <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              className="embed-responsive-item"
+              
+              src={cards.image}
+              allowFullScreen
+            ></iframe>
+          </div> */}
           <Card.Body>
             <Card.Title>{cards.title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">

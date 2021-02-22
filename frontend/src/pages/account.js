@@ -1,6 +1,6 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col} from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
 
 {/* First things a user sees 
@@ -10,9 +10,11 @@ import thumbnail from "../images/thumbnail.png";
 function account(){
     return(            
         <>
+        <Container fluid>
         <Image src={accountIcon} roundedCircle height="180px" width="171px"/>
 
-        Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
+        &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
+        
         
         <Tabs>
             <Tab eventKey="likedVideos" title="Liked Videos">
@@ -43,6 +45,7 @@ function account(){
                 </Tabs>
             </Tab>
         </Tabs>        
+        </Container>
 
         </>    
     );
