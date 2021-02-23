@@ -9,7 +9,7 @@ function nav() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
-        <Navbar.Brand href="/"><img src={logo} alt="logo" width="100px" className=""/></Navbar.Brand>
+        <Navbar.Brand href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
         
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
