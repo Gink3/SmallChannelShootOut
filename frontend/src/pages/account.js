@@ -57,7 +57,7 @@ function showCurrentInfo(){
     return(
         <>
             <Form>
-                <Form.Group as={Row} controlId="formPlaintextEmail">
+                <Form.Group as={Row} controlId="currentInfo">
 
                 {/* Current Username */}
                 <Form.Label column sm="2">
@@ -95,27 +95,27 @@ function changeEmail(){
     return(
         <>
             <Form>
-            <Form.Group controlId="formChangeEmail">
-                <Form.Label>Current Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter current email" />
-            </Form.Group>
+                <Form.Group controlId="formChangeEmail">
+                    <Form.Label>Current Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter current email" />
+                </Form.Group>
 
-            <Form.Group controlId="formNewEmail">
-                <Form.Label>New Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter new email" />
-            </Form.Group>
+                <Form.Group controlId="formNewEmail01">
+                    <Form.Label>New Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter new email" />
+                </Form.Group>
 
-            <Form.Group controlId="formNewEmail">
-                <Form.Label>Re-enter New Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter new email" />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+                <Form.Group controlId="formNewEmail02">
+                    <Form.Label>Re-enter New Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter new email" />
+                    <Form.Text className="text-muted">
+                        We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
             </Form>
         </>
     );
@@ -126,24 +126,24 @@ function changePassword(){
     return(
         <>
             <Form>
-            <Form.Group controlId="formChangePassword">
-                <Form.Label>Current Password</Form.Label>
-                <Form.Control type="password" placeholder="Enter current Password" />
-            </Form.Group>
+                <Form.Group controlId="formChangePassword">
+                    <Form.Label>Current Password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter current Password" />
+                </Form.Group>
 
-            <Form.Group controlId="formNewPassword">
-                <Form.Label>New Password</Form.Label>
-                <Form.Control type="password" placeholder="Enter new Password" />
-            </Form.Group>
+                <Form.Group controlId="formNewPassword01">
+                    <Form.Label>New Password</Form.Label>
+                    <Form.Control type="password" placeholder="Enter new Password" />
+                </Form.Group>
 
-            <Form.Group controlId="formNewPassword">
-                <Form.Label>Re-enter New Password </Form.Label>
-                <Form.Control type="password" placeholder="Enter new Password" />
-            </Form.Group>
+                <Form.Group controlId="formNewPassword02">
+                    <Form.Label>Re-enter New Password </Form.Label>
+                    <Form.Control type="password" placeholder="Enter new Password" />
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
             </Form>
         </>
     );
@@ -154,24 +154,24 @@ function changeUsername(){
     return(
         <>
             <Form>
-            <Form.Group controlId="formChangeUsername">
-                <Form.Label>Current Username</Form.Label>
-                <Form.Control placeholder="Enter current Username" />
-            </Form.Group>
+                <Form.Group controlId="formChangeUsername">
+                    <Form.Label>Current Username</Form.Label>
+                    <Form.Control placeholder="Enter current Username" />
+                </Form.Group>
 
-            <Form.Group controlId="formChangeUsername">
-                <Form.Label>New Username</Form.Label>
-                <Form.Control placeholder="Enter new Username" />
-            </Form.Group>
+                <Form.Group controlId="formChangeUsername01">
+                    <Form.Label>New Username</Form.Label>
+                    <Form.Control placeholder="Enter new Username" />
+                </Form.Group>
 
-            <Form.Group controlId="formChangeUsername">
-                <Form.Label>Re-enter New Username </Form.Label>
-                <Form.Control placeholder="Enter new Username" />
-            </Form.Group>
+                <Form.Group controlId="formChangeUsername02">
+                    <Form.Label>Re-enter New Username </Form.Label>
+                    <Form.Control placeholder="Enter new Username" />
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
             </Form>
         </>
     );
@@ -182,7 +182,7 @@ function changeProfilePic(){
     return(
         <>
             <Form>
-                <Form.File id="formcheck-api-regular">
+                <Form.File id="formNewProfilePic">
                 <Form.File.Label>Choose new profile picture.</Form.File.Label>
                 <Form.File.Input />
                 </Form.File>
