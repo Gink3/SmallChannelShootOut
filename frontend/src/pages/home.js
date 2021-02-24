@@ -26,7 +26,7 @@ function Video(props) {
       {props.cardbox.map((cards, i) => (
         <Card className="home-card-box" key={i}>
            <Card.Img variant="top" src={thumbnail} />
-         {/*  <div className="embed-responsive embed-responsive-16by9">
+          {/* <div className="embed-responsive embed-responsive-16by9">
             <iframe
               className="embed-responsive-item"
               

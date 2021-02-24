@@ -1,7 +1,7 @@
 $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
 * {
   background-color: lighten(#39404e, 10%);
-  color: aliceblue; 
+  color: aliceblue;
 }
 .container {
   position: absolute;
@@ -78,8 +78,7 @@ $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
     text-shadow: 0 0 10px $Navcolor;
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 0 /* $Navcolor */ crimson,
-      0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px 0 rgb(20, 220, 37), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
     transition: all 1s;
     opacity: 0;
@@ -124,11 +123,9 @@ $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
 
 .nav {
   background-color: black;
-
 }
 .btn-nav {
   //border-radius: 9px;
-
 
   &:hover {
     //border-radius: 9px;

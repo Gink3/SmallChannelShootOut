@@ -6,14 +6,18 @@ import "../style/signup.scss";
 function signUp(){
     return(
         <>
-            <div class="header">
+        <Container fluid>
+            <div class="d-flex justify-content-center header ">
                 Create your ShootOut Account
             </div>
+            <Row className="justify-content-md-center ">
+
+                <Col md={4} className=""> 
             
-            <Form className="page-manager">
+            <Form className="">
                 <Form.Group controlId="signupFirstName">
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control required type="text" placeholder="First Name" />
+                    <Form.Control required type="text" className="input" placeholder="First Name" />
                 </Form.Group>
 
                 <Form.Group controlId="signupLastName">
@@ -48,6 +52,9 @@ function signUp(){
                     Create Account!
                 </Button>
             </Form>
+            </Col>
+            </Row>
+            </Container>
         </>
     );  
 }
