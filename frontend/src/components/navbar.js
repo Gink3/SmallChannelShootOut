@@ -3,13 +3,13 @@ import "./base.scss";
 import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck } from "react-bootstrap";
 import homeIcon from "../images/homeicon.svg";
 import accountIcon from "../images/account-icon.png";
-import logo from "../images/Logo1_BB.png";
+import logo from "../images/SCSLogo_SimpleBB.png";
 
 function nav() {
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
-        <Navbar.Brand href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
+        <Navbar.Brand href="/"><img src={logo} alt="logo" width="70px" className=""/></Navbar.Brand>
         
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
