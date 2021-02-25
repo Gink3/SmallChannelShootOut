@@ -127,9 +127,46 @@ $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
 .btn-nav {
   //border-radius: 9px;
 
-  &:hover {
-    //border-radius: 9px;
+  &:active {
+    .icon {
+      transform: scale(1.2);
+    }
+  }
+}
+.icon {
+  background-color: black;
+  &:active {
+    transform: scale(1.2);
+  }
+}
+.your-acc-icon {
+  background-color: white;
+}
 
-    background-color: lighten(black, 15%);
+.bounce {
+  animation: bounce 2s ease 1;
+
+  @keyframes bounce {
+    70% {
+      transform: translateY(0%);
+    }
+    80% {
+      transform: translateY(-45%);
+    }
+    90% {
+      transform: translateY(0%);
+    }
+    95% {
+      transform: translateY(-22%);
+    }
+    97% {
+      transform: translateY(0%);
+    }
+    99% {
+      transform: translateY(-19%);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 }

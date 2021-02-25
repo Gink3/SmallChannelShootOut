@@ -7,7 +7,7 @@ function signUp(){
     return(
         <>
         <Container fluid>
-            <div class="d-flex justify-content-center header ">
+            <div className="d-flex justify-content-center header ">
                 Create your ShootOut Account
             </div>
             <Row className="justify-content-md-center ">

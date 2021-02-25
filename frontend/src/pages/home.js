@@ -3,6 +3,7 @@ import { Button, Card,  Container, Row, Col, CardColumns } from "react-bootstrap
 import './pages.scss';
 import starIcon from "../images/star-like.svg";
 import thumbnail from "../images/thumbnail.png";
+import {FiStar} from "react-icons/fi";
 
 
 const cardbox=[
@@ -41,12 +42,13 @@ function Video(props) {
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
             <Button className="star" variant="">
-              <img
+            <FiStar size="2em"/>
+             {/*  <img
                 src={starIcon}
                 alt="star icon"
                 width="30px"
                 className="star-icon"
-              />
+              /> */}
             </Button>
           </Card.Body>
         </Card>
