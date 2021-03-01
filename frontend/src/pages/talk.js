@@ -9,7 +9,7 @@ function talk(){
             <div className="page-manager">
                 Talk
 
-                <Card>
+                <Card className="backside">
                     <Card.Body>
                         <Card.Text className="text-muted">
                             Posted by User123
@@ -24,7 +24,7 @@ function talk(){
                     </Card.Body>
                 </Card>
 
-                <Card>
+                <Card className="backside">
                     <Card.Body>
                         <Card.Text className="text-muted">
                             Posted by User045

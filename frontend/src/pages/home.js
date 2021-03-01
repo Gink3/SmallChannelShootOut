@@ -3,18 +3,21 @@ import { Button, Card,  Container, Row, Col, CardColumns } from "react-bootstrap
 import './pages.scss';
 import starIcon from "../images/star-like.svg";
 import thumbnail from "../images/thumbnail.png";
-import {FiStar} from "react-icons/fi";
+import {BsStarFill} from "react-icons/bs";
+import {BiStar} from "react-icons/bi";
+
+
 
 
 const cardbox=[
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 1 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
 
 
 ];
@@ -26,8 +29,8 @@ function Video(props) {
     <section>
       {props.cardbox.map((cards, i) => (
         <Card className="home-card-box" key={i}>
-           <Card.Img variant="top" src={thumbnail} />
-          {/* <div className="embed-responsive embed-responsive-16by9">
+            <Card.Img variant="top" src={thumbnail} />
+        {/*  <div className="embed-responsive embed-responsive-16by9">
             <iframe
               className="embed-responsive-item"
               
@@ -41,15 +44,10 @@ function Video(props) {
               {cards.subtitle}
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
-            <Button className="star" variant="">
-            <FiStar size="2em"/>
-             {/*  <img
-                src={starIcon}
-                alt="star icon"
-                width="30px"
-                className="star-icon"
-              /> */}
+            <Button className="star-btn" variant="">
+            <BiStar className="star" color="gold" size= "2em"  />           
             </Button>
+            {cards.star}
           </Card.Body>
         </Card>
       ))}

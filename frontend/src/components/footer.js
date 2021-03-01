@@ -6,10 +6,10 @@ import {FaRobot} from "react-icons/fa";
 function footer(){
     return(
     <> 
-    <br/>
+   
     
     <div className=" d-flex justify-content-center footer_make">
-    <a  href="/"> <img src={logo} alt="logo" width="90px" /></a>
+    <a  href="/"> <img src={logo} alt="logo" width="70px" /></a>
 
   <footer className=" footer footer_make">
    
@@ -21,7 +21,7 @@ function footer(){
     </div>
     <div className=" d-flex justify-content-center footer_make ">
       <span className="footer_make "><HiOutlineMail className="footer_make" size="2em"/> &nbsp;</span>
-      <a href="#n">&nbsp;channelshootOut@beepboop.com</a> 
+      <a href="#n">&nbsp;shootout@beepboop.com</a> 
       
     </div>
     <br/>
