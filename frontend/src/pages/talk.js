@@ -1,10 +1,38 @@
 import React from 'react';
-import { Button, Card,  Container, Row, Col, CardColumns } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardColumns, Form } from "react-bootstrap";
 import "../style/talk.scss";
 
 function talk(){
     return(            
         <>
+            <Container fluid>
+                <div className="d-flex justify-content-center header  " >
+                    <h2>  Create your ShootOut Account</h2>
+                </div>
+                <Row className="justifycontent-md-center ">
+                    <Col md={4} >
+                <Form>
+                    <Form.Group controlId="threadLink">
+                        <Form.Control required type="text" className="line" placeholder="Video Link" />
+                    </Form.Group>
+
+                    <Form.Group controlId="threadTitle">
+                        <Form.Control required type="text" className="line" placeholder="Title" />
+                    </Form.Group>                   
+
+                    <Form.Group controlId="threadBody">
+                        <Form.Control required type="text" className="line" placeholder="Body" />
+                    </Form.Group>
+
+                    <Button variant="primary" className="btn_createthread" size="lg" type="submit" block>
+                        CREATE THREAD 
+                    </Button>
+                
+                </Form>
+                </Col>
+                </Row>
+            </Container>
+
 
             <div className="page-manager">
                 Talk
