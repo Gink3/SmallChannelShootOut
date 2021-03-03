@@ -33,7 +33,7 @@ function Video(props) {
         {/*  <div className="embed-responsive embed-responsive-16by9">
             <iframe
               className="embed-responsive-item"
-              
+
               src={cards.image}
               allowFullScreen
             ></iframe>
@@ -45,7 +45,7 @@ function Video(props) {
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
             <Button className="star-btn" variant="">
-            <BiStar className="star" color="gold" size= "2em"  />           
+            <BiStar className="star" color="gold" size= "2em"  />
             </Button>
             {cards.star}
           </Card.Body>
@@ -76,7 +76,7 @@ export default home;
 /*<div className="homebox">
             <Intro videoboxes={videoboxObj} />
 
-            </div> 
+            </div>
 const videobox=["First", "Second", "Third", "Fourth", "Fifth","Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh"];
 const videoboxObj= videobox.map((videobox, i)=>({id: i, title:videobox}));
 function Intro(props) {

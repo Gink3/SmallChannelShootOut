@@ -3,7 +3,7 @@ import { Button, Card,  Container, Row, Col, CardColumns, Form } from "react-boo
 import "../style/talk.scss";
 
 function talk(){
-    return(            
+    return(
         <>
             <Container fluid>
                 <div className="d-flex justify-content-center header  " >
@@ -18,16 +18,16 @@ function talk(){
 
                     <Form.Group controlId="threadTitle">
                         <Form.Control required type="text" className="line" placeholder="Title" />
-                    </Form.Group>                   
+                    </Form.Group>
 
                     <Form.Group controlId="threadBody">
                         <Form.Control required type="text" className="line" placeholder="Body" />
                     </Form.Group>
 
                     <Button variant="primary" className="btn_createthread" size="lg" type="submit" block>
-                        CREATE THREAD 
+                        CREATE THREAD
                     </Button>
-                
+
                 </Form>
                 </Col>
                 </Row>
@@ -67,7 +67,7 @@ function talk(){
                     </Card.Body>
                 </Card>
             </div>
-        </>    
+        </>
     );
 }
 export default talk;
