@@ -1,7 +1,8 @@
 $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
-* {
-  background-color: lighten(#39404e, 10%);
-  color: aliceblue; 
+
+body {
+  background-color: lighten(#39404e, 10%); //rgb(221, 217, 217);
+  color: aliceblue;
 }
 .container {
   position: absolute;
@@ -78,8 +79,7 @@ $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
     text-shadow: 0 0 10px $Navcolor;
     padding: 0 80px 0 20px;
     border-radius: 30px;
-    box-shadow: 0 0 25px 0 /* $Navcolor */ crimson,
-      0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
     // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
     transition: all 1s;
     opacity: 0;
@@ -124,15 +124,58 @@ $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
 
 .nav {
   background-color: black;
-
 }
 .btn-nav {
   //border-radius: 9px;
 
-
-  &:hover {
-    //border-radius: 9px;
-
-    background-color: lighten(black, 15%);
+  &:active {
+    .icon {
+      transform: scale(1.2);
+    }
   }
+}
+.icon {
+  background-color: black;
+  color: aliceblue; ////////////////////////////
+
+  &:active {
+    transform: scale(1.2);
+  }
+}
+.your-acc-icon {
+  background-color: white;
+}
+
+.bounce {
+  animation: bounce 2s ease 1;
+
+  @keyframes bounce {
+    70% {
+      transform: translateY(0%);
+    }
+    80% {
+      transform: translateY(-45%);
+    }
+    90% {
+      transform: translateY(0%);
+    }
+    95% {
+      transform: translateY(-22%);
+    }
+    97% {
+      transform: translateY(0%);
+    }
+    99% {
+      transform: translateY(-19%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+.account {
+  border: none;
+}
+.footer_make {
+  background-color: black;
 }

@@ -1,53 +1,62 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import {Button, Form, Row, Col, Container} from "react-bootstrap";
 import "../style/signup.scss";
 
 
 function signUp(){
     return(
         <>
-            <div class="header">
-                Create your ShootOut Account
+        <Container fluid>
+            <div className="d-flex justify-content-center header  ">
+              <h2>  Create your ShootOut Account</h2>
             </div>
+            <Row className="justify-content-md-center ">
+
+                <Col md={4} > 
             
-            <Form className="page-manager">
+            <Form >
+                <br/>
                 <Form.Group controlId="signupFirstName">
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control required type="text" placeholder="First Name" />
+                    {/* <Form.Label>First Name</Form.Label> */}
+                    <Form.Control required type="text" className="input line" placeholder="First Name" />
                 </Form.Group>
 
                 <Form.Group controlId="signupLastName">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control required type="text" placeholder="Last Name" />
+                   {/*  <Form.Label>Last Name</Form.Label> */}
+                    <Form.Control required type="text" className="line" placeholder="Last Name" />
                 </Form.Group>
 
                 <Form.Group controlId="signupUsername">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control required type="text" placeholder="Username" />
+                  {/*   <Form.Label>Username</Form.Label> */}
+                    <Form.Control required type="text" className="line" placeholder="Username" />
                 </Form.Group>
 
                 <Form.Group controlId="signupEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control required type="email" placeholder="Enter email" />
+                    {/* <Form.Label>Email address</Form.Label> */}
+                    <Form.Control required type="email" className="line" placeholder="Enter email" />
                     <Form.Text className="text-muted">
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="signupPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control required type="password" placeholder="Password" />
+                    {/* <Form.Label>Password</Form.Label> */}
+                    <Form.Control required type="password" className="line" placeholder="Password" />
                 </Form.Group>
 
                 <Form.Group controlId="signupResubmitPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control required type="password" placeholder="Resubmit Password" />
+                   {/*  <Form.Label>Password</Form.Label> */}
+                    <Form.Control required type="password" className="line" placeholder="Resubmit Password" />
                 </Form.Group>
-
-                <Button variant="primary" type="submit">
-                    Create Account!
+<br/>
+                <Button variant="primary" className="btn_createacc" size="lg" type="submit" block>
+                  SIGN UP 
                 </Button>
+                <br/>
             </Form>
+            </Col>
+            </Row>
+            </Container>
         </>
     );  
 }

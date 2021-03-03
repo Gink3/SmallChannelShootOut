@@ -1,8 +1,30 @@
-.header{
-    padding: 20px;
-    font-size: 30px;
+.header {
+  // padding: 20px;
+  font-size: 30px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
-.page-manager{
-    padding: 20px;
+/* .page-manager {
+  padding: 20px;
+} */
+.line {
+  border-radius: 19px;
+  /* background-color: #201818;
+
+  opacity: 0.5; */
+}
+.btn_createacc {
+  border-radius: 13px;
+  background-color: #fe4066; //lighten(crimson, 10%);
+  transition: box-shadow 2s;
+
+  &:hover {
+    transition: box-shadow 700ms;
+    box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+
+    background-color: crimson;
+  }
+  &:active {
+    background-color: crimson;
+  }
 }

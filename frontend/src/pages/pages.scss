@@ -1,4 +1,4 @@
-$list-bg: lighten(blue, 22%);
+$list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
 .home-card-box {
   background-color: $list-bg;
@@ -20,12 +20,12 @@ $list-bg: lighten(blue, 22%);
     transform: scale(1.02);
     transition: transform 500ms ease;
   }
-  $like-bg: lighten(#39404e, 10%); //bg for star button
+
   .star {
     border: none;
-    background-color: $like-bg;
+    //  background-color: $list-bg;
     .star-icon {
-      background-color: $like-bg;
+      background-color: $list-bg;
     }
     &:hover {
       transform: scale(1.2);
@@ -33,6 +33,11 @@ $list-bg: lighten(blue, 22%);
     &:active {
       transform: scale(1.2) rotate(50deg);
     }
+  }
+}
+.star-btn {
+  &:focus {
+    box-shadow: none;
   }
 }
 

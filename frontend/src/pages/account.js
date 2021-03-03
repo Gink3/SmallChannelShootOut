@@ -17,7 +17,7 @@ function account(){
         &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
 
 
-        <Tabs>
+        <Tabs className="">
             <Tab className="page-manager" eventKey="likedVideos" title="Liked Videos">
                 Liked videos go here.
             </Tab>
@@ -26,7 +26,7 @@ function account(){
                 Previously voted on videos go here.
             </Tab>
 
-            <Tab eventKey="editInfo" title="Edit Information">
+            <Tab  eventKey="editInfo" title="Edit Information">
                 <Tabs>
                     <Tab className="page-manager-curr-info" eventKey="currentInfo" title="Current Information">
                         {showCurrentInfo()}

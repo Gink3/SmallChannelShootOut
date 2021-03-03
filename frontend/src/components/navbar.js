@@ -4,13 +4,20 @@ import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardD
 import homeIcon from "../images/homeicon.svg";
 import accountIcon from "../images/account-icon.png";
 import logo from "../images/SCSLogo_SimpleBB.png";
+import {FaAdn, FaUserPlus} from "react-icons/fa";
+
+import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai"
+import {RiMessage3Line, RiAccountCircleFill} from "react-icons/ri"
+
+
+
 
 function nav() {
+
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
-        <Navbar.Brand href="/"><img src={logo} alt="logo" width="70px" className=""/></Navbar.Brand>
-        
+        <Navbar.Brand href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className="navbar"
@@ -22,23 +29,25 @@ function nav() {
 
             {/*Home Link*/}
             <Nav.Link className="nav btn-nav" href="/">
-            <img src={homeIcon} alt="home icon" width="30px" className=""/>
-                &nbsp; Home
+            {/* <img src={homeIcon} alt="home icon" width="30px" className=""/> */}
+            <AiOutlineHome className="icon" size="2em"/>
+            &#8239;Home
             </Nav.Link>
 
             {/*About Link*/}
             <Nav.Link href="/about" className="nav btn-nav">
-              About
+            <FaAdn className="icon bounce" size="2em"/>
+              &nbsp;About
             </Nav.Link>
 
             {/*Best Choice Choice*/}
             <Nav.Link href="#winner" className="nav btn-nav">
-              Best Choice
+             <AiOutlineTrophy className="icon" size="2em"/>&#8239;Best Choice
             </Nav.Link>
 
             {/*Talk Choice*/}
             <Nav.Link href="/talk" className="nav btn-nav">
-              Talk
+            <RiMessage3Line className="icon" size="2em"/>&#8239;Talk
             </Nav.Link>
 
             {/*Search Bar*/}
@@ -65,18 +74,23 @@ function nav() {
 
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
-              SIGN UP
+              <FaUserPlus size="2em" className="icon"/> SIGN UP
             </Nav.Link>                  
 
             {/* 
             This is Bootstrap.
             "$npm install react-bootstrap bootstrap" needed
             */}
-            <DropdownButton drop="left" title="Account" className="nav btn-nav">
-              <Dropdown.Item href="/account">Your Account</Dropdown.Item>
+            <NavDropdown drop ="left" title="Account" id="collasible-nav-dropdown" className="nav">
+              <NavDropdown.Item href="/account">Your Account</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#s">Settings</NavDropdown.Item>
+            </NavDropdown>
+            {/* <DropdownButton drop="left" title="Account" className="nav account">
+              <Dropdown.Item href="/account"><RiAccountCircleFill className="your-acc-icon" size="2em"/>&#8239;Your Account</Dropdown.Item>
               <NavDropdown.Divider />
               <Dropdown.Item>Settings</Dropdown.Item>
-            </DropdownButton>
+            </DropdownButton> */}
           </Nav>
 
         </Navbar.Collapse>

@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavigationBar from "./components/navbar";
+import Footer from "./components/footer";
+
 //import { Navbar, Nav, NavDropdown, Button, Form, FormControl,} from "react-bootstrap";
 
 import MakeAccount  from './pages/makeacc';
@@ -25,8 +27,9 @@ function App() {
             <Route path="/about"    exact component={About}/>
             <Route path="/account"  exact component={Account}/>
           </Switch>
-        </Router>
-
+        
+<Footer/>
+</Router>
       </>
   );
 }
