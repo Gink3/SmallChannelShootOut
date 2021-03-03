@@ -12,6 +12,7 @@ import Home         from './pages/home';
 import Talk         from './pages/talk';
 import About        from './pages/about';
 import Account      from './pages/account';
+import BestChoice   from './pages/bestchoice';
 
 function App() {
   return (
@@ -21,11 +22,12 @@ function App() {
 
         <Router>
           <Switch>
-            <Route path="/signup"   exact component={MakeAccount} />
-            <Route path="/"         exact component={Home}/>
-            <Route path="/talk"     exact component={Talk}/>
-            <Route path="/about"    exact component={About}/>
-            <Route path="/account"  exact component={Account}/>
+            <Route path="/signup"     exact component={MakeAccount} />
+            <Route path="/"           exact component={Home}/>
+            <Route path="/talk"       exact component={Talk}/>
+            <Route path="/about"      exact component={About}/>
+            <Route path="/account"    exact component={Account}/>
+            <Route path="/bestchoice" exact component={BestChoice}/>
           </Switch>
         
 <Footer/>

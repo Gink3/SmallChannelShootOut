@@ -41,7 +41,7 @@ function nav() {
             </Nav.Link>
 
             {/*Best Choice Choice*/}
-            <Nav.Link href="#winner" className="nav btn-nav">
+            <Nav.Link href="/bestchoice" className="nav btn-nav">
              <AiOutlineTrophy className="icon" size="2em"/>&#8239;Best Choice
             </Nav.Link>
 
