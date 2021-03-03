@@ -6,9 +6,7 @@ function talk(){
     return(            
         <>
 
-            <div className="page-manager">
-                Talk
-
+            <div>
                 <Card>
                     <Card.Body>
                         <Card.Text className="text-muted">

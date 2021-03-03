@@ -48,6 +48,7 @@ function Video(props) {
                 className="star-icon"
               />
             </Button>
+            <Button>Vote!</Button>
           </Card.Body>
         </Card>
       ))}
