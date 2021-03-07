@@ -19,10 +19,6 @@ mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
 
-/*app.get('/signup', (req, res) => {
-    res.send('server.js') 
-}); */
-
 app.post('/signup', signUpRouter); 
 
 app.listen(port, () => {
