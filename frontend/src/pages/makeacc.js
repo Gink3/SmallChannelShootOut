@@ -12,7 +12,7 @@ function MakeAccount(){
         password: ""
     }); 
 
-    const formSubmit=  (e) => {
+    const formSubmit= async (e) => {
         e.preventDefault(); 
       axios.post('http://localhost:5000/signup', postUser);
       window.location = '/';
