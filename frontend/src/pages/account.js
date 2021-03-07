@@ -16,36 +16,44 @@ function account(){
 
         &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
 
-
         <Tabs className="">
-            <Tab className="page-manager" eventKey="likedVideos" title="Liked Videos">
+            
+       
+            <Tab className=""  eventKey="likedVideos" title="Liked Videos">
                 Liked videos go here.
             </Tab>
 
-            <Tab className="page-manager" eventKey="votedVideos" title="Previously Voted For">
+            <Tab className="" eventKey="votedVideos" title="Previously Voted For">
                 Previously voted on videos go here.
             </Tab>
-
-            <Tab  eventKey="editInfo" title="Edit Information">
+            
+            <Tab className=""  eventKey="editInfo" title="Edit Information">
+           
                 <Tabs>
+              
                     <Tab className="page-manager-curr-info" eventKey="currentInfo" title="Current Information">
                         {showCurrentInfo()}
                     </Tab>
-                    <Tab className="page-manager" eventKey="changeEmail" title="Change E-Mail">
+                    <Tab className="" eventKey="changeEmail" title="Change E-Mail">
                         {changeEmail()}
                     </Tab>
-                    <Tab className="page-manager" eventKey="changePassword" title="Change Password">
+                    <Tab className="" eventKey="changePassword" title="Change Password">
                         {changePassword()}
                     </Tab>
-                    <Tab className="page-manager" eventKey="changeUsername" title="Change Username">
+                    <Tab className="" eventKey="changeUsername" title="Change Username">
                         {changeUsername()}
                     </Tab>
-                    <Tab className="page-manager" eventKey="changeProfilePic" title="Change Profile Picture">
+                    <Tab className="" eventKey="changeProfilePic" title="Change Profile Picture">
                         {changeProfilePic()}
+                        
                     </Tab>
+                    
                 </Tabs>
+                
             </Tab>
+          
         </Tabs>
+       
         </Container>
 
         </>
@@ -94,6 +102,8 @@ function showCurrentInfo(){
 function changeEmail(){
     return(
         <>
+         <Row className="justify-content-md-start ">
+            <Col md={3} > 
             <Form>
                 <Form.Group controlId="formChangeEmail">
                     <Form.Label>Current Email address</Form.Label>
@@ -117,6 +127,8 @@ function changeEmail(){
                     Submit
                 </Button>
             </Form>
+            </Col>
+          </Row>
         </>
     );
 }
@@ -125,6 +137,8 @@ function changeEmail(){
 function changePassword(){
     return(
         <>
+         <Row className="justify-content-md-start ">
+            <Col md={3} > 
             <Form>
                 <Form.Group controlId="formChangePassword">
                     <Form.Label>Current Password</Form.Label>
@@ -145,6 +159,8 @@ function changePassword(){
                     Submit
                 </Button>
             </Form>
+            </Col>
+          </Row>
         </>
     );
 }
@@ -153,6 +169,8 @@ function changePassword(){
 function changeUsername(){
     return(
         <>
+         <Row className="justify-content-md-start ">
+            <Col md={3} > 
             <Form>
                 <Form.Group controlId="formChangeUsername">
                     <Form.Label>Current Username</Form.Label>
@@ -173,6 +191,8 @@ function changeUsername(){
                     Submit
                 </Button>
             </Form>
+            </Col>
+          </Row>
         </>
     );
 }
@@ -181,16 +201,20 @@ function changeUsername(){
 function changeProfilePic(){
     return(
         <>
+         <Row className="justify-content-md-start ">
+            <Col md={3} > 
             <Form>
                 <Form.File id="formNewProfilePic">
-                <Form.File.Label>Choose new profile picture.</Form.File.Label>
+                <Form.File.Label>Choose new profile picture.</Form.File.Label><br/>
                 <Form.File.Input />
                 </Form.File>
-
+                    <br/>
                  <Button variant="primary" type="submit">
                     Submit
                 </Button>
             </Form>
+            </Col>
+          </Row>
         </>
     );
 }
