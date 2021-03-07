@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button, Card,  Container, Row, Col, CardColumns } from "react-bootstrap";
+import React, {useState} from 'react';
+import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './pages.scss';
-import starIcon from "../images/star-like.svg";
+
 import thumbnail from "../images/thumbnail.png";
-import {BsStarFill} from "react-icons/bs";
+
 import {BiStar} from "react-icons/bi";
 
 
 
 
 const cardbox=[
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
   {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
@@ -23,14 +23,19 @@ const cardbox=[
 ];
 //const vcardboxObj= cardbox.map((cardbox, i)=>({id: i, title:cardbox}));
 
+ 
+  
+
 
 function Video(props) {
+  
   return (
-    <section>
+    <>
       {props.cardbox.map((cards, i) => (
-        <Card className="home-card-box" key={i}>
+        
+        <Card className="home-card-box " key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
             <Card.Img variant="top" src={thumbnail} />
-        {/*  <div className="embed-responsive embed-responsive-16by9">
+         {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
             <iframe
               className="embed-responsive-item"
 
@@ -44,29 +49,44 @@ function Video(props) {
               {cards.subtitle}
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
-            <Button className="star-btn" variant="">
+            <Button className="star-btn" variant="" /* onClick={likeVideo} */>
             <BiStar className="star" color="gold" size= "2em"  />
             </Button>
             {cards.star}
+           {/*  {(
+        <input
+          type="number"
+          name="clicks"
+          value={count}
+          onChange={event => {
+            setCount(event.target.value);
+          }}
+        />
+      )} */}
           </Card.Body>
         </Card>
+       
       ))}
-    </section>
+    </>
   );
 }
 
 function home() {
+
+  
+
   return (
     <>
       <Container fluid>
         <Row>
           <Col>
-            <CardColumns>
+            <CardDeck>
               <Video cardbox={cardbox} />
-            </CardColumns>
+            </CardDeck>
           </Col>
         </Row>
       </Container>
+      <br />
     </>
   );
 }

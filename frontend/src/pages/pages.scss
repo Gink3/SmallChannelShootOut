@@ -3,7 +3,8 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 .home-card-box {
   background-color: $list-bg;
   border-radius: 9px;
-  margin-top: 7%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
   cursor: pointer;
   transition: box-shadow 500ms;
@@ -40,54 +41,3 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
     box-shadow: none;
   }
 }
-
-////////////////Do not delete for now
-/* .homebox {
-  .like {
-    border: none;
-    position: relative;
-    margin-top: 4rem;
-    margin-left: 8rem;
-    background-color: $list-bg;
-    .like-icon {
-      background-color: $list-bg;
-    }
-    &:hover {
-      transform: scale(1.2);
-    }
-    &:active {
-      transform: scale(1.2) rotate(50deg);
-    }
-  }
-
-  li {
-    padding: 15px 15px;
-    background-color: $list-bg;
-    height: 15rem;
-    width: 28%;
-    border-radius: 9px;
-    padding: 9rem;
-    margin: 2%;
-    cursor: pointer;
-    transition: box-shadow 500ms;
-    transition: transform 500ms ease;
-    box-shadow: -15px 15px 2px rgba(0, 0, 0, 0.1),
-      15px 2px 15px 0 rgba(0, 0, 0, 0.1);
-    &:hover {
-      //background-color: lighten($list-bg, 10%);
-      transition: box-shadow 500ms;
-      border: 1px solid crimson;
-      box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
-      //zoom
-      -ms-transform: scale(1.25); // IE 9
-      -webkit-transform: scale(1.5); // Safari 3-8
-      transform: scale(1.1);
-      transition: transform 500ms ease;
-    }
-  }
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-  }
-} */
