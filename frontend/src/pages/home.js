@@ -29,6 +29,24 @@ const cardbox=[
 
 function Video(props) {
   
+    /* const [count, setCount] = useState([]); */
+    
+    const [isVisible, setIsVisible] = useState(false);
+     
+    const likeVideo = (cards,i ) => {
+      console.log(cards.star);
+      (isVisible) ?(cards.star -= 1):(cards.star += 1);
+      /* (isVisible) ? setCount(count - 1): setCount(count + 1); */
+      setIsVisible(!isVisible);
+    };
+    /* function likeVideo(cards,i) {
+      console.log(cards.star);
+    
+    (isVisible) ? setCount(count - 1) : setCount(count + 1);
+    setIsVisible(!isVisible);
+    
+  } */
+  
   return (
     <>
       {props.cardbox.map((cards, i) => (
@@ -49,10 +67,11 @@ function Video(props) {
               {cards.subtitle}
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
-            <Button className="star-btn" variant="" /* onClick={likeVideo} */>
+            <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
             <BiStar className="star" color="gold" size= "2em"  />
             </Button>
-            {cards.star}
+            {cards.star }
+          {/*  {count} */}
            {/*  {(
         <input
           type="number"
@@ -71,7 +90,7 @@ function Video(props) {
   );
 }
 
-function home() {
+function Home() {
 
   
 
@@ -90,7 +109,7 @@ function home() {
     </>
   );
 }
-export default home;
+export default Home;
 ///////////////////////////////Do not delete :)
 
 /*<div className="homebox">

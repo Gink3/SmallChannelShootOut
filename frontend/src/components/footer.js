@@ -8,7 +8,7 @@ function footer(){
     <> 
    
     
-    <div className=" d-flex justify-content-center footer_make">
+    <div className=" d-flex justify-content-center footer_make added-footer">
     <a  href="/"> <img src={logo} alt="logo" width="70px" /></a>
 
   <footer className=" footer footer_make">
@@ -16,7 +16,7 @@ function footer(){
     <br/>
     
        
-      <div className= "footer footer_make"> 
+      <div className= "footer footer_make "> 
       <span className="footer footer_make">&nbsp; &copy; 2021 &nbsp;<FaRobot className="footer_make" size="2em"/> &nbsp;Beep Boop Inc.</span>
     </div>
     <div className=" d-flex justify-content-center footer_make ">
