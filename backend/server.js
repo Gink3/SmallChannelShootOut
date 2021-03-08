@@ -1,7 +1,9 @@
-const express = require ('express');
-const cors = require ('cors');
-const moongoose = require('mongoose');
-require ('dotenv').config(); 
+import express from 'express'; 
+import cors from 'cors';
+import mongoose from 'mongoose'; 
+import {signUpRouter} from './route/SignupRoute.js'
+const ATLAS_URI= "mongodb+srv://admin:SmallChannelSh00tOut!@cluster0.q9opq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
 
 const app = express();
 const port = process.env.PORT || 5000; 
@@ -9,17 +11,17 @@ const port = process.env.PORT || 5000;
 app.use(cors()); 
 app.use(express.json()); 
 
-const uri = process.env.ATLAS_URI; //uri for mongodb
+const uri = ATLAS_URI; //uri for mongodb
 
-moongoose.connect (uri, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect (uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
-moongoose.connection.once('open', () => {
+mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
 
-
-
+app.post('/signup', signUpRouter); 
 
 app.listen(port, () => {
     console.log(`Server is runnig in port: ${port}`)
 });
+
