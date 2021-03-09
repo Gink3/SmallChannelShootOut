@@ -72,16 +72,7 @@ function Video(props) {
             </Button>
             {cards.star }
           {/*  {count} */}
-           {/*  {(
-        <input
-          type="number"
-          name="clicks"
-          value={count}
-          onChange={event => {
-            setCount(event.target.value);
-          }}
-        />
-      )} */}
+         
           </Card.Body>
         </Card>
        
