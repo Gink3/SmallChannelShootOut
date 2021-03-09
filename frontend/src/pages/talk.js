@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card,  Container, Row, Col, CardColumns, Form } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, Form } from "react-bootstrap";
 import "../style/talk.scss";
 
 function talk(){

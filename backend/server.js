@@ -20,6 +20,7 @@ mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
 
+app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); 
 
 app.listen(port, () => {

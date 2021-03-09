@@ -1,7 +1,7 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
-import thumbnail from "../images/thumbnail.png";
+import { Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+
 import "../style/account.scss";
 
 {/* First things a user sees
@@ -16,20 +16,22 @@ function account(){
 
         &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
 
-        <Tabs className="">
+        <Tabs className="wrap" >
             
        
             <Tab className=""  eventKey="likedVideos" title="Liked Videos">
+            <br/><br/><br/><br/><br/><br/><br/>
                 Liked videos go here.
             </Tab>
 
             <Tab className="" eventKey="votedVideos" title="Previously Voted For">
+            <br/><br/><br/><br/><br/><br/><br/>
                 Previously voted on videos go here.
             </Tab>
             
-            <Tab className=""  eventKey="editInfo" title="Edit Information">
+            <Tab   eventKey="editInfo" title="Edit Information">
            
-                <Tabs>
+                <Tabs className="wrap">
               
                     <Tab className="page-manager-curr-info" eventKey="currentInfo" title="Current Information">
                         {showCurrentInfo()}
@@ -102,10 +104,10 @@ function showCurrentInfo(){
 function changeEmail(){
     return(
         <>
-         <Row className="justify-content-md-start ">
+         <Row className="justify-content-md-start ml-sm-3 ">
             <Col md={3} > 
             <Form>
-                <Form.Group controlId="formChangeEmail">
+                <Form.Group controlId="formChangeEmail"><br/>
                     <Form.Label>Current Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter current email" />
                 </Form.Group>
@@ -123,10 +125,10 @@ function changeEmail(){
                     </Form.Text>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button  className= "btn_acc" variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>
+            </Form><br/>
             </Col>
           </Row>
         </>
@@ -137,10 +139,10 @@ function changeEmail(){
 function changePassword(){
     return(
         <>
-         <Row className="justify-content-md-start ">
+         <Row className="justify-content-md-start ml-sm-3">
             <Col md={3} > 
             <Form>
-                <Form.Group controlId="formChangePassword">
+                <Form.Group controlId="formChangePassword"><br/>
                     <Form.Label>Current Password</Form.Label>
                     <Form.Control type="password" placeholder="Enter current Password" />
                 </Form.Group>
@@ -155,10 +157,10 @@ function changePassword(){
                     <Form.Control type="password" placeholder="Enter new Password" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button  className= "btn_acc" variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>
+            </Form><br/>
             </Col>
           </Row>
         </>
@@ -169,10 +171,10 @@ function changePassword(){
 function changeUsername(){
     return(
         <>
-         <Row className="justify-content-md-start ">
+         <Row className="justify-content-md-start ml-sm-3">
             <Col md={3} > 
             <Form>
-                <Form.Group controlId="formChangeUsername">
+                <Form.Group controlId="formChangeUsername"><br></br>
                     <Form.Label>Current Username</Form.Label>
                     <Form.Control placeholder="Enter current Username" />
                 </Form.Group>
@@ -187,10 +189,10 @@ function changeUsername(){
                     <Form.Control placeholder="Enter new Username" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button  className= "btn_acc" variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>
+            </Form><br/>
             </Col>
           </Row>
         </>
@@ -201,18 +203,21 @@ function changeUsername(){
 function changeProfilePic(){
     return(
         <>
-         <Row className="justify-content-md-start ">
+         <Row className="justify-content-md-start ml-sm-3">
             <Col md={3} > 
             <Form>
+            <br></br>
                 <Form.File id="formNewProfilePic">
-                <Form.File.Label>Choose new profile picture.</Form.File.Label><br/>
+                <Form.File.Label>Choose new profile picture.</Form.File.Label><br/><br/>
                 <Form.File.Input />
                 </Form.File>
                     <br/>
-                 <Button variant="primary" type="submit">
+                 <Button className= "btn_acc" variant="primary" type="submit">
                     Submit
                 </Button>
+                
             </Form>
+            <br/>
             </Col>
           </Row>
         </>

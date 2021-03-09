@@ -3,7 +3,9 @@ import React from 'react';
 function bestChoice(){
     return(            
         <>
-            YAY!
+      
+            YAY! 
+
         </>    
     );
 }
