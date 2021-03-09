@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose'; 
 import {signUpRouter} from './route/SignupRoute.js'
+import {talkRouter} from './route/TalkRoute.js'
 const ATLAS_URI= "mongodb+srv://admin:SmallChannelSh00tOut!@cluster0.q9opq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 
@@ -19,6 +20,7 @@ mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
 
+app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); 
 
 app.listen(port, () => {
