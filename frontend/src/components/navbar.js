@@ -1,19 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import "./base.scss";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck } from "react-bootstrap";
-import homeIcon from "../images/homeicon.svg";
-import accountIcon from "../images/account-icon.png";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+
 import logo from "../images/SCSLogo_SimpleBB.png";
 import {FaAdn, FaUserPlus} from "react-icons/fa";
-
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai"
-import {RiMessage3Line, RiAccountCircleFill} from "react-icons/ri"
+import {RiMessage3Line} from "react-icons/ri"
+import {BiLogIn} from "react-icons/bi"
+
+import Login   from '../pages/login';
 
 
 
 
-function nav() {
 
+function Topbar() {
+  const [modalShow, setModalShow] = useState(false); 
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
@@ -75,8 +77,14 @@ function nav() {
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
               <FaUserPlus size="2em" className="icon"/> SIGN UP
-            </Nav.Link>                  
+            </Nav.Link>   
 
+            {/*Login Link*/}
+            <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} >
+              <BiLogIn size="2em" className="icon"/> LOGIN
+            </Nav.Link>               
+                  <Login show={modalShow}
+                    onHide={() => setModalShow(false)}/>
             {/* 
             This is Bootstrap.
             "$npm install react-bootstrap bootstrap" needed
@@ -84,7 +92,7 @@ function nav() {
             <NavDropdown drop ="left" title="Account" id="collasible-nav-dropdown" className="nav">
               <NavDropdown.Item href="/account">Your Account</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#s">Settings</NavDropdown.Item>
+              <NavDropdown.Item href="#s">Sign Out</NavDropdown.Item>
             </NavDropdown>
             {/* <DropdownButton drop="left" title="Account" className="nav account">
               <Dropdown.Item href="/account"><RiAccountCircleFill className="your-acc-icon" size="2em"/>&#8239;Your Account</Dropdown.Item>
@@ -99,4 +107,4 @@ function nav() {
   );
 }
 
-export default nav;
+export default Topbar;

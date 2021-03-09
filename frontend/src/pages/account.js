@@ -1,7 +1,7 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Navbar, Nav, NavDropdown, DropdownButton, Dropdown, Button, Card, CardDeck, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
-import thumbnail from "../images/thumbnail.png";
+import { Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+
 import "../style/account.scss";
 
 {/* First things a user sees

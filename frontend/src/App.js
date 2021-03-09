@@ -6,8 +6,6 @@ import NavigationBar from "./components/navbar";
 import Footer from "./components/footer";
 
 
-//import { Navbar, Nav, NavDropdown, Button, Form, FormControl,} from "react-bootstrap";
-
 import MakeAccount  from './pages/makeacc';
 import Home         from './pages/home';
 import Talk         from './pages/talk';
@@ -15,7 +13,9 @@ import About        from './pages/about';
 import Account      from './pages/account';
 import BestChoice   from './pages/bestchoice';
 
+
 function App() {
+  
   return (
 
       <>
@@ -30,6 +30,8 @@ function App() {
             <Route path="/account"    exact component={Account}/>
             <Route path="/bestchoice" exact component={BestChoice}/>
           </Switch>
+           
+         
         
 <Footer/>
 </Router>
