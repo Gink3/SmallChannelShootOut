@@ -64,7 +64,7 @@ function MakeAccount(){
 
 
                                 <br />
-                                <Button variant="primary" className="btn_createacc" size="lg" type="submit" block>
+                                <Button variant="" className="btn_createacc" size="lg" type="submit" block>
                                     SIGN UP
                                 </Button>
                                 <br />

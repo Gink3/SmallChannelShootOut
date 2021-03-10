@@ -1,27 +1,27 @@
 .header {
-  // padding: 20px;
   font-size: 30px;
   font-family: Verdana, sans-serif;
 }
 
-/* .page-manager {
-  padding: 20px;
-} */
 .line {
   border-radius: 19px;
 }
+
+///This is a style for the SIGNUP and SIGNIN Button
 .btn_createacc {
   border-radius: 13px;
   background-color: #fe4066; //lighten(crimson, 10%);
   transition: box-shadow 2s;
-
+  border: none;
+  color: aliceblue;
   &:hover {
     transition: box-shadow 700ms;
     box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    color: aliceblue;
 
     background-color: crimson;
   }
   &:active {
-    background-color: crimson;
+    background-color: #fe4066;
   }
 }

@@ -20,14 +20,6 @@ function Login(props) {
         <Modal.Body>
           <Form>
             <br />
-            {/* <Form.Group controlId="userName">
-              <Form.Control
-                required
-                type="text"
-                className="line"
-                placeholder="Username"
-              />
-            </Form.Group> */}
             <Form.Group controlId="email">
               <Form.Control
                 required
@@ -46,11 +38,12 @@ function Login(props) {
             </Form.Group>
             <br />
             <Button
-              variant="primary"
+              variant=""
               className="btn_createacc"
               size="lg"
               type="submit"
               block
+              
             >
               LOGIN
             </Button>

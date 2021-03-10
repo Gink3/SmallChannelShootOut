@@ -53,7 +53,7 @@ function Topbar() {
             </Nav.Link>
 
             {/*Search Bar*/}
-            <NavDropdown title="Genre" id="collasible-nav-dropdown" className="nav">
+            <NavDropdown title="Genre" id="collasible-nav-dropdown" className="nav" style={{marginTop: "2px"}}>
               <NavDropdown.Item href="#action/3.1">Sports</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Horror</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Comedy</NavDropdown.Item>
@@ -89,7 +89,7 @@ function Topbar() {
             This is Bootstrap.
             "$npm install react-bootstrap bootstrap" needed
             */}
-            <NavDropdown drop ="left" title="Account" id="collasible-nav-dropdown" className="nav">
+            <NavDropdown drop ="left" title="Account" id="collasible-nav-dropdown" className="nav" style={{marginTop: "2px"}}>
               <NavDropdown.Item href="/account">Your Account</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#s">Sign Out</NavDropdown.Item>

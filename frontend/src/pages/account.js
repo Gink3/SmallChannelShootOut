@@ -4,9 +4,9 @@ import { Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootst
 
 import "../style/account.scss";
 
-{/* First things a user sees
+/*  First things a user sees
     when they click onto the
-    "Account" page. */}
+    "Account" page. */
 
 function account(){
     return(
@@ -62,7 +62,7 @@ function account(){
     );
 }
 
-{/* Current Information Tab */}
+ /* Current Information Tab */ 
 function showCurrentInfo(){
     return(
         <>
@@ -100,7 +100,7 @@ function showCurrentInfo(){
     );
 }
 
-{/* Change Email Tab */}
+/*  Change Email Tab */ 
 function changeEmail(){
     return(
         <>
@@ -125,7 +125,7 @@ function changeEmail(){
                     </Form.Text>
                 </Form.Group>
 
-                <Button  className= "btn_acc" variant="primary" type="submit">
+                <Button  block className= "btn_acc" variant="" type="submit">
                     Submit
                 </Button>
             </Form><br/>
@@ -135,7 +135,7 @@ function changeEmail(){
     );
 }
 
-{/* Change Password Tab */}
+    /* Change Password Tab  */
 function changePassword(){
     return(
         <>
@@ -157,7 +157,7 @@ function changePassword(){
                     <Form.Control type="password" placeholder="Enter new Password" />
                 </Form.Group>
 
-                <Button  className= "btn_acc" variant="primary" type="submit">
+                <Button block className= "btn_acc" variant="" type="submit">
                     Submit
                 </Button>
             </Form><br/>
@@ -167,7 +167,7 @@ function changePassword(){
     );
 }
 
-{/* Change Username Tab */}
+ /* Change Username Tab */ 
 function changeUsername(){
     return(
         <>
@@ -189,7 +189,7 @@ function changeUsername(){
                     <Form.Control placeholder="Enter new Username" />
                 </Form.Group>
 
-                <Button  className= "btn_acc" variant="primary" type="submit">
+                <Button block className= "btn_acc" variant="" type="submit">
                     Submit
                 </Button>
             </Form><br/>
@@ -199,7 +199,7 @@ function changeUsername(){
     );
 }
 
-{/* Change Profile Picture Tab */}
+ /* Change Profile Picture Tab  */
 function changeProfilePic(){
     return(
         <>
@@ -209,10 +209,10 @@ function changeProfilePic(){
             <br></br>
                 <Form.File id="formNewProfilePic">
                 <Form.File.Label>Choose new profile picture.</Form.File.Label><br/><br/>
-                <Form.File.Input />
+                <Form.File.Input className="justify-content-md-start ml-sm-4" />
                 </Form.File>
                     <br/>
-                 <Button className= "btn_acc" variant="primary" type="submit">
+                 <Button block className= "btn_acc" variant="" type="submit">
                     Submit
                 </Button>
                 

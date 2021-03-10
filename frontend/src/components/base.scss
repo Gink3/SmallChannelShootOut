@@ -126,8 +126,6 @@ body {
   background-color: black;
 }
 .btn-nav {
-  //border-radius: 9px;
-
   &:active {
     .icon {
       transform: scale(1.2);
@@ -147,29 +145,31 @@ body {
 }
 
 .bounce {
-  animation: bounce 2s ease 1;
+  &:hover {
+    animation: bounce 2s ease 500ms;
 
-  @keyframes bounce {
-    70% {
-      transform: translateY(0%);
-    }
-    80% {
-      transform: translateY(-45%);
-    }
-    90% {
-      transform: translateY(0%);
-    }
-    95% {
-      transform: translateY(-22%);
-    }
-    97% {
-      transform: translateY(0%);
-    }
-    99% {
-      transform: translateY(-19%);
-    }
-    100% {
-      transform: translateY(0);
+    @keyframes bounce {
+      70% {
+        transform: translateY(10%);
+      }
+      80% {
+        transform: translateY(-45%);
+      }
+      90% {
+        transform: translateY(0%);
+      }
+      95% {
+        transform: translateY(-22%);
+      }
+      97% {
+        transform: translateY(0%);
+      }
+      99% {
+        transform: translateY(-19%);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   }
 }
