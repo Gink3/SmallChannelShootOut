@@ -4,19 +4,29 @@ import "../style/signup.scss";
 import axios from 'axios';
 
 function MakeAccount(){
+
     const[postUser, setUserData] = useState({
         firstName: "", 
         lastName: "", 
         userName: "", 
         email: "", 
-        password: ""
+        password: "", 
+        verifyPaswrd: "",
     }); 
 
     const formSubmit= async (e) => {
         e.preventDefault(); 
-      axios.post('http://localhost:5000/signup', postUser);
-      window.location = '/';
-      };
+      axios.post('http://localhost:5000/signup', postUser).then (function(response){
+          if(response.data.Message === "Successful"){
+              window.location = '/';
+            alert(response.data.Message); //do something when signup is successsfull (probably go to the login page)
+          }
+        else {
+            alert(response.data.Message); //showing the server message
+        }
+      });
+      
+    }
 
         return (
             <>
@@ -60,6 +70,12 @@ function MakeAccount(){
                                 <Form.Group controlId="password">
                                     <Form.Control required type="password" className="line" placeholder="Password"
                                      value = {postUser.password} onChange={(e)=> setUserData({...postUser, password:e.target.value})}/>
+                                </Form.Group>
+
+
+                                <Form.Group controlId="verifyPaswrd">
+                                    <Form.Control required type="password" className="line" placeholder="Verify Password"
+                                     value = {postUser.verifyPaswrd} onChange={(e)=> setUserData({...postUser, verifyPaswrd:e.target.value})}/>
                                 </Form.Group>
 
 

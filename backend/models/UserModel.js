@@ -1,3 +1,5 @@
+//Model for database
+
 import mongoose from 'mongoose'; 
 const Schema = mongoose.Schema; 
 
@@ -26,7 +28,10 @@ password: {
     type:String, 
     default:"" 
     },
-
+date: {
+    type: Date, 
+    default: Date.now
+},
 });
 
 
