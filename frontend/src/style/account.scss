@@ -11,23 +11,19 @@
   padding: 20px;
 }
 
-/* .acc_bar {
-  border-radius: 9px;
-  background-color: turquoise;
-  color: green;
-} */
 .btn_acc {
   border-radius: 9px;
-  background-color: #fe4066; //lighten(crimson, 10%);
+  background-color: #fe4066;
   transition: box-shadow 2s;
-
+  border: none;
+  color: aliceblue;
   &:hover {
     transition: box-shadow 700ms;
     box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-
+    color: aliceblue;
     background-color: crimson;
   }
   &:active {
-    background-color: crimson;
+    background-color: #fe4066;
   }
 }
