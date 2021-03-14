@@ -1,10 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form} from "react-bootstrap";
 import "../style/signup.scss";
-
+import axios from 'axios'; 
   
 function Login(props) {
+
+  const[logUser, setUserData] = useState({
+    email: "", 
+    password: "", 
+}); 
+
+
+const formSubmit= async (e) => {
+  e.preventDefault(); 
+axios.post('http://localhost:5000/login', logUser).then (function(response){
+    if(response.data.Message === "Successful"){
+      alert(response.data.Message); //do something when login is succesfull
+    }
+  else {
+      alert(response.data.Message); //showing the server error message
+  }
+});
+
+}
+
   return (
     <>
       <Modal
@@ -18,7 +38,7 @@ function Login(props) {
           <Modal.Title id="contained-modal-title-vcenter">LOGIN</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+        <Form onSubmit={formSubmit}>
             <br />
             <Form.Group controlId="email">
               <Form.Control
@@ -26,6 +46,7 @@ function Login(props) {
                 type="email"
                 className="line"
                 placeholder="Enter email"
+                value = {logUser.email} onChange={(e)=> setUserData({...logUser, email:e.target.value})}
               />
             </Form.Group>
             <Form.Group controlId="password">
@@ -34,6 +55,7 @@ function Login(props) {
                 type="password"
                 className="line"
                 placeholder="Password"
+                value = {logUser.password} onChange={(e)=> setUserData({...logUser, password:e.target.value})}
               />
             </Form.Group>
             <br />
