@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card,  Container, Row, Col, Form } from "react-bootstrap";
+import { Button, Tabs, Tab, Card,  Container, Row, Col, Form } from "react-bootstrap";
 import "../style/createthread.scss";
 
 function createThread(){
@@ -7,7 +7,7 @@ function createThread(){
         <>
             <Container fluid>
                     <div className="d-flex justify-content-center header  ">
-                        <h2>  Create a post</h2>
+                        <h2>Create a post</h2>
                     </div>
                     <Row className="justify-content-md-center ">
 
@@ -15,20 +15,23 @@ function createThread(){
 
                             <Form >
                                 <br/>
-                                <Form.Group controlId="firstName">
-                                    <Form.Control required type="text" className="input line" placeholder="Title" />
-                                </Form.Group>
 
-                                <Form.Group controlId="lastName">
+                                <Tabs className="wrap">
+              
+                                    <Tab className="" eventKey="threadTypePost" title="Post">
+                                        {typePost()}
+                                    </Tab>
+                                    <Tab className="" eventKey="threadTypeLink" title="Link">
+                                        {typeLink()}
+                                    </Tab>
 
-                                    <Form.Control required type="text" className="line" placeholder="Text" />
-                                </Form.Group>
+                                </Tabs>
 
                                 <br />
-                                <Button variant="" className="btn_createacc" size="lg" type="submit" block>
+                                <Button href="/talk" variant="" className="btn_createacc" size="lg" type="submit" block>
                                     Post
                                 </Button>
-                                <Button variant="" className="btn_createacc" size="lg" type="submit" block>
+                                <Button href="/talk" variant="" className="btn_createacc" size="lg" type="submit" block>
                                     Save as Draft
                                 </Button>
                                 <br />
@@ -39,4 +42,43 @@ function createThread(){
         </>    
     );
 }
+
+function typePost(){
+    return(
+        <>
+            <div className="box2">
+                <Form>
+                    <Form.Group controlId="Title">
+                        <Form.Control required type="text" placeholder="Title" />
+                    </Form.Group>
+
+                    <textarea className="box3" rows="5" placeholder="Write your post here."/>
+                </Form>
+            </div>
+        </>
+    );
+}
+
+function typeLink(){
+    return(
+        <>
+            <div className="box2">
+                <Form>
+                    <Form.Group controlId="Title">
+                        <Form.Control required type="text" placeholder="Title" />
+                    </Form.Group>
+
+                    <Form.Group controlId="Link">
+                        <Form.Control required type="text" placeholder="Link" />
+                    </Form.Group>
+
+                    <Form.Group controlId="Comment">
+                        <Form.Control required type="text" placeholder="Comment" />
+                    </Form.Group>                  
+                </Form>
+            </div>
+        </>
+    );
+}
+
 export default createThread;

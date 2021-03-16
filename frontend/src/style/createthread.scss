@@ -1,6 +1,15 @@
-box{
+.box{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 100px;
+}
+
+.box2{
+    background-color: grey;
+    border: 10px solid grey;
+}
+
+.box3{
+    width: 100%;
 }

@@ -68,7 +68,7 @@ function Video(props) {
             </Card.Subtitle>
             <Card.Text>{cards.text}</Card.Text>
             <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
-            <BiStar className="star" color="gold" size= "2em"  />
+              <BiStar className="star" color="gold" size= "2em"  />
             </Button>
             {cards.star }
           {/*  {count} */}

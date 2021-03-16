@@ -1,13 +1,16 @@
 import React from 'react';
 import { Button, Card,  Container, Row, Col, Form } from "react-bootstrap";
 import "../style/talk.scss";
+import {AiOutlinePlus} from "react-icons/ai";
+
 
 function talk(){
     return(
         <>    
-            <div style={{ margin: "12px" }}>
-                <Button href="/createthread">Start a conversation!</Button>
-            </div> 
+            <Button variant="" href="/createthread" >
+                <AiOutlinePlus color="white" size= "3em"  />
+                <text className="btn-text">Start a conversation!</text>
+            </Button>
 
             <div style={{ borderTop: "4px solid #000 " }}></div>
 
