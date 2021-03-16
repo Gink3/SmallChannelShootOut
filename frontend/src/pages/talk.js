@@ -4,39 +4,14 @@ import "../style/talk.scss";
 
 function talk(){
     return(
-        <>
-            <Container fluid>
-                <div className="d-flex justify-content-center header  " >
-                    <h2>  Create your ShootOut Account</h2>
-                </div>
-                <Row className="justifycontent-md-center ">
-                    <Col md={4} >
-                <Form>
-                    <Form.Group controlId="threadLink">
-                        <Form.Control required type="text" className="line" placeholder="Video Link" />
-                    </Form.Group>
+        <>    
+            <div style={{ margin: "12px" }}>
+                <Button href="/createthread">Start a conversation!</Button>
+            </div> 
 
-                    <Form.Group controlId="threadTitle">
-                        <Form.Control required type="text" className="line" placeholder="Title" />
-                    </Form.Group>
-
-                    <Form.Group controlId="threadBody">
-                        <Form.Control required type="text" className="line" placeholder="Body" />
-                    </Form.Group>
-
-                    <Button variant="primary" className="btn_createthread" size="lg" type="submit" block>
-                        CREATE THREAD
-                    </Button>
-
-                </Form>
-                </Col>
-                </Row>
-            </Container>
-
+            <div style={{ borderTop: "4px solid #000 " }}></div>
 
             <div className="page-manager">
-                Talk
-
                 <Card className="backside">
                     <Card.Body>
                         <Card.Text className="text-muted">
