@@ -92,6 +92,9 @@ function Home() {
           <Col>
             <CardDeck>
               <Video cardbox={cardbox} />
+                {/*<div style = { { backgroundImage: "url('../images/BCK_Light.png')" } } id = "boxostuff">
+                  testing
+                </div>*/}
             </CardDeck>
           </Col>
         </Row>
