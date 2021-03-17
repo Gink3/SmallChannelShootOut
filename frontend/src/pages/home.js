@@ -82,9 +82,6 @@ function Video(props) {
 }
 
 function Home() {
-
-  
-
   return (
     <>
       <Container fluid>

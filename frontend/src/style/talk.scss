@@ -1,12 +1,21 @@
 .page-manager {
-  padding: 20px;
-  width: 100%;
+  //padding: 20px;
+  //width: 100%;
+  //top: 50%;
+  //left: 50%;
 }
+
 .backside {
   background-color: lighten(#39404e, 15%);
+  width: 100%;
+  margin: 5px;
 }
 
 .btn-text{
   color: white;
   font-size: 20px;
+}
+
+.create-thread-btn{
+  
 }

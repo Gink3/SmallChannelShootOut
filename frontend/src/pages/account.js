@@ -1,8 +1,42 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
-import { Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 
 import "../style/account.scss";
+import thumbnail from "../images/thumbnail.png";
+
+const cardbox=[
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+];
+  
+function Video(props) {   
+    return (
+      <>
+        {props.cardbox.map((cards, i) => (
+          
+          <Card className="home-card-box" key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
+              <Card.Img variant="top" src={thumbnail} />
+            <Card.Body>
+              <Card.Title>{cards.title}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+                {cards.subtitle}
+              </Card.Subtitle>
+              <Card.Text>{cards.text}</Card.Text>
+              {cards.star }           
+            </Card.Body>
+          </Card>
+         
+        ))}
+      </>
+    );
+  }
 
 /*  First things a user sees
     when they click onto the
@@ -17,19 +51,31 @@ function account(){
         &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
 
         <Tabs className="wrap" >
-            
-       
-            <Tab className=""  eventKey="likedVideos" title="Liked Videos">
-            <br/><br/><br/><br/><br/><br/><br/>
-                Liked videos go here.
+            <Tab className="" eventKey="likedVideos" title="Liked Videos">
+                <Container fluid>
+                    <Row>
+                        <Col>
+                            <CardDeck>
+                                <Video cardbox={cardbox} />
+                            </CardDeck>
+                        </Col>
+                    </Row>
+                </Container>            
             </Tab>
 
             <Tab className="" eventKey="votedVideos" title="Previously Voted For">
-            <br/><br/><br/><br/><br/><br/><br/>
-                Previously voted on videos go here.
+                <Container fluid>
+                    <Row>
+                        <Col>
+                            <CardDeck>
+                                <Video cardbox={cardbox} />
+                            </CardDeck>
+                        </Col>
+                    </Row>
+                </Container>  
             </Tab>
             
-            <Tab   eventKey="editInfo" title="Edit Information">
+            <Tab eventKey="editInfo" title="Edit Information">
            
                 <Tabs className="wrap">
               
@@ -47,7 +93,6 @@ function account(){
                     </Tab>
                     <Tab className="" eventKey="changeProfilePic" title="Change Profile Picture">
                         {changeProfilePic()}
-                        
                     </Tab>
                     
                 </Tabs>
