@@ -6,14 +6,16 @@ import "../style/account.scss";
 import thumbnail from "../images/thumbnail.png";
 
 const cardbox=[
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
 ];
   
 function Video(props) {   
@@ -46,9 +48,18 @@ function account(){
     return(
         <>
         <Container fluid>
-        <Image src={accountIcon} className="header" roundedCircle height="171px" width="171px"/>
 
-        &nbsp;Firstname Lastname, Insert stats about user. EX: how many videos voted on, liked, date since joined, etc...
+        <div className="header">
+            <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
+            
+            <div className="inner_header">
+                &nbsp;<h2>John Doe</h2>
+            </div>
+
+            <div className="inner_header">
+                &nbsp;<h4>10 Liked Videos - Voted 7 Times</h4>
+            </div>
+        </div>
 
         <Tabs className="wrap" >
             <Tab className="" eventKey="likedVideos" title="Liked Videos">
@@ -97,6 +108,12 @@ function account(){
                     
                 </Tabs>
                 
+            </Tab>
+
+            <Tab className="" eventKey="signout" title="Sign out">
+                <Button  block className= "btn_acc" variant="" type="submit">
+                    Signout
+                </Button>
             </Tab>
           
         </Tabs>

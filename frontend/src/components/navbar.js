@@ -7,6 +7,9 @@ import {FaAdn, FaUserPlus} from "react-icons/fa";
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai"
 import {RiMessage3Line} from "react-icons/ri"
 import {BiLogIn} from "react-icons/bi"
+import {FaMedal} from "react-icons/fa"
+import {BiPoll} from "react-icons/bi"
+import {RiAccountCircleLine} from "react-icons/ri"
 
 import Login   from '../pages/login';
 
@@ -33,34 +36,25 @@ function Topbar() {
             <Nav.Link className="nav btn-nav" href="/">
             {/* <img src={homeIcon} alt="home icon" width="30px" className=""/> */}
             <AiOutlineHome className="icon" size="2em"/>
-            &#8239;Home
-            </Nav.Link>
-
-            {/*About Link*/}
-            <Nav.Link href="/about" className="nav btn-nav">
-            <FaAdn className="icon bounce" size="2em"/>
-              &nbsp;About
+            &#8239;
             </Nav.Link>
 
             {/*Best Choice Choice*/}
             <Nav.Link href="/bestchoice" className="nav btn-nav">
-             <AiOutlineTrophy className="icon" size="2em"/>&#8239;Best Choice
+             <BiPoll className="icon" size="2em"/>&#8239;
             </Nav.Link>
 
             {/*Talk Choice*/}
             <Nav.Link href="/talk" className="nav btn-nav">
-            <RiMessage3Line className="icon" size="2em"/>&#8239;Talk
+            <RiMessage3Line className="icon" size="2em"/>&#8239;
             </Nav.Link>
 
-            {/*Search Bar*/}
-            <NavDropdown title="Genre" id="collasible-nav-dropdown" className="nav" style={{marginTop: "2px"}}>
-              <NavDropdown.Item href="#action/3.1">Sports</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Horror</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Comedy</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Free-style</NavDropdown.Item>
-            </NavDropdown>
-
+            {/* Hall of Fame Link*/}
+            <Nav.Link href="/about" className="nav btn-nav">
+            <AiOutlineTrophy className="icon bounce" size="2em"/>
+              &nbsp;
+            </Nav.Link>
+            
             {/*Search Bar*/}
             <div className="container nav">
               <input href="/search" type="text" placeholder="Search..." />
@@ -76,29 +70,25 @@ function Topbar() {
 
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
-              <FaUserPlus size="2em" className="icon"/> SIGN UP
+              <FaUserPlus size="2em" className="icon"/>
             </Nav.Link>   
 
             {/*Login Link*/}
             <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} >
-              <BiLogIn size="2em" className="icon"/> LOGIN
+              <BiLogIn size="2em" className="icon"/>
             </Nav.Link>               
                   <Login show={modalShow}
                     onHide={() => setModalShow(false)}/>
+
             {/* 
             This is Bootstrap.
             "$npm install react-bootstrap bootstrap" needed
             */}
-            <NavDropdown drop ="left" title="Account" id="collasible-nav-dropdown" className="nav" style={{marginTop: "2px"}}>
-              <NavDropdown.Item href="/account">Your Account</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#s">Sign Out</NavDropdown.Item>
-            </NavDropdown>
-            {/* <DropdownButton drop="left" title="Account" className="nav account">
-              <Dropdown.Item href="/account"><RiAccountCircleFill className="your-acc-icon" size="2em"/>&#8239;Your Account</Dropdown.Item>
-              <NavDropdown.Divider />
-              <Dropdown.Item>Settings</Dropdown.Item>
-            </DropdownButton> */}
+
+            {/*Sign-Up Link*/}
+            <Nav.Link href="/account" className="nav btn-nav">
+              <RiAccountCircleLine size="2em" className="icon"/>
+            </Nav.Link>  
           </Nav>
 
         </Navbar.Collapse>

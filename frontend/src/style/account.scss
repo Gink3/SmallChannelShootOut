@@ -1,7 +1,19 @@
 $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
-.header {
+.header{
   padding: 20px;
+}
+
+.header_image {
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
+}
+
+.inner_header {
+  display: flex;
+  justify-content: left;
+  margin: 18px 0px;
 }
 
 .page-manager {
