@@ -5,18 +5,14 @@ import {OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 import logo from "../images/SCSLogo_SimpleBB.png";
 import {FaAdn, FaUserPlus} from "react-icons/fa";
-import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai"
-import {RiMessage3Line} from "react-icons/ri"
-import {BiLogIn} from "react-icons/bi"
-import {FaMedal} from "react-icons/fa"
-import {BiPoll} from "react-icons/bi"
-import {RiAccountCircleLine} from "react-icons/ri"
+import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai";
+import {RiMessage3Line} from "react-icons/ri";
+import {BiLogIn} from "react-icons/bi";
+import {FaMedal} from "react-icons/fa";
+import {BiPoll} from "react-icons/bi";
+import {RiAccountCircleLine} from "react-icons/ri";
 
 import Login   from '../pages/login';
-
-
-
-
 
 function Topbar() {
   const [modalShow, setModalShow] = useState(false); 
