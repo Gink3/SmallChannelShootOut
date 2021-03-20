@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./base.scss";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import {OverlayTrigger, Tooltip } from 'react-bootstrap'
 
 import logo from "../images/SCSLogo_SimpleBB.png";
 import {FaAdn, FaUserPlus} from "react-icons/fa";
@@ -15,6 +16,7 @@ import Login   from '../pages/login';
 
 function Topbar() {
   const [modalShow, setModalShow] = useState(false); 
+  //const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
@@ -26,28 +28,44 @@ function Topbar() {
         <Navbar.Collapse id="responsive-navbar-nav" className="nav">
 
           {/*Left-Side Navigation*/}
-          <Nav className="mr-auto">
+          <Nav className="mr-auto" defaultActiveKey="/">
 
             {/*Home Link*/}
-            <Nav.Link className="nav btn-nav" href="/">
-            {/* <img src={homeIcon} alt="home icon" width="30px" className=""/> */}
+             <Nav.Link className="nav btn-nav" href="/" eventKey="1">
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
+              <span className="d-inline-block">
             <AiOutlineHome className="icon" size="2em"/>
+            </span>
+          </OverlayTrigger>
             &#8239;
             </Nav.Link>
+            
 
             {/*Best Choice Choice*/}
             <Nav.Link href="/bestchoice" className="nav btn-nav">
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
+              <span className="d-inline-block">
              <BiPoll className="icon" size="2em"/>&#8239;
+             </span>
+          </OverlayTrigger>
             </Nav.Link>
 
             {/*Talk Choice*/}
             <Nav.Link href="/talk" className="nav btn-nav">
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Talk</Tooltip>}>
+              <span className="d-inline-block">
             <RiMessage3Line className="icon" size="2em"/>&#8239;
+            </span>
+          </OverlayTrigger>
             </Nav.Link>
 
             {/* Hall of Fame Link*/}
             <Nav.Link href="/about" className="nav btn-nav">
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">About</Tooltip>}>
+              <span className="d-inline-block">
             <AiOutlineTrophy className="icon bounce" size="2em"/>
+            </span>
+          </OverlayTrigger>
               &nbsp;
             </Nav.Link>
             

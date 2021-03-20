@@ -49,16 +49,24 @@ function Thread(props) {
 function talk(){
     return(
         <>    
-            <Button style={{marginBottom: "2px", marginTop: "2px"}} variant="" href="/createthread" >
-                <AiOutlinePlus color="white" size= "3em" />
-                <text className="btn-text">Start a conversation!</text>
+        <Container fluid>
+          <br/>
+            <Button className="plus"/*  style={{ marginBottom: "2px", marginTop: "2px",  color:'white', fontSize: '20px'}} */ variant="" href="/createthread"  >
+                <AiOutlinePlus size= "3em"  />Create a thread!
+                {/* <text className="btn-text">Start a conversation!</text> */}
             </Button>
-
+<br></br>
             <div style={{borderTop: "4px solid #000 " }}></div>
 
-            <div className="page-manager">
-                <Thread threadbox={threadbox} />
-            </div>
+           
+           <Row className="justify-content-md-center ">
+             <Col lg={6}>
+             <Thread threadbox={threadbox} />
+             
+             </Col>
+           </Row>
+          
+           </Container>
         </>
     );
 }
