@@ -5,7 +5,7 @@ import {signUpRouter} from './route/SignupRoute.js'; //importing route for signu
 import {loginRouter} from './route/LoginRoute.js';
 import {talkRouter} from './route/TalkRoute.js'; 
 import dotenv from 'dotenv'; 
-
+import 'cookie-parser'; 
 dotenv.config(); 
 
 const app = express();
