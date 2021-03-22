@@ -7,27 +7,35 @@ function footer(){
     return(
     <> 
    
-    
-    <div className=" d-flex justify-content-center footer_make added-footer">
-    <a  href="/"> <img src={logo} alt="logo" width="70px" /></a>
+      <div className=" d-flex justify-content-center footer_make added-footer">
+        <a href="/"> 
+          <img src={logo} alt="logo" width="70px" style={{paddingTop: '20px'}}/>
+        </a>
 
-  <footer className=" footer footer_make">
-   
-    <br/>
-    
-       
-      <div className= "footer footer_make "> 
-      <span className="footer footer_make">&nbsp; &copy; 2021 &nbsp;<FaRobot className="footer_make" size="2em"/> &nbsp;Beep Boop Inc.</span>
-    </div>
-    <div className=" d-flex justify-content-center footer_make ">
-      <span className="footer_make "><HiOutlineMail className="footer_make" size="2em"/> &nbsp;</span>
-      <a href="#n">&nbsp;shootout@beepboop.com</a> 
-      
-    </div>
-    <br/>
-  </footer>
-</div>
+        <footer className="footer footer_make">
+          <br/>
 
+          <div className= "footer footer_make"> 
+            <span className="footer footer_make">
+              &nbsp; &copy; 2021 &nbsp;
+              <FaRobot className="footer_make" size="2em"/> 
+              &nbsp;Beep Boop Inc.
+            </span>
+          </div>
+
+          <div className="d-flex justify-content-center footer_make">
+            <span className="footer_make"><HiOutlineMail className="footer_make" size="2em"/> 
+              &nbsp;
+            </span>
+
+            <a href="#n">
+              &nbsp;shootout@beepboop.com
+            </a> 
+          </div>
+
+          <br/>
+        </footer>
+      </div>
     </>
     );
 }

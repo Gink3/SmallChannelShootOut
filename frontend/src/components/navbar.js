@@ -84,11 +84,17 @@ function Topbar() {
 
           {/*Right-Side Navigation*/}
           <Nav>
-            {/*Dark Mode Toggle*/}
+
             {/*backgroundMode()} className="nav btn-nav">*/}
+            {/*Dark Mode Toggle*/}
             <Nav.Link onClick={() => darkMode()} className="nav btn-nav"> 
-              <BiMoon size="2em" className="icon"/> THEME
-            </Nav.Link>  
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Dark Mode</Tooltip>}>
+                <span className="d-inline-block">
+                  <BiMoon className="icon bounce" size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+            </Nav.Link>
 
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
@@ -137,7 +143,7 @@ function Topbar() {
 
 
 function darkMode() {
-  console.log("dark mode activated");
+  //console.log("dark mode activated");
   var element = document.body;
   element.classList.toggle("dark-mode");
   localStorage.setItem('mode', "dark");
