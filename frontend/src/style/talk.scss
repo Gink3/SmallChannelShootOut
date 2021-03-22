@@ -1,12 +1,39 @@
 .page-manager {
-  padding: 20px;
-  width: 100%;
-}
-.backside {
-  background-color: lighten(#39404e, 15%);
+  //padding: 20px;
+  //width: 100%;
+  //top: 50%;
+  //left: 50%;
 }
 
-.btn-text{
+.backside {
+  background-color: lighten(#39404e, 15%);
+  border-radius: 9px;
+  width: 100%;
+  margin: 5px;
+  border: 2px solid crimson;
+  &:hover {
+    transition: box-shadow 500ms;
+
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.btn-text {
   color: white;
   font-size: 20px;
+}
+
+.create-thread-btn {
+}
+.plus {
+  //plus  button
+  color: white;
+  background-color: lighten(crimson, 20%);
+  border-radius: 33px;
+  &:hover {
+    color: purple;
+  }
+  &:active {
+    transform: scale(1.2);
+  }
 }

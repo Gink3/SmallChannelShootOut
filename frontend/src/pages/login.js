@@ -70,7 +70,7 @@ axios.post('http://localhost:5000/login', logUser).then (function(response){
               LOGIN
             </Button>
             <br />
-            Don't have an account ? &nbsp; <a href="/signup">Click here!</a>
+            Don't have an account?&nbsp;<a href="/signup">Click here!</a>
             <br />
           </Form>
         </Modal.Body>

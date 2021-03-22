@@ -24,6 +24,9 @@ function createThread(){
                                     <Tab className="" eventKey="threadTypeLink" title="Link">
                                         {typeLink()}
                                     </Tab>
+                                    <Tab className="" eventKey="threadTypeDrafts" title="From Drafts">
+                                        {typeDrafts()}
+                                    </Tab>
 
                                 </Tabs>
 
@@ -77,6 +80,14 @@ function typeLink(){
                     </Form.Group>                  
                 </Form>
             </div>
+        </>
+    );
+}
+
+function typeDrafts(){
+    return(
+        <>
+            No drafts saved.
         </>
     );
 }

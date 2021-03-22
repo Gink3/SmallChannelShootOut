@@ -1,7 +1,7 @@
 import express from 'express'
 import bcrypt from 'bcrypt';
 import User from '../models/UserModel.js' //importing models from user models from mongodb
-
+import jwt from 'jsonwebtoken';
 const router = express.Router(); 
 
 
@@ -27,21 +27,21 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
         //encrypting the password
         password = bcrypt.hashSync(password, 12);
         const newUser = new User({firstName, lastName, userName, email, password}); //setting up new user
-        const oldUser = await User.findOne({email: email}); //see of the email address exists in database
+        const oldUser = await User.findOne({email: email}); //see if the email address exists in database
         //error message
         if (oldUser){
             return res.json({Message:"An account associated with the email already exists. Try Login instead."})
         }
         else{
-        //saving new user
-        newUser.save(function(error,obj){
-            if(error) {
-                res.json({Message:"Database problem"})
-            }
-            else {
-                res.json({Message:"Successful"})
-            }
-        }); 
+            const saveUser = await newUser.save(); 
+            const token =  jwt.sign({
+                user: saveUser._id         
+            }, process.env.JWT_PASS); 
+
+            res.cookie("token", token, {
+                httpOnly: true,
+            }).send(); 
+        
         }
     }
     catch(error) {

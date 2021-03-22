@@ -6,26 +6,29 @@ import thumbnail from "../images/thumbnail.png";
 
 import {BiStar} from "react-icons/bi";
 
-
-
-
 const cardbox=[
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video 1 Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 2 Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 3 Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video 4 Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 5 Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 6 Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video 7 Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video 8 Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
-
-
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
 ];
 //const vcardboxObj= cardbox.map((cardbox, i)=>({id: i, title:cardbox}));
-
- 
-  
-
 
 function Video(props) {
   
@@ -82,9 +85,6 @@ function Video(props) {
 }
 
 function Home() {
-
-  
-
   return (
     <>
       <Container fluid>
