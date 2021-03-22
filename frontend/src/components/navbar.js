@@ -30,45 +30,46 @@ function Topbar() {
           {/*Left-Side Navigation*/}
           <Nav className="mr-auto" defaultActiveKey="/">
 
-            {/*Home Link*/}
-             <Nav.Link className="nav btn-nav" href="/" eventKey="1">
-            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
-              <span className="d-inline-block">
-            <AiOutlineHome className="icon" size="2em"/>
-            </span>
-          </OverlayTrigger>
-            &#8239;
+            {/*Homepage Link*/}
+            <Nav.Link className="nav btn-nav" href="/" eventKey="1">
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
+                <span className="d-inline-block">
+                  <AiOutlineHome className="icon" size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &#8239;
             </Nav.Link>
             
 
-            {/*Best Choice Choice*/}
+            {/*Voting Page Link*/}
             <Nav.Link href="/bestchoice" className="nav btn-nav">
-            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
-              <span className="d-inline-block">
-             <BiPoll className="icon" size="2em"/>&#8239;
-             </span>
-          </OverlayTrigger>
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
+                <span className="d-inline-block">
+                  <BiPoll className="icon" size="2em"/>&#8239;
+                </span>
+              </OverlayTrigger>
             </Nav.Link>
 
-            {/*Talk Choice*/}
+            {/*Thread Page Choice*/}
             <Nav.Link href="/talk" className="nav btn-nav">
-            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Talk</Tooltip>}>
-              <span className="d-inline-block">
-            <RiMessage3Line className="icon" size="2em"/>&#8239;
-            </span>
-          </OverlayTrigger>
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
+                <span className="d-inline-block">
+                  <RiMessage3Line className="icon" size="2em"/>&#8239;
+                </span>
+              </OverlayTrigger>
             </Nav.Link>
 
             {/* Hall of Fame Link*/}
             <Nav.Link href="/about" className="nav btn-nav">
-            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">About</Tooltip>}>
-              <span className="d-inline-block">
-            <AiOutlineTrophy className="icon bounce" size="2em"/>
-            </span>
-          </OverlayTrigger>
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
+                <span className="d-inline-block">
+                  <AiOutlineTrophy className="icon bounce" size="2em"/>
+                </span>
+              </OverlayTrigger>
               &nbsp;
             </Nav.Link>
-            
+          {/*End of Left-side Nav*/}
+
             {/*Search Bar*/}
             <div className="container nav">
               <input href="/search" type="text" placeholder="Search..." />
@@ -76,35 +77,51 @@ function Topbar() {
 
               </div>
             </div>
-        
           </Nav>
+
 
           {/*Right-Side Navigation*/}
           <Nav>
 
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
-              <FaUserPlus size="2em" className="icon"/>
-            </Nav.Link>   
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
+                <span className="d-inline-block">
+                  <FaUserPlus className="icon bounce" size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+            </Nav.Link>
 
             {/*Login Link*/}
             <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} >
-              <BiLogIn size="2em" className="icon"/>
-            </Nav.Link>               
-                  <Login show={modalShow}
-                    onHide={() => setModalShow(false)}/>
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
+                <span className="d-inline-block">
+                  <BiLogIn className="icon bounce" size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+              &nbsp;
+            </Nav.Link>
+
+            <Login show={modalShow} onHide={() => setModalShow(false)}/>
 
             {/* 
             This is Bootstrap.
             "$npm install react-bootstrap bootstrap" needed
             */}
 
-            {/*Sign-Up Link*/}
+            {/*Account Page Link*/}
             <Nav.Link href="/account" className="nav btn-nav">
-              <RiAccountCircleLine size="2em" className="icon"/>
-            </Nav.Link>  
-          </Nav>
+              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Account Settings</Tooltip>}>
+                <span className="d-inline-block">
+                  <RiAccountCircleLine className="icon bounce" size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+            </Nav.Link>
 
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
     </>

@@ -53,12 +53,14 @@ function account(){
             <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
             
             <div className="inner_header">
-                &nbsp;<h2>John Doe</h2>
+                <div className="header_text">
+                    <h2>John Doe</h2>
+                    <br/>
+                    <h4>10 Liked Videos - 7 Saved Videos</h4>
+                </div>
             </div>
 
-            <div className="inner_header">
-                &nbsp;<h4>10 Liked Videos - Voted 7 Times</h4>
-            </div>
+
         </div>
 
         <Tabs className="wrap" >

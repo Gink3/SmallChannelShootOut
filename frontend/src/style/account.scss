@@ -2,6 +2,7 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
 .header{
   padding: 20px;
+  display: flex;
 }
 
 .header_image {
@@ -12,8 +13,7 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
 .inner_header {
   display: flex;
-  justify-content: left;
-  margin: 18px 0px;
+  padding: 18px;
 }
 
 .page-manager {
@@ -23,6 +23,12 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
 .page-manager-curr-info {
   padding: 20px;
+}
+
+.header_text{
+  float: left;
+  display: block;
+  height: 62px;
 }
 
 .btn_acc {

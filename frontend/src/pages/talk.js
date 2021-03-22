@@ -52,19 +52,20 @@ function talk(){
         <Container fluid>
           <br/>
             <Button className="plus"/*  style={{ marginBottom: "2px", marginTop: "2px",  color:'white', fontSize: '20px'}} */ variant="" href="/createthread"  >
-                <AiOutlinePlus size= "3em"  />Create a thread!
-                {/* <text className="btn-text">Start a conversation!</text> */}
+              <AiOutlinePlus size="3em"/>Create a thread!
             </Button>
-<br></br>
-            <div style={{borderTop: "4px solid #000 " }}></div>
 
-           
-           <Row className="justify-content-md-center ">
-             <Col lg={6}>
-             <Thread threadbox={threadbox} />
-             
-             </Col>
-           </Row>
+            <br/><br/>
+
+            <div style={{borderTop: "4px solid #000 " }}></div>
+            <br/>
+
+            <Row className="justify-content-md-center ">
+              <Col lg={6}>
+              <Thread threadbox={threadbox} />
+              
+              </Col>
+            </Row>
           
            </Container>
         </>

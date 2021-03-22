@@ -10,7 +10,7 @@
   border-radius: 9px;
   width: 100%;
   margin: 5px;
-  border: 2px solid crimson;
+  border: 2px solid lighten(crimson, 20%);
   &:hover {
     transition: box-shadow 500ms;
 
@@ -26,12 +26,12 @@
 .create-thread-btn {
 }
 .plus {
-  //plus  button
+  //plus button
   color: white;
   background-color: lighten(crimson, 20%);
   border-radius: 33px;
   &:hover {
-    color: purple;
+    color: darken(white, 20%);
   }
   &:active {
     transform: scale(1.2);

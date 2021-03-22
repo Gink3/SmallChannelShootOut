@@ -12,22 +12,8 @@ const cardbox=[
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
   {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
 ];
+
 //const vcardboxObj= cardbox.map((cardbox, i)=>({id: i, title:cardbox}));
 
 function Video(props) {
@@ -54,7 +40,7 @@ function Video(props) {
     <>
       {props.cardbox.map((cards, i) => (
         
-        <Card className="home-card-box " key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
+        <Card className="home-card-box " key={i} style={{marginTop: '0px', minWidth: '18rem',  flexGrow: 1}} >
             <Card.Img variant="top" src={thumbnail} />
          {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
             <iframe
@@ -88,6 +74,10 @@ function Home() {
   return (
     <>
       <Container fluid>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <h2>Featured</h2>
+        </div>  
+
         <Row>
           <Col>
             <CardDeck>
@@ -96,7 +86,54 @@ function Home() {
           </Col>
         </Row>
       </Container>
-      <br />
+
+      <br/>
+
+      <Container fluid>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <h2>Sports</h2>
+        </div>       
+
+        <Row>
+          <Col>
+            <CardDeck>
+              <Video cardbox={cardbox} />
+            </CardDeck>
+          </Col>
+        </Row>
+      </Container>
+
+      <br/>
+
+      <Container fluid>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <h2>Gaming</h2>
+        </div>
+
+        <Row>
+          <Col>
+            <CardDeck>
+              <Video cardbox={cardbox} />
+            </CardDeck>
+          </Col>
+        </Row>
+      </Container>
+
+      <br/>
+
+      <Container fluid>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <h2>Fashion and Beauty</h2>
+        </div>  
+
+        <Row>
+          <Col>
+            <CardDeck>
+              <Video cardbox={cardbox} />
+            </CardDeck>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
