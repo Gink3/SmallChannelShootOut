@@ -14,6 +14,8 @@ import {RiAccountCircleLine} from "react-icons/ri";
 
 import Login   from '../pages/login';
 
+import {BiMoon} from 'react-icons/bi'
+
 function Topbar() {
   const [modalShow, setModalShow] = useState(false); 
   //const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -82,6 +84,11 @@ function Topbar() {
 
           {/*Right-Side Navigation*/}
           <Nav>
+            {/*Dark Mode Toggle*/}
+            {/*backgroundMode()} className="nav btn-nav">*/}
+            <Nav.Link onClick={() => darkMode()} className="nav btn-nav"> 
+              <BiMoon size="2em" className="icon"/> THEME
+            </Nav.Link>  
 
             {/*Sign-Up Link*/}
             <Nav.Link href="/signup" className="nav btn-nav">
@@ -127,5 +134,57 @@ function Topbar() {
     </>
   );
 }
+
+
+function darkMode() {
+  console.log("dark mode activated");
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  localStorage.setItem('mode', "dark");
+}
+
+/*function lightMode() {
+  console.log("light mode activated");
+  var element = document.body;
+  element.classList.toggle("light-mode");
+  localStorage.setItem('mode', "light");
+}
+
+function backgroundMode()
+{
+  //var element = document.body;
+  var bckgrnd = document.body.style.backgroundImage;
+  //querySelector("body").style;
+
+  alert(document.getElementById("boxostuff").style.backgroundImage);
+
+  console.log(bckgrnd);
+/*
+  if(bckgrnd == ""){
+
+  }
+
+  if(bckgrnd == ""){
+    
+  }
+  
+}
+
+function checkBackground(){
+  const bck = localStorage.getItem('mode');
+  console.log(bck);
+
+  var element = document.body;
+
+  if(bck == "dark"){
+    element.classList.toggle("dark-mode");
+  }
+  else{
+    return;
+  }
+
+}
+
+checkBackground();*/
 
 export default Topbar;

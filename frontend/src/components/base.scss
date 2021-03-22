@@ -1,8 +1,15 @@
 $Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
 
 body {
-  background-color: lighten(#39404e, 10%); //rgb(221, 217, 217);
-  color: aliceblue;
+  //background-color: lighten(#39404e, 10%); //rgb(221, 217, 217);
+  //color: aliceblue;
+  background: url("../images/BCK_Light.png");
+}
+//.light-mode{
+  
+//}
+.dark-mode{
+  background: url("../images/BCK_Dark.png");
 }
 .container {
   position: absolute;
