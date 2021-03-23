@@ -15,7 +15,6 @@ const threadbox=[
     {title:"Thread 8", user:"User78", timestamp:"10 min ago"},
     {title:"Thread 9", user:"User89", timestamp:"45 min ago"},
     {title:"Thread 10", user:"User90", timestamp:"1 hr ago"},
-
 ];
 
 function Thread(props) {  
@@ -23,9 +22,7 @@ function Thread(props) {
     <>
       {props.threadbox.map((cards, i) => (
       
-        <Toast style={{
-          width: '200%',
-        }}>
+        <Toast className="backside">
           <Toast.Header>
             {/*Profile Picture*/}
             <img src={toast} className="rounded mr-2" alt="" />
@@ -70,8 +67,10 @@ function talk(){
         <div style={{borderTop: "4px solid #000 " }}></div>
         <br/>
 
-        <Thread threadbox={threadbox} />
-  
+        <div className="toast-container">        
+          <Thread threadbox={threadbox} />
+        </div>
+
       </Container>
     </>
   );
