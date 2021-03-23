@@ -34,7 +34,7 @@ function MakeAccount(){
                     <div className="d-flex justify-content-center header  ">
                         <h2>  Create your ShootOut Account</h2>
                     </div>
-                    <Row className="justify-content-md-center ">
+                    <Row className="justify-content-md-center " >
 
                         <Col md={4}>
 

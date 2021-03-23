@@ -6,7 +6,6 @@
   border: 2px solid lighten(crimson, 20%);
   &:hover {
     transition: box-shadow 500ms;
-
     box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
   }
 }
@@ -16,8 +15,6 @@
   font-size: 20px;
 }
 
-.create-thread-btn {
-}
 .plus {
   //plus button
   color: white;
