@@ -38,11 +38,11 @@ function Home() {
             </CardDeck>
           </Col>
         </Row>
-      </Container>
+      
 
       <br/>
 
-      <Container fluid>
+     
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/sports"> 
             <h2>Sports</h2>
@@ -56,11 +56,11 @@ function Home() {
             </CardDeck>
           </Col>
         </Row>
-      </Container>
+      
 
       <br/>
 
-      <Container fluid>
+    
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/gaming"> 
             <h2>Gaming</h2>
@@ -74,11 +74,11 @@ function Home() {
             </CardDeck>
           </Col>
         </Row>
-      </Container>
+    
 
       <br/>
 
-      <Container fluid>
+     
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/fashion"> 
             <h2>Fashion and Beauty</h2>
@@ -92,11 +92,10 @@ function Home() {
             </CardDeck>
           </Col>
         </Row>
-      </Container>
+     
 
       <br/>
 
-      <Container fluid>
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/news"> 
             <h2>News</h2>

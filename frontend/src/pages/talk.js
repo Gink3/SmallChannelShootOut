@@ -23,12 +23,10 @@ function Thread(props) {
     <>
       {props.threadbox.map((cards, i) => (
       
-        <Toast style={{
-          width: '200%',
-        }}>
+        <Toast className="thread" key={i} >
           <Toast.Header>
             {/*Profile Picture*/}
-            <img src={toast} className="rounded mr-2" alt="" />
+            <img src={toast} className="rounded mr-2"  />
 
             {/*Username*/}
             <strong className="mr-auto">
@@ -60,7 +58,7 @@ function talk(){
     <>    
       <Container fluid>
         <br/>
-
+        
         <Button className="plus"/*  style={{ marginBottom: "2px", marginTop: "2px",  color:'white', fontSize: '20px'}} */ variant="" href="/createthread"  >
           <AiOutlinePlus size="3em"/>Create a thread!
         </Button>
@@ -69,10 +67,13 @@ function talk(){
 
         <div style={{borderTop: "4px solid #000 " }}></div>
         <br/>
-
-        <Thread threadbox={threadbox} />
+        <Row className="justify-content-md-center" >
+          <Col md={4}>
+            <Thread threadbox={threadbox} />
+          </Col>
+        </Row>
   
-      </Container>
+      </Container><br/>
     </>
   );
 }
