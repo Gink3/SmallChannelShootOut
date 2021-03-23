@@ -5,6 +5,7 @@ import './pages.scss';
 import thumbnail from "../images/thumbnail.png";
 
 import {BiStar} from "react-icons/bi";
+import {Video} from "../components/video.js"
 
 const cardbox=[
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
@@ -14,74 +15,26 @@ const cardbox=[
   {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
 ];
 
-//const vcardboxObj= cardbox.map((cardbox, i)=>({id: i, title:cardbox}));
-
-function Video(props) {
-  
-    /* const [count, setCount] = useState([]); */
-    
-    const [isVisible, setIsVisible] = useState(false);
-     
-    const likeVideo = (cards,i ) => {
-      console.log(cards.star);
-      (isVisible) ?(cards.star -= 1):(cards.star += 1);
-      /* (isVisible) ? setCount(count - 1): setCount(count + 1); */
-      setIsVisible(!isVisible);
-    };
-    /* function likeVideo(cards,i) {
-      console.log(cards.star);
-    
-    (isVisible) ? setCount(count - 1) : setCount(count + 1);
-    setIsVisible(!isVisible);
-    
-  } */
-  
-  return (
-    <>
-      {props.cardbox.map((cards, i) => (
-        
-        <Card className="home-card-box " key={i} style={{marginTop: '0px', minWidth: '18rem',  flexGrow: 1}} >
-            <Card.Img variant="top" src={thumbnail} />
-         {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-            <iframe
-              className="embed-responsive-item"
-
-              src={cards.image}
-              allowFullScreen
-            ></iframe>
-          </div> */}
-          <Card.Body>
-            <Card.Title>{cards.title}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              {cards.subtitle}
-            </Card.Subtitle>
-            <Card.Text>{cards.text}</Card.Text>
-            <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
-              <BiStar className="star" color="gold" size= "2em"  />
-            </Button>
-            {cards.star }
-          {/*  {count} */}
-         
-          </Card.Body>
-        </Card>
-       
-      ))}
-    </>
-  );
-}
+const cardbox3=[
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
+];
 
 function Home() {
   return (
     <>
       <Container fluid>
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <h2>Featured</h2>
+          <a href="/bestchoice"> 
+            <h2>Trending</h2>
+          </a>        
         </div>  
 
         <Row>
           <Col>
             <CardDeck>
-              <Video cardbox={cardbox} />
+              <Video cardbox={cardbox3} />
             </CardDeck>
           </Col>
         </Row>
@@ -91,7 +44,9 @@ function Home() {
 
       <Container fluid>
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <h2>Sports</h2>
+          <a href="/voting/sports"> 
+            <h2>Sports</h2>
+          </a>
         </div>       
 
         <Row>
@@ -107,7 +62,9 @@ function Home() {
 
       <Container fluid>
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <h2>Gaming</h2>
+          <a href="/voting/gaming"> 
+            <h2>Gaming</h2>
+          </a>          
         </div>
 
         <Row>
@@ -123,20 +80,39 @@ function Home() {
 
       <Container fluid>
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <h2>Fashion and Beauty</h2>
+          <a href="/voting/fashion"> 
+            <h2>Fashion and Beauty</h2>
+          </a>          
         </div>  
 
         <Row>
           <Col>
             <CardDeck>
               <Video cardbox={cardbox} />
-                {/*<div style = { { backgroundImage: "url('../images/BCK_Light.png')" } } id = "boxostuff">
-                  testing
-                </div>*/}
             </CardDeck>
           </Col>
         </Row>
       </Container>
+
+      <br/>
+
+      <Container fluid>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <a href="/voting/news"> 
+            <h2>News</h2>
+          </a>          
+        </div>  
+
+        <Row>
+          <Col>
+            <CardDeck>
+              <Video cardbox={cardbox} />
+            </CardDeck>
+          </Col>
+        </Row>
+      </Container>
+
+      <br/>
     </>
   );
 }

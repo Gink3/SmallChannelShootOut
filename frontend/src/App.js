@@ -14,6 +14,11 @@ import Account      from './pages/account';
 import BestChoice   from './pages/bestchoice';
 import CreateThread from './pages/createthread';
 
+import Gaming       from './pages/voting/gaming';
+import Sports       from './pages/voting/sports';
+import Fashion      from './pages/voting/fashion';
+import News         from './pages/voting/news';
+
 function App() {
   
   return (
@@ -30,6 +35,11 @@ function App() {
             <Route path="/account"      exact component={Account}/>
             <Route path="/bestchoice"   exact component={BestChoice}/>
             <Route path="/createthread" exact component={CreateThread}/>
+
+            <Route path="/voting/gaming"    exact component={Gaming}/>
+            <Route path="/voting/fashion"   exact component={Fashion}/>
+            <Route path="/voting/sports"    exact component={Sports}/>
+            <Route path="/voting/news"      exact component={News}/>
           </Switch>
            
          

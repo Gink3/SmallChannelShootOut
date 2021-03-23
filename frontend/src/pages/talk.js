@@ -1,19 +1,20 @@
 import React from 'react';
-import { Button, Card,  Container, Row, Col, Form } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, Form, Toast } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
+import toast from "../images/toast.png";
 
 const threadbox=[
-    {title:"Thread 1", subtitle:"Posted by User01"},
-    {title:"Thread 2", subtitle:"Posted by User12"},   
-    {title:"Thread 3", subtitle:"Posted by User23"},    
-    {title:"Thread 4", subtitle:"Posted by User34"},    
-    {title:"Thread 5", subtitle:"Posted by User45"},
-    {title:"Thread 6", subtitle:"Posted by User56"},
-    {title:"Thread 7", subtitle:"Posted by User67"},
-    {title:"Thread 8", subtitle:"Posted by User78"},
-    {title:"Thread 9", subtitle:"Posted by User89"},
-    {title:"Thread 10", subtitle:"Posted by User90"},
+    {title:"Thread 1", user:"User01", timestamp:"just now"},
+    {title:"Thread 2", user:"User12", timestamp:"just now"},  
+    {title:"Thread 3", user:"User23", timestamp:"just now"},    
+    {title:"Thread 4", user:"User34", timestamp:"2 min ago"},    
+    {title:"Thread 5", user:"User45", timestamp:"2 min ago"},
+    {title:"Thread 6", user:"User56", timestamp:"3 min ago"},
+    {title:"Thread 7", user:"User67", timestamp:"4 min ago"},
+    {title:"Thread 8", user:"User78", timestamp:"10 min ago"},
+    {title:"Thread 9", user:"User89", timestamp:"45 min ago"},
+    {title:"Thread 10", user:"User90", timestamp:"1 hr ago"},
 
 ];
 
@@ -21,25 +22,33 @@ function Thread(props) {
   return (
     <>
       {props.threadbox.map((cards, i) => (
-        
-        <Card className="backside" key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
-          <Card.Body>
+      
+        <Toast style={{
+          width: '200%',
+        }}>
+          <Toast.Header>
+            {/*Profile Picture*/}
+            <img src={toast} className="rounded mr-2" alt="" />
 
-            <Card.Title>{cards.title}</Card.Title>
+            {/*Username*/}
+            <strong className="mr-auto">
+              {cards.user}
+            </strong>
 
-            <Card.Subtitle className="mb-2 text-muted">
-              {cards.subtitle}
-            </Card.Subtitle>        
+            {/*Timestamp*/}
+            <small>
+              {cards.timestamp}
+            </small>
+          </Toast.Header>
 
-            {/* -- BUTTONS -- 
-            <Button variant="primary">Comments</Button>
-            <Button variant="primary">Share</Button>
-            <Button variant="primary">Save</Button>
-            <Button variant="primary">...</Button>
-            */}
-
-          </Card.Body>
-        </Card>
+          {/*Message*/}
+          <Toast.Body>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.          
+          </Toast.Body>
+        </Toast>
        
       ))}
     </>
@@ -47,28 +56,24 @@ function Thread(props) {
 }
 
 function talk(){
-    return(
-        <>    
-        <Container fluid>
-          <br/>
-            <Button className="plus"/*  style={{ marginBottom: "2px", marginTop: "2px",  color:'white', fontSize: '20px'}} */ variant="" href="/createthread"  >
-              <AiOutlinePlus size="3em"/>Create a thread!
-            </Button>
+  return(
+    <>    
+      <Container fluid>
+        <br/>
 
-            <br/><br/>
+        <Button className="plus"/*  style={{ marginBottom: "2px", marginTop: "2px",  color:'white', fontSize: '20px'}} */ variant="" href="/createthread"  >
+          <AiOutlinePlus size="3em"/>Create a thread!
+        </Button>
 
-            <div style={{borderTop: "4px solid #000 " }}></div>
-            <br/>
+        <br/><br/>
 
-            <Row className="justify-content-md-center ">
-              <Col lg={6}>
-              <Thread threadbox={threadbox} />
-              
-              </Col>
-            </Row>
-          
-           </Container>
-        </>
-    );
+        <div style={{borderTop: "4px solid #000 " }}></div>
+        <br/>
+
+        <Thread threadbox={threadbox} />
+  
+      </Container>
+    </>
+  );
 }
 export default talk;

@@ -1,0 +1,53 @@
+$list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
+
+.home-card-box {
+  background-color: $list-bg;
+  border-radius: 9px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  cursor: pointer;
+  transition: box-shadow 500ms;
+  transition: transform 500ms ease;
+  box-shadow: -9px 9px 12px rgba(0, 0, 0, 0.7),
+    15px 2px 15px 0 rgba(0, 0, 0, 0.1);
+  &:hover {
+    transition: box-shadow 500ms;
+    border: 1px solid crimson;
+    box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
+    //zoom effect
+    -ms-transform: scale(0.98); // IE 9
+    -webkit-transform: scale(1.5); // Safari 3-8
+    transform: scale(1.02);
+    transition: transform 500ms ease;
+  }
+
+  .star {
+    border: none;
+    //  background-color: $list-bg;
+    .star-icon {
+      background-color: $list-bg;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+    &:active {
+      transform: scale(1.2) rotate(50deg);
+    }
+  }
+}
+.star-btn {
+  &:focus {
+    box-shadow: none;
+  }
+}
+.wrap {
+  border-radius: 9px;
+  background-color: lighten(black, 15%);
+  &:focus {
+    border-radius: 9px;
+  }
+}
+.login-design {
+  color: black;
+}
