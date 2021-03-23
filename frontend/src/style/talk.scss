@@ -1,18 +1,7 @@
-.page-manager {
-  //padding: 20px;
-  //width: 100%;
-  //top: 50%;
-  //left: 50%;
-}
-
-.toast {
-  width: 300%;
-}
-
-.thread {
+.backside {
+  background-color: darken(white, 15%);
   border-radius: 9px;
-  //width: 100%;
-  //max-width: 180%;
+  min-width: 100%;
   margin: 5px;
   border: 2px solid lighten(crimson, 20%);
   &:hover {
@@ -37,4 +26,9 @@
   &:active {
     transform: scale(1.2);
   }
+}
+
+.toast-container{
+  width: 50%;
+  margin: auto;
 }
