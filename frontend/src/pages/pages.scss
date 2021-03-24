@@ -1,5 +1,15 @@
 $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
+// Removes underline from hyperlinked text.
+a:link{
+  text-decoration: none;
+}
+
+h2{
+  margin: 0px;
+  color:rgb(8, 7, 7);
+}
+
 .home-card-box {
   background-color: $list-bg;
   border-radius: 9px;
