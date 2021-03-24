@@ -4,6 +4,7 @@ import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} fro
 
 import "../style/account.scss";
 import thumbnail from "../images/thumbnail.png";
+import { BiBorderRadius } from 'react-icons/bi';
 
 const cardbox=[
     {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
@@ -43,13 +44,37 @@ function Video(props) {
 /*  First things a user sees
     when they click onto the
     "Account" page. */
+    function signout(){
+     
+        console.log("done signout");
+
+       
+    };
 
 function account(){
+
     return(
         <>
         <Container fluid>
 
-        <div className="header">
+        <Row style={{backgroundColor:'crimson'}}>
+            <Col sm={3}>
+            <div className="header">
+            <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
+            </div>
+            </Col>
+            <Col sm={6}>
+            <div className="inner_header">
+                <div className="header_text"><br/>
+                    <h2>John Doe</h2>
+                    <br/>
+                    <h4>&nbsp;&nbsp;10 Liked Videos</h4>
+                    <h4>&nbsp;&nbsp;7 Saved Videos</h4>
+                </div>
+            </div>
+            </Col>
+        </Row>
+       {/*  <div className="header">
             <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
             
             <div className="inner_header">
@@ -61,7 +86,7 @@ function account(){
             </div>
 
 
-        </div>
+        </div> */}
 
         <Tabs className="wrap" >
             <Tab className="" eventKey="likedVideos" title="Liked Videos">
@@ -113,8 +138,13 @@ function account(){
             </Tab>
 
             <Tab className="" eventKey="signout" title="Sign out">
+<<<<<<< HEAD
                 <Button block className="btn_acc" variant="" type="submit" >
                     Signout
+=======
+                <Button block className="btn_acc" variant="" type="submit" onClick={()=>signout()}>
+                    Signout 
+>>>>>>> bac0edaaee2fbc9bf496342c299833d673350cee
                 </Button>
             </Tab>
           

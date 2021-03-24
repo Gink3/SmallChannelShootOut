@@ -1,6 +1,6 @@
 $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
-.header{
+.header {
   padding: 20px;
   display: flex;
 }
@@ -16,20 +16,20 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
   padding: 18px;
 }
 
-.page-manager {
+/* .page-manager {
   padding: 20px;
   width: 25%;
 }
-
-.page-manager-curr-info {
+ */
+/* .page-manager-curr-info {
   padding: 20px;
-}
-
-.header_text{
+} */
+/* 
+.header_text {
   float: left;
   display: block;
   height: 62px;
-}
+} */
 
 .btn_acc {
   border-radius: 9px;
