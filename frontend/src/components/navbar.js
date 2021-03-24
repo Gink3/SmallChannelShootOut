@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import "./base.scss";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav} from "react-bootstrap";
 import {OverlayTrigger, Tooltip } from 'react-bootstrap'
-
+import { NavLink} from 'react-router-dom'
 import logo from "../images/SCSLogo_SimpleBB.png";
-import {FaAdn, FaUserPlus} from "react-icons/fa";
+import { FaUserPlus} from "react-icons/fa";
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai";
 import {RiMessage3Line} from "react-icons/ri";
 import {BiLogIn} from "react-icons/bi";
-import {FaMedal} from "react-icons/fa";
+
 import {BiPoll} from "react-icons/bi";
 import {RiAccountCircleLine} from "react-icons/ri";
 
@@ -30,46 +30,81 @@ function Topbar() {
         <Navbar.Collapse id="responsive-navbar-nav" className="nav">
 
           {/*Left-Side Navigation*/}
-          <Nav className="mr-auto" defaultActiveKey="/">
+          <Nav className="mr-auto" >
 
-            {/*Homepage Link*/}
-            <Nav.Link className="nav btn-nav" href="/" eventKey="1">
+           {/*Homepage Link*/}
+          <NavLink to='/' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+          <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
+                <span className="d-inline-block">
+                  <AiOutlineHome /* className="icon" */ size="2em"/>
+                </span>
+              </OverlayTrigger>&nbsp;&nbsp;&nbsp;
+          </NavLink>
+
+           
+           {/*  <Nav.Link className="nav btn-nav" href="/" >
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
                 <span className="d-inline-block">
                   <AiOutlineHome className="icon" size="2em"/>
                 </span>
               </OverlayTrigger>
               &#8239;
-            </Nav.Link>
+            </Nav.Link> */}
             
 
             {/*Voting Page Link*/}
-            <Nav.Link href="/bestchoice" className="nav btn-nav">
+            <NavLink to='/bestchoice' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
+                <span className="d-inline-block">
+                  <BiPoll /* className="icon" */ size="2em"/>&#8239;
+                </span>
+              </OverlayTrigger>&nbsp;&nbsp;&nbsp;
+          </NavLink>
+
+            {/* <Nav.Link href="/bestchoice" className="nav btn-nav" >
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
                 <span className="d-inline-block">
                   <BiPoll className="icon" size="2em"/>&#8239;
                 </span>
               </OverlayTrigger>
-            </Nav.Link>
+            </Nav.Link> */}
 
             {/*Thread Page Choice*/}
-            <Nav.Link href="/talk" className="nav btn-nav">
+            <NavLink to='/talk' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
+                <span className="d-inline-block">
+                  <RiMessage3Line size="2em"/>&#8239;
+                </span>
+              </OverlayTrigger>&nbsp;&nbsp;&nbsp;
+          </NavLink>
+
+
+            {/* <Nav.Link href="/talk" className="nav btn-nav" eventKey="Threads">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
                 <span className="d-inline-block">
                   <RiMessage3Line className="icon" size="2em"/>&#8239;
                 </span>
               </OverlayTrigger>
-            </Nav.Link>
+            </Nav.Link> */}
 
             {/* Hall of Fame Link*/}
-            <Nav.Link href="/about" className="nav btn-nav">
+            <NavLink to='/about' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
+                <span className="d-inline-block">
+                  <AiOutlineTrophy size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+          </NavLink>
+
+            {/* <Nav.Link href="/about" className="nav btn-nav">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
                 <span className="d-inline-block">
                   <AiOutlineTrophy className="icon bounce" size="2em"/>
                 </span>
               </OverlayTrigger>
               &nbsp;
-            </Nav.Link>
+            </Nav.Link> */}
           {/*End of Left-side Nav*/}
 
             {/*Search Bar*/}
@@ -93,28 +128,37 @@ function Topbar() {
                   <BiMoon className="icon bounce" size="2em"/>
                 </span>
               </OverlayTrigger>
-              &nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </Nav.Link>
 
             {/*Sign-Up Link*/}
-            <Nav.Link href="/signup" className="nav btn-nav">
+            <NavLink to='/signup' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
+                <span className="d-inline-block">
+                  <FaUserPlus size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;&nbsp;
+          </NavLink>
+
+            {/* <Nav.Link href="/signup" className="nav btn-nav">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
                 <span className="d-inline-block">
                   <FaUserPlus className="icon bounce" size="2em"/>
                 </span>
               </OverlayTrigger>
               &nbsp;
-            </Nav.Link>
+            </Nav.Link> */}
 
             {/*Login Link*/}
             <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} >
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
                 <span className="d-inline-block">
-                  <BiLogIn className="icon bounce" size="2em"/>
+                  <BiLogIn className="icon" size="2em"/>
                 </span>
               </OverlayTrigger>
               &nbsp;
-              &nbsp;
+              
             </Nav.Link>
 
             <Login show={modalShow} onHide={() => setModalShow(false)}/>

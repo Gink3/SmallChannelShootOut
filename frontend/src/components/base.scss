@@ -6,9 +6,9 @@ body {
   background: url("../images/BCK_Light.png");
 }
 //.light-mode{
-  
+
 //}
-.dark-mode{
+.dark-mode {
   background: url("../images/BCK_Dark.png");
 }
 .container {
@@ -189,4 +189,7 @@ body {
 /////////////////////////////////
 .footer_make {
   background-color: black;
+}
+.active-link {
+  color: crimson;
 }

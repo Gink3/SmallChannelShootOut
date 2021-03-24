@@ -24,9 +24,10 @@ function App() {
   return (
 
       <>
-        <NavigationBar/>
+        
 
         <Router>
+        <NavigationBar/>
           <Switch>
             <Route path="/signup"       exact component={MakeAccount} />
             <Route path="/"             exact component={Home}/>

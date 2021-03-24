@@ -1,7 +1,7 @@
 .backside {
   background-color: darken(white, 15%);
   border-radius: 9px;
-  min-width: 100%;
+  /*  min-width: 60%; */
   margin: 5px;
   border: 2px solid lighten(crimson, 20%);
   &:hover {
@@ -28,7 +28,7 @@
   }
 }
 
-.toast-container{
+.toast-container {
   width: 50%;
   margin: auto;
 }

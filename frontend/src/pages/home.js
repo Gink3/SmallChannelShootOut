@@ -8,7 +8,7 @@ import {BiStar} from "react-icons/bi";
 import {Video} from "../components/video.js";
 
 const cardbox=[
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
   {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
   {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
   {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
