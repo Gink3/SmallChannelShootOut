@@ -21,10 +21,13 @@ export const loginRouter = router.post('/login',  async (req, res) => {
             return res.json({Message: "Wrong Password"});
         }
         else {
+
+            //store the signed in user's id in token
             const token =  jwt.sign({
                 user: oldUser._id         
             }, process.env.JWT_PASS); 
 
+            //Send token as cookie 
             res.cookie("token", token, {
                 httpOnly: true,
             }).send(); 

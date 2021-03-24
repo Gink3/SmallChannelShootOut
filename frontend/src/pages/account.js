@@ -113,7 +113,7 @@ function account(){
             </Tab>
 
             <Tab className="" eventKey="signout" title="Sign out">
-                <Button block className="btn_acc" variant="" type="submit">
+                <Button block className="btn_acc" variant="" type="submit" >
                     Signout
                 </Button>
             </Tab>
