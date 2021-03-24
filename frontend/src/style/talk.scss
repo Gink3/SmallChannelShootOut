@@ -32,3 +32,15 @@
   width: 50%;
   margin: auto;
 }
+
+.like-btn{
+  &:active{
+    fill: green;
+  }
+}
+
+.dislike-btn{
+  &:active{
+    fill: red;
+  }
+}

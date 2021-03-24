@@ -33,15 +33,16 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
             return res.json({Message:"An account associated with the email already exists. Try Login instead."})
         }
         else{
+            //save user, store the saved user ID in token and pass it as cookie
             const saveUser = await newUser.save(); 
             const token =  jwt.sign({
                 user: saveUser._id         
             }, process.env.JWT_PASS); 
 
+            //Send the cookie to front end as token
             res.cookie("token", token, {
                 httpOnly: true,
-            }).send(); 
-        
+            }).send();
         }
     }
     catch(error) {

@@ -1,8 +1,11 @@
 import express from 'express'
 const router = express.Router(); 
+import {auth} from '../middleware/authentication.js'
 
-export const logoutRouter = router.get('/logout', (req,res) => {
+//logout route sets cookie to null and the cookie is set as expired
+export const logoutRouter = router.get('/logout', auth, (req,res) => {
     try {
+        console.log = (req.user); 
     res.cookie("token", "", {
         httpOnly: true,
         expires: new Date(0)

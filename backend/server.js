@@ -6,7 +6,7 @@ import {loginRouter} from './route/LoginRoute.js'; //importing route forr login
 import {logoutRouter} from './route/LogoutRoute.js'; //importing route for logout
 //import {talkRouter} from './route/TalkRoute.js'; 
 import dotenv from 'dotenv'; 
-import 'cookie-parser'; 
+import cookieParser from 'cookie-parser';
 dotenv.config(); 
 
 const app = express();
@@ -14,6 +14,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors()); 
 app.use(express.json()); 
+app.use(cookieParser());
 
 const uri = process.env.ATLAS_URI; //uri for mongodb
 

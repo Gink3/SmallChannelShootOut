@@ -2,39 +2,59 @@ import React from 'react';
 import { Button, Card,  Container, Row, Col, Form, Toast } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
+import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
 import toast from "../images/toast.png";
 
 const threadbox=[
-    {title:"Thread 1", user:"User01", timestamp:"just now"},
-    {title:"Thread 2", user:"User12", timestamp:"just now"},
-    {title:"Thread 3", user:"User23", timestamp:"just now"},
-    {title:"Thread 4", user:"User34", timestamp:"2 min ago"},
-    {title:"Thread 5", user:"User45", timestamp:"2 min ago"},
-    {title:"Thread 6", user:"User56", timestamp:"3 min ago"},
-    {title:"Thread 7", user:"User67", timestamp:"4 min ago"},
-    {title:"Thread 8", user:"User78", timestamp:"10 min ago"},
-    {title:"Thread 9", user:"User89", timestamp:"45 min ago"},
-    {title:"Thread 10", user:"User90", timestamp:"1 hr ago"},
+    {title:"Thread 1", user:"User01", timestamp:"just now", likes:"62"},
+    {title:"Thread 2", user:"User12", timestamp:"just now", likes:"5.4k"},
+    {title:"Thread 3", user:"User23", timestamp:"just now", likes:"69k"},
+    {title:"Thread 4", user:"User34", timestamp:"2 min ago", likes:"0"},
+    {title:"Thread 5", user:"User45", timestamp:"2 min ago", likes:"777"},
+    {title:"Thread 6", user:"User56", timestamp:"3 min ago", likes:"15k"},
+    {title:"Thread 7", user:"User67", timestamp:"4 min ago", likes:"420"},
+    {title:"Thread 8", user:"User78", timestamp:"10 min ago", likes:"15k"},
+    {title:"Thread 9", user:"User89", timestamp:"45 min ago", likes:"10k"},
+    {title:"Thread 10", user:"User90", timestamp:"1 hr ago", likes:"3"},
 ];
 
 function Thread(props) {
   return (
     <>
-      {props.threadbox.map((cards, i) => (
+      {props.threadbox.map((thread, i) => (
 
-        <Toast className="backside" key={i}>
+        <Toast className="backside" closeButton='false'>
           <Toast.Header>
+
+            {/*Likes*/}
+            <FiThumbsUp className="like-btn" size="1.25em" color="green"/>
+
+            &nbsp;
+            {thread.likes}
+            &nbsp;
+
+            <FiThumbsDown className="dislike-btn" size="1.25em" color="red"/>
+
             {/*Profile Picture*/}
-            <img src={toast} className="rounded mr-2"  />
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <img src={toast} className="rounded mr-2"/>
 
             {/*Username*/}
             <strong className="mr-auto">
-              {cards.user}
+              {thread.user}      
             </strong>
 
+            {/*Title*/}
+            <medium className="mr-auto">
+              {thread.title}
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            </medium>
+            
             {/*Timestamp*/}
             <small>
-              {cards.timestamp}
+              {thread.timestamp}
             </small>
           </Toast.Header>
 
