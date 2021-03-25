@@ -2,12 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema; 
 
 const VideoSchema = new Schema({
-videoID: {
-    type:Number, 
-    trim: true, 
-    default: ""
-},
-videoLink: {
+link: {
     type:String,
     trim: true, 
     default: ""
@@ -16,6 +11,10 @@ creator: {
     type:String,
     trim: true, 
     default: ""
+},
+date: {
+    type: Date, 
+    default: Date.now
 },
 });
 

@@ -1,7 +1,14 @@
+import Thread from '../models/ThreadModel.js'
 import express from 'express'
-
 const router = express.Router(); 
 
-import {Thread} from '../Controllers/Talkcotrol.js'
-
-export const talkRouter = router.post('/thread', Thread); 
+export const talkRouter = router.post('/talk',  async (req, res) => {
+   var {link, title, body} = req.body; 
+    try {
+        const newThread = new Thread({link, title, body}); 
+        newThread.save(); 
+    }
+    catch(error) {
+        res.status(409).json({message: error.message});
+    } 
+}); 

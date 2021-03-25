@@ -1,8 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Button, Tabs, Tab, Card,  Container, Row, Col, Form } from "react-bootstrap";
 import "../style/createthread.scss";
+import axios from 'axios';
 
-function createThread(){
+
+
+function CreateThread(){
+    const[postThread, setThreadData] = useState({
+        link: "", 
+        title: "", 
+        body: "", 
+    }); 
+
+    const formSubmit= async (e) => {
+        e.preventDefault(); 
+        axios.post('http://localhost:5000/signup', postThread).then (function(response){
+        if(response.data.Message === "Successful"){
+            window.location = '/';
+            alert(response.data.Message); //do something when signup is successsfull (probably go to the login page)
+        }
+        else {
+            alert(response.data.Message); //showing the server message
+        }
+    });
+}
+
+
     return(            
         <>
             <Container fluid>
@@ -13,19 +36,39 @@ function createThread(){
 
                         <Col md={4}>
 
-                            <Form >
+                            <Form onSubmit={formSubmit}>
                                 <br/>
 
                                 <Tabs className="wrap">
               
                                     <Tab className="" eventKey="threadTypePost" title="Post">
-                                        {typePost()}
+                                    <div className="box2">
+                                        <Form.Group controlId="Title">
+                                            <Form.Control required type="text" placeholder="Title" 
+                                            value = {postThread.title} onChange={(e)=> setThreadData({...postThread, title:e.target.value})}/>
+                                        </Form.Group>
+                                        <textarea className="box3" rows="5" placeholder="Write your post here."
+                                        value = {postThread.body} onChange={(e)=> setThreadData({...postThread, body:e.target.value})}/>
+                                    </div>
                                     </Tab>
                                     <Tab className="" eventKey="threadTypeLink" title="Link">
-                                        {typeLink()}
+                                    <div className="box2">
+                                        <Form.Group controlId="Title">
+                                            <Form.Control required type="text" placeholder="Title" />
+                                        </Form.Group>
+
+                                        <Form.Group controlId="Link">
+                                            <Form.Control required type="text" placeholder="Link" 
+                                            value = {postThread.link} onChange={(e)=> setThreadData({...postThread, link:e.target.value})}/>
+                                        </Form.Group>
+
+                                        <Form.Group controlId="Comment">
+                                            <Form.Control required type="text" placeholder="Comment" />
+                                        </Form.Group>                  
+                                    </div>
                                     </Tab>
                                     <Tab className="" eventKey="threadTypeDrafts" title="From Drafts">
-                                        {typeDrafts()}
+                                        No drafts saved.
                                     </Tab>
 
                                 </Tabs>
@@ -46,6 +89,9 @@ function createThread(){
     );
 }
 
+export default CreateThread;
+
+/*
 function typePost(){
     return(
         <>
@@ -91,5 +137,4 @@ function typeDrafts(){
         </>
     );
 }
-
-export default createThread;
+*/
