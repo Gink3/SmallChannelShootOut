@@ -2,18 +2,23 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema; 
 
 const ThreadSchema = new Schema({
-threadID: {
-    type:Number, 
+userName: {
+    type:String,
     trim: true, 
     default: ""
 },
-videoLink: {
+link: {
     type:String, 
     trim: true, 
     default: ""
 },
-userName: {
-    type:String,
+title: {
+    type:String, 
+    trim: true, 
+    default: ""
+},
+body: {
+    type:String, 
     trim: true, 
     default: ""
 },
@@ -22,12 +27,20 @@ comments: {
     trim: true, 
     default: ""
 },
-TimeOfCreation:{
-    type:Date,
-    trim:true, 
-    default:""
+likes: {
+    type:Number,
+    trim: true, 
+    default: 0
 },
-
+dislikes: {
+    type:Number,
+    trim: true, 
+    default: 0
+},
+date: {
+    type: Date, 
+    default: Date.now
+},
 });
 
 
