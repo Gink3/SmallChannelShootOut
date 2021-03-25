@@ -42,7 +42,9 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
             //Send the cookie to front end as token
             res.cookie("token", token, {
                 httpOnly: true,
-            }).send();
+            }); 
+            const store = saveUser._id;
+            res.json({store}); 
         }
     }
     catch(error) {

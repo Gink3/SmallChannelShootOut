@@ -16,15 +16,9 @@ function MakeAccount(){
 
     const formSubmit= async (e) => {
         e.preventDefault(); 
-      axios.post('http://localhost:5000/signup', postUser).then (function(response){
-          if(response.data.Message === "Successful"){
-              window.location = '/';
-            alert(response.data.Message); //do something when signup is successsfull (probably go to the login page)
-          }
-        else {
-            alert(response.data.Message); //showing the server message
-        }
-      });
+      axios.post('http://localhost:5000/signup', postUser, {
+          withCredentials:true
+        }); 
       
     }
 

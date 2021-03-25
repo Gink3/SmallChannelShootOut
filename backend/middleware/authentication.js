@@ -8,7 +8,7 @@ export const auth = (req, res, next) => {
         }
 
         const verify = jwt.verify(token, process.env.JWT_PASS); 
-        console.log(verify); 
+        console.log(verify.user); 
         req.user = verify.user;
         next(); 
 

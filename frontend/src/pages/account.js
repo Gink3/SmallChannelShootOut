@@ -1,10 +1,12 @@
 import React from 'react';
 import accountIcon from "../images/account-icon.png";
 import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import axios from 'axios';
 
 import "../style/account.scss";
 import thumbnail from "../images/thumbnail.png";
 import { BiBorderRadius } from 'react-icons/bi';
+import { AiFillPropertySafety } from 'react-icons/ai';
 
 const cardbox=[
     {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
@@ -45,10 +47,11 @@ function Video(props) {
     when they click onto the
     "Account" page. */
     function signout(){
-     
-        console.log("done signout");
-
-       
+          axios.get('http://localhost:5000/logout', {
+              withCredentials:true
+          }).then (function(response){
+                console.log(response.data);
+          });
     };
 
 function account(){
@@ -138,13 +141,8 @@ function account(){
             </Tab>
 
             <Tab className="" eventKey="signout" title="Sign out">
-<<<<<<< HEAD
-                <Button block className="btn_acc" variant="" type="submit" >
-                    Signout
-=======
                 <Button block className="btn_acc" variant="" type="submit" onClick={()=>signout()}>
                     Signout 
->>>>>>> bac0edaaee2fbc9bf496342c299833d673350cee
                 </Button>
             </Tab>
           
