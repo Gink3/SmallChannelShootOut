@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import {signUpRouter} from './route/SignupRoute.js'; //importing route for signup
 import {loginRouter} from './route/LoginRoute.js'; //importing route forr login
 import {logoutRouter} from './route/LogoutRoute.js'; //importing route for logout
-//import {talkRouter} from './route/TalkRoute.js'; 
+import {talkRouter} from './route/TalkRoute.js'; 
 import dotenv from 'dotenv'; 
 import cookieParser from 'cookie-parser';
 dotenv.config(); 
@@ -12,7 +12,10 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000; 
 
-app.use(cors()); 
+app.use(cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+})); 
 app.use(express.json()); 
 app.use(cookieParser());
 
@@ -24,7 +27,7 @@ mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
 
-//app.post('/talk', talkRouter);
+app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); //route for signup
 app.post('/login', loginRouter);  //route for login
 app.get('/logout', logoutRouter); //route for logout
