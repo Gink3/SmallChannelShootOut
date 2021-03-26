@@ -6,6 +6,7 @@ import thumbnail from "../images/thumbnail.png";
 import {BiStar} from "react-icons/bi";
 
 import Carousel from 'react-bootstrap/Carousel'
+import {template} from './video-template.js'
 
 const turns = ["1", "2", "3"];
 
@@ -39,20 +40,17 @@ export function Video(props) {
           <CardDeck style={{margin: '10px'}}>
             {props.cardbox.map((cards, i) => (
 
-              <Card className="home-card-box" key={i} style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >               
-               <Card.Img variant="top" src={thumbnail} />
-              {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                   <iframe className="embed-responsive-item"
-                 src={cards.image}
-              allowFullScreen
-            ></iframe>
-          </div>  */}
-                <Card.ImgOverlay>
-                  <Card.Title>{cards.title}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
-                </Card.ImgOverlay>
-                
-              </Card>
+              <a href="./video-template.js" style={{maxWidth: '20%'}}>
+
+                <Card className="home-card-box" key={i} style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >               
+                <Card.Img variant="top" src={thumbnail} />
+                  <Card.ImgOverlay>
+                    <Card.Title>{cards.title}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
+                  </Card.ImgOverlay>
+                </Card>
+
+              </a>
 
             ))}
           </CardDeck>

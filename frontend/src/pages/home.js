@@ -15,12 +15,6 @@ const cardbox=[
   {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
 ];
 
-const cardbox3=[
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-];
-
 function Home() {
   return(
     <>
@@ -31,7 +25,7 @@ function Home() {
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-        <Video cardbox={cardbox3} />
+        <Video cardbox={cardbox} />
 
         <br/>
 
@@ -72,7 +66,7 @@ function Home() {
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-        <Video cardbox={cardbox} />
+        <Video cardbox={cardbox}/>
 
         <br/>
 

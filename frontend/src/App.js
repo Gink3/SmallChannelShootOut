@@ -2,32 +2,32 @@ import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import NavigationBar from "./components/navbar";
-import Footer from "./components/footer";
+import NavigationBar  from "./components/navbar";
+import Footer         from "./components/footer";
+import Template       from './components/video-template';
 
+import MakeAccount    from './pages/makeacc';
+import Home           from './pages/home';
+import Talk           from './pages/talk';
+import About          from './pages/about';
+import Account        from './pages/account';
+import BestChoice     from './pages/bestchoice';
+import CreateThread   from './pages/createthread';
 
-import MakeAccount  from './pages/makeacc';
-import Home         from './pages/home';
-import Talk         from './pages/talk';
-import About        from './pages/about';
-import Account      from './pages/account';
-import BestChoice   from './pages/bestchoice';
-import CreateThread from './pages/createthread';
-
-import Gaming       from './pages/voting/gaming';
-import Sports       from './pages/voting/sports';
-import Fashion      from './pages/voting/fashion';
-import News         from './pages/voting/news';
+import Gaming         from './pages/voting/gaming';
+import Sports         from './pages/voting/sports';
+import Fashion        from './pages/voting/fashion';
+import News           from './pages/voting/news';
 
 function App() {
   
   return (
-
       <>
         
-
         <Router>
-        <NavigationBar/>
+
+          <NavigationBar/>
+
           <Switch>
             <Route path="/signup"       exact component={MakeAccount} />
             <Route path="/"             exact component={Home}/>
@@ -41,12 +41,13 @@ function App() {
             <Route path="/voting/fashion"   exact component={Fashion}/>
             <Route path="/voting/sports"    exact component={Sports}/>
             <Route path="/voting/news"      exact component={News}/>
-          </Switch>
-           
-         
-        
-<Footer/>
-</Router>
+
+            <Route path="/components/video-template" exact component={Template}/>
+          </Switch>  
+
+          <Footer/>
+
+        </Router>
       </>
   );
 }
