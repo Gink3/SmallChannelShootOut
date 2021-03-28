@@ -57,21 +57,32 @@ function account(){
         <>
         <Container fluid>
 
-        <Row style={{backgroundColor:'crimson'}}>
-            <Col sm={3}>
-            <div className="header">
-            <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
-            </div>
+        <Row style={{backgroundColor:'#c5dedd'}} >
+            <Col sm={2} style={{marginTop: '10px', marginBottom:'10px'}}>
+                <div>
+                <Image style={{marginLeft:'5%'}} src={accountIcon} /* className="header_image" */ roundedCircle height="171px" width="171px"/>
+
+                </div>
+
+           {/*  <div className="header">
+            </div> */}
             </Col>
-            <Col sm={6}>
-            <div className="inner_header">
+            <Col sm={4} style={{marginTop: '3%'}} >
+                <div>
+                <h2>John Doe</h2>
+                    <br/>
+                    <h4>&nbsp;&nbsp;10 Liked Videos</h4>
+                    <h4>&nbsp;&nbsp;7 Saved Videos</h4>
+                </div>
+            
+            {/* <div className="inner_header">
                 <div className="header_text"><br/>
                     <h2>John Doe</h2>
                     <br/>
                     <h4>&nbsp;&nbsp;10 Liked Videos</h4>
                     <h4>&nbsp;&nbsp;7 Saved Videos</h4>
                 </div>
-            </div>
+            </div> */}
             </Col>
         </Row>
        {/*  <div className="header">
@@ -138,13 +149,8 @@ function account(){
             </Tab>
 
             <Tab className="" eventKey="signout" title="Sign out">
-<<<<<<< HEAD
-                <Button block className="btn_acc" variant="" type="submit" >
-                    Signout
-=======
                 <Button block className="btn_acc" variant="" type="submit" onClick={()=>signout()}>
                     Signout 
->>>>>>> bac0edaaee2fbc9bf496342c299833d673350cee
                 </Button>
             </Tab>
           

@@ -39,7 +39,7 @@ export function Video(props) {
           <CardDeck style={{margin: '10px'}}>
             {props.cardbox.map((cards, i) => (
 
-              <Card className="home-card-box" key={i} style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >               
+              <Card className="home-card-box-video" key={i} style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1, marginBottom:'10px'}} >               
                <Card.Img variant="top" src={thumbnail} />
               {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
                    <iframe className="embed-responsive-item"
