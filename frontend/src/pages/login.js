@@ -14,13 +14,8 @@ function Login(props) {
 
 const formSubmit= async (e) => {
   e.preventDefault(); 
-axios.post('http://localhost:5000/login', logUser).then (function(response){
-    if(response.data.Message === "Successful"){
-      alert(response.data.Message); //do something when login is succesfull
-    }
-  else {
-      alert(response.data.Message); //showing the server error message
-  }
+axios.post('http://localhost:5000/login', logUser, {
+  withCredentials:true
 });
 
 }
