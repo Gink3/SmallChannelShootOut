@@ -35,7 +35,7 @@ function Topbar() {
            {/*Homepage Link*/}
           <NavLink to='/' className="icon" exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
           <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
-                <span className="d-inline-block">
+           <span className="d-inline-block">
                   <AiOutlineHome style={{marginLeft: '9px'}} size="2em"/>
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
@@ -152,8 +152,8 @@ function Topbar() {
 
             {/*Login Link*/}
             
-            <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)}  >
-            &nbsp;  <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
+            <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} style={{marginTop:'2px'}}  >
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
                 <span className="d-inline-block">
                   <BiLogIn className="icon" size="2em"/>
                 </span>
