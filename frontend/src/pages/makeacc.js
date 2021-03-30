@@ -18,6 +18,8 @@ function MakeAccount(){
         e.preventDefault(); 
       axios.post('http://localhost:5000/signup', postUser, {
           withCredentials:true
+        }).then(function(res){
+            alert(res.data.store);
         }); 
       
     }
