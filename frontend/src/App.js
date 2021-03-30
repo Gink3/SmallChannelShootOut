@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavigationBar  from "./components/navbar";
 import Footer         from "./components/footer";
-import Template       from './components/video-template';
+import VideoTemplate  from "./components/video-template";
 
 import MakeAccount    from './pages/makeacc';
 import Home           from './pages/home';
@@ -29,20 +29,20 @@ function App() {
           <NavigationBar/>
 
           <Switch>
-            <Route path="/signup"       exact component={MakeAccount} />
-            <Route path="/"             exact component={Home}/>
-            <Route path="/talk"         exact component={Talk}/>
-            <Route path="/about"        exact component={About}/>
-            <Route path="/account"      exact component={Account}/>
-            <Route path="/bestchoice"   exact component={BestChoice}/>
+            <Route path="/signup" exact component={MakeAccount} />
+            <Route path="/" exact component={Home}/>
+            <Route path="/talk" exact component={Talk}/>
+            <Route path="/about" exact component={About}/>
+            <Route path="/account" exact component={Account}/>
+            <Route path="/bestchoice" exact component={BestChoice}/>
             <Route path="/createthread" exact component={CreateThread}/>
 
-            <Route path="/voting/gaming"    exact component={Gaming}/>
-            <Route path="/voting/fashion"   exact component={Fashion}/>
-            <Route path="/voting/sports"    exact component={Sports}/>
-            <Route path="/voting/news"      exact component={News}/>
+            <Route path="/voting/gaming" exact component={Gaming}/>
+            <Route path="/voting/fashion" exact component={Fashion}/>
+            <Route path="/voting/sports" exact component={Sports}/>
+            <Route path="/voting/news" exact component={News}/>
 
-            <Route path="/components/video-template" exact component={Template}/>
+            <Route path="/components/video-template" exact component={VideoTemplate}/>
           </Switch>  
 
           <Footer/>
