@@ -33,14 +33,20 @@
   margin: auto;
 }
 
-.like-btn{
-  &:active{
+.like-btn {
+  cursor: pointer;
+  &:active {
     fill: green;
   }
 }
 
-.dislike-btn{
-  &:active{
+.dislike-btn {
+  cursor: pointer;
+
+  &:active {
     fill: red;
   }
+}
+.top-text {
+  margin-top: 5px;
 }

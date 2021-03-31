@@ -1,4 +1,5 @@
 import "./App.scss";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -20,13 +21,14 @@ import Fashion        from './pages/voting/fashion';
 import News           from './pages/voting/news';
 
 function App() {
-  
+ 
   return (
       <>
         
         <Router>
 
           <NavigationBar/>
+          
 
           <Switch>
             <Route path="/signup"       exact component={MakeAccount} />
