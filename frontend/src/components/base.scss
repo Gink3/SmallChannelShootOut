@@ -142,7 +142,8 @@ body {
 .icon {
   background-color: black;
   color: aliceblue; ////////////////////////////
-
+  position: relative;
+  margin-left: 5px;
   &:active {
     transform: scale(1.2);
   }
@@ -192,4 +193,15 @@ body {
 }
 .active-link {
   color: crimson;
+  @media (min-width: 992px) {
+    border-bottom: 3px solid red;
+    margin-bottom: -16px;
+  }
+}
+.active-right {
+  color: crimson;
+  @media (min-width: 992px) {
+    border-bottom: 3px solid red;
+    margin-bottom: -11px;
+  }
 }

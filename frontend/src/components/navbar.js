@@ -33,10 +33,10 @@ function Topbar() {
           <Nav className="mr-auto" >
 
            {/*Homepage Link*/}
-          <NavLink to='/' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+          <NavLink to='/' className="icon" exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
           <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
-                <span className="d-inline-block">
-                  <AiOutlineHome /* className="icon" */ size="2em"/>
+           <span className="d-inline-block">
+                  <AiOutlineHome style={{marginLeft: '9px'}} size="2em"/>
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
@@ -53,10 +53,10 @@ function Topbar() {
             
 
             {/*Voting Page Link*/}
-            <NavLink to='/bestchoice' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <NavLink to='/bestchoice' className="icon" exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
                 <span className="d-inline-block">
-                  <BiPoll /* className="icon" */ size="2em"/>&#8239;
+                  <BiPoll style={{marginLeft: '9px'}} size="2em"/>{/* &#8239; */}
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
@@ -70,10 +70,10 @@ function Topbar() {
             </Nav.Link> */}
 
             {/*Thread Page Choice*/}
-            <NavLink to='/talk' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <NavLink to='/talk' className="icon" exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
                 <span className="d-inline-block">
-                  <RiMessage3Line size="2em"/>&#8239;
+                  <RiMessage3Line style={{marginLeft: '9px'}} size="2em"/>{/* &#8239; */}
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
@@ -88,13 +88,13 @@ function Topbar() {
             </Nav.Link> */}
 
             {/* Hall of Fame Link*/}
-            <NavLink to='/about' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
+            <NavLink to='/about' className="icon" exact activeClassName="active-link" style={{marginTop:'6px' , marginLeft:'3px' }}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
                 <span className="d-inline-block">
-                  <AiOutlineTrophy size="2em"/>
+                  <AiOutlineTrophy style={{marginLeft: '9px'}} size="2em"/>{/* &#8239; */}
                 </span>
               </OverlayTrigger>
-              &nbsp;
+              &nbsp;&nbsp;&nbsp;
           </NavLink>
 
             {/* <Nav.Link href="/about" className="nav btn-nav">
@@ -128,17 +128,17 @@ function Topbar() {
                   <BiMoon className="icon bounce" size="2em"/>
                 </span>
               </OverlayTrigger>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </Nav.Link>
 
             {/*Sign-Up Link*/}
-            <NavLink to='/signup' className="icon" exact activeClassName="active-link" style={{marginTop:'6px'}}>
-            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
+            <NavLink to='/signup' className="icon" exact activeClassName="active-right " style={{marginTop:'9px'}}>
+            &nbsp;&nbsp;&nbsp; <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
                 <span className="d-inline-block">
                   <FaUserPlus size="2em"/>
                 </span>
               </OverlayTrigger>
-              &nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;
           </NavLink>
 
             {/* <Nav.Link href="/signup" className="nav btn-nav">
@@ -151,8 +151,9 @@ function Topbar() {
             </Nav.Link> */}
 
             {/*Login Link*/}
-            <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} >
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
+            
+            <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} style={{marginTop:'2px'}}  >
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
                 <span className="d-inline-block">
                   <BiLogIn className="icon" size="2em"/>
                 </span>
@@ -169,7 +170,21 @@ function Topbar() {
             */}
 
             {/*Account Page Link*/}
-            <Nav.Link href="/account" className="nav btn-nav">
+            <NavLink to='/account' className="icon" exact activeClassName="active-right " style={{marginTop:'9px'}}>
+            &nbsp;&nbsp; <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Account Settings</Tooltip>}>
+                <span className="d-inline-block">
+                  <RiAccountCircleLine size="2em"/>
+                </span>
+              </OverlayTrigger>
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              
+              
+            </NavLink>
+
+
+            {/* <Nav.Link href="/account" className="nav btn-nav">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Account Settings</Tooltip>}>
                 <span className="d-inline-block">
                   <RiAccountCircleLine className="icon bounce" size="2em"/>
@@ -177,7 +192,7 @@ function Topbar() {
               </OverlayTrigger>
               &nbsp;
             </Nav.Link>
-
+ */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

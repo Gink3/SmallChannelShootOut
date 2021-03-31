@@ -2,6 +2,7 @@ import React from 'react';
 import accountIcon from "../images/account-icon.png";
 import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 import axios from 'axios';
+import {Video} from "../components/video.js";
 
 import "../style/account.scss";
 import thumbnail from "../images/thumbnail.png";
@@ -9,72 +10,55 @@ import { BiBorderRadius } from 'react-icons/bi';
 import { AiFillPropertySafety } from 'react-icons/ai';
 
 const cardbox=[
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',  title:"Video Title", subtitle:"Generic Small Channel", star:19, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:1,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/gbNwdDWeC9E',  title:"Video Title", subtitle:"Generic Small Channel", star:4, text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:15,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:12,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/-F3ybIQb6tY',  title:"Video Title", subtitle:"Generic Small Channel", star:0,text:" Video description, creator, view count, etc..."},
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY',  title:"Video Title", subtitle:"Generic Small Channel", star:9,text:" Video description, creator, view count, etc..."},
+    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
 ];
-  
-function Video(props) {   
-    return (
-      <>
-        {props.cardbox.map((cards, i) => (
-          
-          <Card className="home-card-box" key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
-              <Card.Img variant="top" src={thumbnail} />
-            <Card.Body>
-              <Card.Title>{cards.title}</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
-                {cards.subtitle}
-              </Card.Subtitle>
-              <Card.Text>{cards.text}</Card.Text>
-              {cards.star }           
-            </Card.Body>
-          </Card>
-         
-        ))}
-      </>
-    );
-  }
+
+function signout(){
+    axios.get('http://localhost:5000/logout', {
+    withCredentials:true
+}).then (function(response){
+    console.log(response.data);
+    });
+};
 
 /*  First things a user sees
     when they click onto the
     "Account" page. */
-    function signout(){
-          axios.get('http://localhost:5000/logout', {
-              withCredentials:true
-          }).then (function(response){
-                console.log(response.data);
-          });
-    };
-
 function account(){
-
     return(
         <>
         <Container fluid>
 
-        <Row style={{backgroundColor:'crimson'}}>
-            <Col sm={3}>
-            <div className="header">
-            <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
-            </div>
+        <Row style={{backgroundColor:'#c5dedd'}} >
+            <Col sm={2} style={{marginTop: '10px', marginBottom:'10px'}}>
+                <div>
+                <Image style={{marginLeft:'5%'}} src={accountIcon} /* className="header_image" */ roundedCircle height="171px" width="171px"/>
+
+                </div>
+
+           {/*  <div className="header">
+            </div> */}
             </Col>
-            <Col sm={6}>
-            <div className="inner_header">
+            <Col sm={4} style={{marginTop: '3%'}} >
+                <div>
+                <h2>John Doe</h2>
+                    <br/>
+                    <h4>&nbsp;&nbsp;10 Liked Videos</h4>
+                    <h4>&nbsp;&nbsp;7 Saved Videos</h4>
+                </div>
+            
+            {/* <div className="inner_header">
                 <div className="header_text"><br/>
                     <h2>John Doe</h2>
                     <br/>
                     <h4>&nbsp;&nbsp;10 Liked Videos</h4>
                     <h4>&nbsp;&nbsp;7 Saved Videos</h4>
                 </div>
-            </div>
+            </div> */}
             </Col>
         </Row>
        {/*  <div className="header">
@@ -145,7 +129,7 @@ function account(){
                     Signout 
                 </Button>
             </Tab>
-          
+
         </Tabs>
        
         </Container>
