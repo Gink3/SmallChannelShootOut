@@ -61,3 +61,26 @@ h2 {
 .login-design {
   color: black;
 }
+
+.column{
+  float: left;
+  width: 33.33%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.gold{
+  z-index: 2;
+}
+
+.silver{
+  z-index: 1;
+}
+
+.bronze{
+  z-index: 3;
+}
