@@ -56,9 +56,14 @@
 .btn-comment {
   border: none;
   transition: box-shadow 1s;
+  //font-weight: "bold";
+  font-weight: 700;
+  color: darken(white, 50%);
 
   &:hover {
     //color: azure;
+    color: darken(white, 50%);
+
     background-color: darken(white, 10%);
     transition: box-shadow 700ms;
     box-shadow: 0 0 25px 0 darken(white, 10%), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
