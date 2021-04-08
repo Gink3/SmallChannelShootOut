@@ -50,14 +50,6 @@ function Topbar() {
           </NavLink>
 
            
-           {/*  <Nav.Link className="nav btn-nav" href="/" >
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
-                <span className="d-inline-block">
-                  <AiOutlineHome className="icon" size="2em"/>
-                </span>
-              </OverlayTrigger>
-              &#8239;
-            </Nav.Link> */}
             
 
             {/*Voting Page Link*/}
@@ -69,13 +61,6 @@ function Topbar() {
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
 
-            {/* <Nav.Link href="/bestchoice" className="nav btn-nav" >
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Best Choice</Tooltip>}>
-                <span className="d-inline-block">
-                  <BiPoll className="icon" size="2em"/>&#8239;
-                </span>
-              </OverlayTrigger>
-            </Nav.Link> */}
 
             {/*Thread Page Choice*/}
             <NavLink to='/talk' className="icon" exact activeClassName="active-link" onClick={handleLoadSomething} style={{marginTop:'6px', marginLeft:'3px'}}>
@@ -85,16 +70,7 @@ function Topbar() {
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
-
-
-            {/* <Nav.Link href="/talk" className="nav btn-nav" eventKey="Threads">
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
-                <span className="d-inline-block">
-                  <RiMessage3Line className="icon" size="2em"/>&#8239;
-                </span>
-              </OverlayTrigger>
-            </Nav.Link> */}
-
+            
             {/* Hall of Fame Link*/}
             <NavLink to='/about' className="icon" exact activeClassName="active-link" onClick={handleLoadSomething} style={{marginTop:'6px' , marginLeft:'3px' }}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
@@ -105,15 +81,7 @@ function Topbar() {
               &nbsp;&nbsp;&nbsp;
           </NavLink>
 
-            {/* <Nav.Link href="/about" className="nav btn-nav">
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
-                <span className="d-inline-block">
-                  <AiOutlineTrophy className="icon bounce" size="2em"/>
-                </span>
-              </OverlayTrigger>
-              &nbsp;
-            </Nav.Link> */}
-          {/*End of Left-side Nav*/}
+            
 
             {/*Search Bar*/}
             <SearchBar/>
@@ -145,15 +113,7 @@ function Topbar() {
               &nbsp;&nbsp;&nbsp;
           </NavLink>
 
-            {/* <Nav.Link href="/signup" className="nav btn-nav">
-              <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
-                <span className="d-inline-block">
-                  <FaUserPlus className="icon bounce" size="2em"/>
-                </span>
-              </OverlayTrigger>
-              &nbsp;
-            </Nav.Link> */}
-
+            
             {/*Login Link*/}
             
             <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} style={{marginTop:'2px'}}  >

@@ -41,31 +41,10 @@ function account(){
                     <h4>&nbsp;&nbsp;10 Liked Videos</h4>
                     <h4>&nbsp;&nbsp;7 Saved Videos</h4>
                 </div>
-            
-            {/* <div className="inner_header">
-                <div className="header_text"><br/>
-                    <h2>John Doe</h2>
-                    <br/>
-                    <h4>&nbsp;&nbsp;10 Liked Videos</h4>
-                    <h4>&nbsp;&nbsp;7 Saved Videos</h4>
-                </div>
-            </div> */}
+           
             </Col>
         </Row>
-       {/*  <div className="header">
-            <Image src={accountIcon} className="header_image" roundedCircle height="171px" width="171px"/>
-            
-            <div className="inner_header">
-                <div className="header_text">
-                    <h2>John Doe</h2>
-                    <br/>
-                    <h4>10 Liked Videos - 7 Saved Videos</h4>
-                </div>
-            </div>
-
-
-        </div> */}
-
+     
         <Tabs className="wrap" >
             <Tab className="" eventKey="likedVideos" title="Liked Videos">
                 <Container fluid>
