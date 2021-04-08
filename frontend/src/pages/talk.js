@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import AuthContext from "../context/authcontext.js"
 import { Button, Card,  Container, Row, Col, Form, Toast } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
 import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
 import toast from "../images/toast.png";
+
  /* import AdSense from 'react-adsense';  */
 
 const threadbox=[
@@ -23,9 +25,11 @@ function Thread(props) {
   return (
     <>
       {props.threadbox.map((thread, i) => (
+        
         <Card className="backside" key={i} style={{minWidth: '18rem',  flexGrow: 1}} >
+  
         <Card.Body>
-
+        
           <Card.Title style={{backgroundColor:'white', borderRadius:'5px'}}> 
           &nbsp;
          <div className="ml-4">
@@ -49,7 +53,8 @@ function Thread(props) {
           
           <Card.Subtitle className="mb-2 text-muted">
             
-          </Card.Subtitle>        
+          </Card.Subtitle> 
+          
 
           {/* -- BUTTONS -- 
           <Button variant="primary">Comments</Button>
@@ -79,16 +84,22 @@ sdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             </Button>
 
         </Card.Body>
+          
       </Card>
                 
       ))}
+
     </>
   );
 }
 
-function talk(){
+function Talk(){
+  
+  const {loggedIn} = useContext(AuthContext);
   return(
+  
     <>
+
       <Container fluid>
         <br/>
 
@@ -121,7 +132,8 @@ function talk(){
         
 
       </Container>
+   
     </>
   );
 }
-export default talk;
+export default Talk;

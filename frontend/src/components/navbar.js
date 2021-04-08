@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useContext} from "react";
 import "./base.scss";
 import { Navbar, Nav} from "react-bootstrap";
 import {OverlayTrigger, Tooltip } from 'react-bootstrap'
@@ -18,8 +18,13 @@ import {RiAccountCircleLine} from "react-icons/ri";
 import Login   from '../pages/login';
 
 import {BiMoon} from 'react-icons/bi'
+import AuthContext from "../context/authcontext.js"
+//import { checkLogin } from "../context/authcontext.js"
 
 function Topbar() {
+  const {loggedIn} = useContext(AuthContext);
+ // const loggedIn = useState(checkLogin);
+  console.log(loggedIn);
   const [modalShow, setModalShow] = useState(false); 
   const ref = useRef(null);
 
@@ -81,6 +86,7 @@ function Topbar() {
             </Nav.Link> */}
 
             {/*Thread Page Choice*/}
+            
             <NavLink to='/talk' className="icon" exact activeClassName="active-link" onClick={handleLoadSomething} style={{marginTop:'6px', marginLeft:'3px'}}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
                 <span className="d-inline-block">
@@ -88,7 +94,7 @@ function Topbar() {
                 </span>
               </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
-
+        
 
             {/* <Nav.Link href="/talk" className="nav btn-nav" eventKey="Threads">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Threads</Tooltip>}>
@@ -143,6 +149,7 @@ function Topbar() {
             </Nav.Link>
 
             {/*Sign-Up Link*/}
+            {loggedIn==false && (
             <NavLink to='/signup' className="icon" exact activeClassName="active-right " onClick={handleLoadSomething} style={{marginTop:'9px'}}>
             &nbsp;&nbsp;&nbsp; <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
                 <span className="d-inline-block">
@@ -151,6 +158,7 @@ function Topbar() {
               </OverlayTrigger>
               &nbsp;&nbsp;&nbsp;
           </NavLink>
+            )}
 
             {/* <Nav.Link href="/signup" className="nav btn-nav">
               <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Create an Account</Tooltip>}>
@@ -161,8 +169,9 @@ function Topbar() {
               &nbsp;
             </Nav.Link> */}
 
-            {/*Login Link*/}
             
+            {/*Login Link*/}
+            {loggedIn==false && (
             <Nav.Link href="" className="nav btn-nav" onClick={() => setModalShow(true)} style={{marginTop:'2px'}}  >
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Log In</Tooltip>}>
                 <span className="d-inline-block">
@@ -172,6 +181,7 @@ function Topbar() {
               &nbsp;
               
             </Nav.Link>
+            )}
 
             <Login show={modalShow} onHide={() => setModalShow(false)}/>
 
@@ -181,6 +191,7 @@ function Topbar() {
             */}
 
             {/*Account Page Link*/}
+            {loggedIn==true && (
             <NavLink to='/account' className="icon" exact activeClassName="active-right " onClick={handleLoadSomething} style={{marginTop:'9px'}}>
             &nbsp;&nbsp; <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Account Settings</Tooltip>}>
                 <span className="d-inline-block">
@@ -190,9 +201,8 @@ function Topbar() {
               &nbsp;
               &nbsp;
               &nbsp;
-              
-              
             </NavLink>
+            )}
 
 
             {/* <Nav.Link href="/account" className="nav btn-nav">

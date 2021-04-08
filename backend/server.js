@@ -5,6 +5,8 @@ import {signUpRouter} from './route/SignupRoute.js'; //importing route for signu
 import {loginRouter} from './route/LoginRoute.js'; //importing route forr login
 import {logoutRouter} from './route/LogoutRoute.js'; //importing route for logout
 import {talkRouter} from './route/TalkRoute.js'; 
+import {isLoggedInRouter} from './route/isLoggedInroute.js' //importing route for isLoggedIn
+import {userInfoRouter} from './route/getUserInfo.js'
 import dotenv from 'dotenv'; 
 import cookieParser from 'cookie-parser';
 dotenv.config(); 
@@ -31,6 +33,8 @@ app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); //route for signup
 app.post('/login', loginRouter);  //route for login
 app.get('/logout', logoutRouter); //route for logout
+app.get ('/isLoggedIn',isLoggedInRouter); //check if user are logged in 
+app.get('/userInfo', userInfoRouter); //check if user are not logged in
 app.listen(port, () => {
     console.log(`Server is runnig in port: ${port}`)
 });

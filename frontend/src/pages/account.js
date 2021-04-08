@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
+import AuthContext from "../context/authcontext.js"
 import accountIcon from "../images/account-icon.png";
 import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 import axios from 'axios';
@@ -7,7 +8,10 @@ import {Video} from "../components/video.js";
 import "../style/account.scss";
 import thumbnail from "../images/thumbnail.png";
 import { BiBorderRadius } from 'react-icons/bi';
-import { AiFillPropertySafety } from 'react-icons/ai';
+import { AiFillPropertySafety, AiOutlineConsoleSql } from 'react-icons/ai';
+import { useHistory } from 'react-router-dom';
+
+
 
 const cardbox=[
     {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
@@ -21,23 +25,38 @@ function signout(){
     axios.get('http://localhost:5000/logout', {
     withCredentials:true
 }).then (function(response){
-    console.log(response.data);
+    console.log(response.data)
+    window.location.href = "/"
     });
 };
-
 /*  First things a user sees
     when they click onto the
     "Account" page. */
-function account(){
+function Account(){
+    const [fname, setfname]=useState('');
+    const [lname, setlname]=useState('');
+    const [email, setemail]=useState('')
+    axios.get('http://localhost:5000/userInfo', {
+        withCredentials:true
+    }).then (function(response){
+       const fname = response.data.firstName;
+        const lname = response.data.lastName;
+        const email = response.data.email; 
+        setfname(fname);
+        setlname(lname);  
+        setemail(email);
+        });
+  const {loggedIn} = useContext(AuthContext);
     return(
         <>
+         {loggedIn==true && (
         <Container fluid>
 
         <Row style={{backgroundColor:'#c5dedd'}} >
             <Col sm={2} style={{marginTop: '10px', marginBottom:'10px'}}>
                 <div>
                 <Image style={{marginLeft:'5%'}} src={accountIcon} /* className="header_image" */ roundedCircle height="171px" width="171px"/>
-
+                
                 </div>
 
            {/*  <div className="header">
@@ -45,7 +64,7 @@ function account(){
             </Col>
             <Col sm={4} style={{marginTop: '3%'}} >
                 <div>
-                <h2>John Doe</h2>
+                <h2>{fname} {lname}</h2>
                     <br/>
                     <h4>&nbsp;&nbsp;10 Liked Videos</h4>
                     <h4>&nbsp;&nbsp;7 Saved Videos</h4>
@@ -105,7 +124,7 @@ function account(){
                 <Tabs className="wrap">
               
                     <Tab className="page-manager-curr-info" eventKey="currentInfo" title="Current Information">
-                        {showCurrentInfo()}
+                        {showCurrentInfo(fname, lname, email)}
                     </Tab>
                     <Tab className="" eventKey="changeEmail" title="Change E-Mail">
                         {changeEmail()}
@@ -133,13 +152,16 @@ function account(){
         </Tabs>
        
         </Container>
-
+         )}
         </>
     );
 }
 
  /* Current Information Tab */ 
-function showCurrentInfo(){
+function showCurrentInfo(fname, lname,email){
+
+    //this function will get the user information
+    
     return(
         <>
             <Form>
@@ -150,7 +172,8 @@ function showCurrentInfo(){
                     Username
                 </Form.Label>
                 <Col sm="10">
-                    <Form.Control plaintext readOnly defaultValue="exampleUser123" />
+                    {fname} {lname}
+                    {/* <Form.Control plaintext readOnly defaultValue= "name"/> */}
                 </Col>
 
                 {/* Current Email */}
@@ -159,17 +182,17 @@ function showCurrentInfo(){
                 </Form.Label>
 
                 <Col sm="10">
-                    <Form.Control plaintext readOnly defaultValue="email@example.com" />
+                    {email}
                 </Col>
 
-                {/* Current Password */}
+                {/* Current Password 
                 <Form.Label column sm="2">
                     Password
                 </Form.Label>
                 <Col sm="10">
                     <Form.Control plaintext readOnly defaultValue="password123" />
                 </Col>
-
+*/}
                 </Form.Group>
             </Form>
         </>
@@ -300,4 +323,4 @@ function changeProfilePic(){
     );
 }
 
-export default account;
+export default Account;
