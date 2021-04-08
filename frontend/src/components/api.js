@@ -2,20 +2,36 @@
 
 API STUFF:
 
+API KEY: AIzaSyCQCCOurp1uYGYyj_hJT1GYGrAlbPEGxBs
+
+Current Tutorial Video: https://www.youtube.com/watch?v=v9ew8ltRbWI&ab_channel=CODERSNEVERQUIT
+
 Content Details:                https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&channelId=Channel_id&key=API
 All Threads Related to Channel: https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&allThreadsRelatedToChannelId=Channel_id&key=YOUR_API_KEY
 Comment Threads:                https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Video_id&key=YOUR_API_KEY
 
+https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=songs&type=video&key=[YOUR_API_KEY]
+
 */
 
-import axios from 'axios';
-const KEY = 'AIzaSyCQCCOurp1uYGYyj_hJT1GYGrAlbPEGxBs';
+const KEY = 'AIzaSyAqikspDfGLsWFqNq60qSsZyjtD1rUK5GQ';
 
-export default axios.create({
-    baseURL: 'https://www.googleapis.com/youtube/v3/',
-    params: {
-        part: 'snippet',
-        maxResults: '5',
-        key: KEY
-    }
-})
+export function fetchDataFromYoutube(topic){
+    var baseURL = 'https://www.googleapis.com/youtube/v3/';
+    var part = 'snippet'; //contentDetails
+    var maxResults = '50';
+    //var q = query;
+    var topicId = topic;
+    var type = 'video';
+    var key = KEY;
+    var regionCode = 'US';
+    var chart = 'mostPopular'
+
+    return fetch(`${baseURL}search?part=${part}&maxResults=${maxResults}&q=${topicId}&type=${type}&regionCode=${regionCode}&key=${key}`)
+    .then(res => res.json())
+    .then(json => {
+        return json
+    })
+    .catch(err => console.log(err))
+}
+

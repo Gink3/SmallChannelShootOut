@@ -1,6 +1,5 @@
 import React from 'react';
-import { Breadcrumb, Container } from 'react-bootstrap';
-import {Video} from "../components/video.js";
+import {Container } from 'react-bootstrap';
 
 const cardbox=[
     {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
@@ -20,7 +19,7 @@ function bestChoice(){
             </a>
           </div>
           <div style={{borderTop: "4px solid #000 " }}></div>
-          <Video cardbox={cardbox} />
+          {/*<Video cardbox={cardbox} />*/}
   
           <br/>  
 
@@ -30,9 +29,9 @@ function bestChoice(){
             </a>
           </div>
           <div style={{borderTop: "4px solid #000 " }}></div>
+           {/*<Video cardbox={cardbox} />
           <Video cardbox={cardbox} />
-          <Video cardbox={cardbox} />
-          <Video cardbox={cardbox} />
+          <Video cardbox={cardbox} />*/}
 
           <br/>  
         </Container>

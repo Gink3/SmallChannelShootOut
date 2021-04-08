@@ -24,15 +24,13 @@ function App() {
  
   return (
       <>
-        
         <Router>
 
           <NavigationBar/>
           
-
           <Switch>
             <Route path="/signup" exact component={MakeAccount} />
-            <Route path="/" exact component={Home}/>
+            <Route path="/home" exact component={Home}/>
             <Route path="/talk" exact component={Talk}/>
             <Route path="/about" exact component={About}/>
             <Route path="/account" exact component={Account}/>

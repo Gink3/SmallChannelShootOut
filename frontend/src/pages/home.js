@@ -1,33 +1,58 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
+import {Container, Tab, Tabs, Row, Col} from "react-bootstrap";
+import thumbnail from "../images/thumbnail.png";
 import './pages.scss';
 
-import thumbnail from "../images/thumbnail.png";
-
-import {BiStar} from "react-icons/bi";
 import {Video} from "../components/video.js";
 
-const cardbox=[
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-];
+//var cardbox = [];
 
-function Home() {
+//<div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+//{console.log("Hello!")}
+//</div>
+
+function Home(){
   return(
     <>
-      <Container fluid>
-        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <a href="/bestchoice" style={{margin: '0px'}}>
-            <h2>Trending</h2>
-          </a>
-        </div>
-        <div style={{borderTop: "4px solid #000 " }}></div>
-        <Video cardbox={cardbox} />
+      <Tabs>
+        <Tab className="" eventKey="trending" title="Trending">
+          <Container fluid>
+            <Video cardbox={[]} query='trending' />
 
-        <br/>
+          </Container>            
+        </Tab>
+     
+        <Tab className="" eventKey="gaming" title="Gaming">
+          <Container fluid>
+            <Video cardbox={[]} query='gaming' />
+          </Container>            
+        </Tab>
+
+   {/*
+        <Tab className="" eventKey="news" title="News">
+          <Container fluid>
+            <Video query='news' />
+          </Container>            
+        </Tab>
+
+        <Tab className="" eventKey="music" title="Music">
+          <Container fluid>
+            <Video query='music' />
+          </Container>            
+        </Tab>
+
+        <Tab className="" eventKey="movies" title="Movies">
+          <Container fluid>
+            <Video query='movies' />
+          </Container>            
+        </Tab>
+        */}
+      </Tabs>
+
+      <br/>
+
+
+{/*
 
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/sports">
@@ -35,16 +60,19 @@ function Home() {
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
+
+        {returnData('comedy')}
         <Video cardbox={cardbox} />
 
         <br/>
-
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/gaming">
             <h2>Gaming</h2>
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
+
+        {returnData('gaming')}
         <Video cardbox={cardbox} />
 
         <br/>
@@ -56,6 +84,8 @@ function Home() {
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
+
+        {returnData('fashion')}
         <Video cardbox={cardbox} />
 
         <br/>
@@ -66,11 +96,25 @@ function Home() {
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
+
+        {returnData('news')}
         <Video cardbox={cardbox}/>
 
         <br/>
 
-      </Container>
+        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+          <a href="/voting/news">
+            <h2>Music</h2>
+          </a>
+        </div>
+        <div style={{borderTop: "4px solid #000 " }}></div>
+
+        {returnData('music')}
+        <Video cardbox={cardbox}/>
+
+        <br/>
+*/}
+
     </>
   );
 }

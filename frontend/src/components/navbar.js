@@ -4,20 +4,16 @@ import { Navbar, Nav} from "react-bootstrap";
 import {OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { NavLink} from 'react-router-dom'
 import LoadingBar from "react-top-loading-bar";
-
-
 import logo from "../images/SCSLogo_SimpleBB.png";
-import { FaUserPlus} from "react-icons/fa";
+import {FaUserPlus} from "react-icons/fa";
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai";
 import {RiMessage3Line} from "react-icons/ri";
 import {BiLogIn} from "react-icons/bi";
-
 import {BiPoll} from "react-icons/bi";
 import {RiAccountCircleLine} from "react-icons/ri";
-
 import Login   from '../pages/login';
-
 import {BiMoon} from 'react-icons/bi'
+import SearchBar from "./searchbar";
 
 function Topbar() {
   const [modalShow, setModalShow] = useState(false); 
@@ -29,11 +25,12 @@ function Topbar() {
          ref.current.complete();
     }, 1000);
   };
+
   return (
     <>
-<LoadingBar color="#f11946" ref={ref} />
+      <LoadingBar color="#f11946" ref={ref}/>
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
-        <Navbar.Brand onClick={handleLoadSomething} href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
+        <Navbar.Brand onClick={handleLoadSomething} href="/home"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className="navbar"
@@ -44,7 +41,7 @@ function Topbar() {
           <Nav className="mr-auto" >
 
            {/*Homepage Link*/}
-          <NavLink to='/' className="icon" onClick={handleLoadSomething} exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
+          <NavLink to='/home' className="icon" onClick={handleLoadSomething} exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
           <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
            <span className="d-inline-block">
                   <AiOutlineHome style={{marginLeft: '9px'}} size="2em"/>
@@ -119,12 +116,8 @@ function Topbar() {
           {/*End of Left-side Nav*/}
 
             {/*Search Bar*/}
-            <div className="container nav">
-              <input href="/search" type="text" placeholder="Search..." />
-              <div className="search">
-
-              </div>
-            </div>
+            <SearchBar/>
+            
           </Nav>
 
 

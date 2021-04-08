@@ -1,16 +1,45 @@
 import React, {useState} from 'react';
 import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './pages.scss';
-
-import thumbnail from "../images/thumbnail.png";
-import playButton from "../images/playbutton.png"
 import {BiStar} from "react-icons/bi";
+import {fetchDataFromYoutube} from "../components/api.js";
 
-import Carousel from 'react-bootstrap/Carousel'
+const cardbox=[
+  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
+];
 
-const turns = ["1", "2", "3"];
+export function Video(object) {  
+  /*
+  console.log(object)
+  console.log(object.cardbox)
+  const truncate = (str, n) => {
+    return (str.length > n) ? str.substr(0, n-3) + '...' : str;
+  }
 
-export function Video(props) {
+  var array = fetchDataFromYoutube(object.query);
+  array.then(function(result){
+
+      var videosPerPage = 50;
+
+      for(var i = 0; i < videosPerPage; i++){
+        var card = {
+          image: result.items[i].snippet.thumbnails.medium.url,
+          title: result.items[i].snippet.title, 
+          subtitle: result.items[i].snippet.channelTitle, 
+          videoId: result.items[i].id.videoId,
+          channelId: result.items[i].snippet.channelId,
+          star: 0 
+        }
+  
+        object.cardbox.push(card);
+      }
+  })
+  */
+  
   const [count, setCount] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
   
@@ -32,32 +61,27 @@ export function Video(props) {
 
   return (
     <>
-      <Carousel controls={false} interval={null}>
-
-      {/* loops "turns" number of times. the number is equal to how many elements are within 'turns' */}
-      {turns.map((turn) => (
-
-        <Carousel.Item key={turn}>
           <CardDeck style={{margin: '10px'}}>
-            {props.cardbox.map((cards, i) => (
+            {/*object.*/}
+            {cardbox.map((cards, i) => (
+              <div style={{maxWidth: '20%'}}>
+                <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
 
-              <div style={{maxWidth: '20%'}} key={i}>
+                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} > 
+                <Card.Img variant="top" src={cards.image} />
 
-                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} > 
-                <Card.Img variant="top" src={thumbnail} />
-               {/*  Please do not delete */}
-                {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                   <iframe className="embed-responsive-item"
-                 src={cards.image}
-              allowFullScreen
-            ></iframe>
-          </div>  */}
-                  <Card.ImgOverlay className="home-card-box-video-image">
-                    <Card.Title>{cards.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
-                  </Card.ImgOverlay>
+                {/*  Please do not delete */}
+                  {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
+                      <iframe className="embed-responsive-item"
+                        src={cards.image}
+                        allowFullScreen
+                      ></iframe>
+                    </div>  
+                  */}
 
                   <Card.Body>
+                    <Card.Title>{truncate((cards.title), 51)}</Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
                     <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
                       <BiStar className="star" color="gold" size= "2em"  />
                     </Button>
@@ -66,15 +90,12 @@ export function Video(props) {
                   </Card.Body>
 
                 </Card>
+                </a>
 
               </div>
 
             ))}
           </CardDeck>
-        </Carousel.Item>
-
-      ))}
-      </Carousel>
     </>
   );
 };

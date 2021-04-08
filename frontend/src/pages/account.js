@@ -5,17 +5,8 @@ import axios from 'axios';
 import {Video} from "../components/video.js";
 
 import "../style/account.scss";
-import thumbnail from "../images/thumbnail.png";
 import { BiBorderRadius } from 'react-icons/bi';
 import { AiFillPropertySafety } from 'react-icons/ai';
-
-const cardbox=[
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-];
 
 function signout(){
     axios.get('http://localhost:5000/logout', {
@@ -81,7 +72,7 @@ function account(){
                     <Row>
                         <Col>
                             <CardDeck>
-                                <Video cardbox={cardbox} />
+                                {/*<Video cardbox={cardbox} />*/}
                             </CardDeck>
                         </Col>
                     </Row>
@@ -93,7 +84,7 @@ function account(){
                     <Row>
                         <Col>
                             <CardDeck>
-                                <Video cardbox={cardbox} />
+                                {/*<Video cardbox={cardbox} />*/}
                             </CardDeck>
                         </Col>
                     </Row>

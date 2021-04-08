@@ -5,7 +5,8 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
   border-radius: 9px;
   margin-top: 2%;
   margin-bottom: 2%;
-  
+  color: black;
+
   cursor: pointer;
   transition: box-shadow 500ms;
   transition: transform 500ms ease;
