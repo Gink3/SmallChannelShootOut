@@ -13,13 +13,13 @@ const cardbox=[
 ];
 
 export function Video(object) {  
-  /*
+  
   console.log(object)
   console.log(object.cardbox)
   const truncate = (str, n) => {
     return (str.length > n) ? str.substr(0, n-3) + '...' : str;
   }
-
+  /*
   var array = fetchDataFromYoutube(object.query);
   array.then(function(result){
 
