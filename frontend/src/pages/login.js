@@ -23,6 +23,7 @@ axios.post('http://localhost:5000/login', logUser, {
 }).then ( () => {
   getLoggedIn();
   history.push("/");
+  history.go(0);
   
 });
 
