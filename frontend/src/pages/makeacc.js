@@ -32,13 +32,13 @@ function MakeAccount(){
                  <>
                  {loggedIn==false && (
                 <Container fluid>
-                    <div className="d-flex justify-content-center header  ">
-                        <h2>  Create your ShootOut Account</h2>
-                    </div>
+                   
                     <Row className="justify-content-md-center " >
 
-                        <Col md={4}>
-
+                        <Col md={4} style={{backgroundColor:'black', marginTop:'2%', marginBottom:'2%', borderRadius:'9px'}}>
+                        <div className="d-flex justify-content-center header"> 
+                        <h2  style={{color:'white'}}>  Create your ShootOut Account</h2>
+                         </div>
                             <Form onSubmit={formSubmit}>
                                 <br />
                                 <Form.Group controlId="firstName">
@@ -89,7 +89,7 @@ function MakeAccount(){
                         </Col>
                     </Row>
                 </Container>
-                )}
+               )} 
             </>
         );
 }

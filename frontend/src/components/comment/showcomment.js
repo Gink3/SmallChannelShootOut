@@ -7,7 +7,7 @@ import { Button, Card } from "react-bootstrap";
 
 
 const ShowComment=({postId})=>{
-console.log(postId);
+/* console.log(postId); */
     const {isLoading, error, data} = useQuery("commentList",() =>{
         return Get("http://localhost:3009/comments");
     });
