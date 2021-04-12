@@ -20,7 +20,7 @@ const cardbox=[
   const cardbox1=[
     {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
   ];
-
+  
 
 function about(){
   return(
@@ -38,12 +38,12 @@ function about(){
                   <Card.Subtitle className="mb-2 text-muted">Channel</Card.Subtitle>
                 </Card.ImgOverlay>
               </Card>
-
               <div style={{marginLeft: '7%'}}>
               <img src={silverpillar} style={{borderBottom: "5px solid black", marginTop: '10px', marginLeft: '10%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}}  />
               </div>
-            </div>
-          </div>
+           </div>
+          </div> 
+
         </Col>
    {/*    </Row> */}
 
@@ -82,7 +82,7 @@ function about(){
               <div style={{marginLeft: '2%'}}>
               <img src={bronzepillar} style={{borderBottom: "5px solid black", marginTop: '7px', marginLeft: '8%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} height="341px" width="433px"/>
               </div>
-          </div>
+          </div> 
         </div>
 
         {/* <div style={{borderTop: "4px solid #000 " }}></div> */}

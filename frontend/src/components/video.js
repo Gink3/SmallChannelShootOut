@@ -57,7 +57,7 @@ export function Video(object) {
       <CardDeck style={{margin: '10px'}}>
         {object.cardbox.map((cards, i) => (
           <div style={{maxWidth: '20%'}}>
-
+            
             <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
               <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
                 <Card.Img variant="top" src={cards.image} />
