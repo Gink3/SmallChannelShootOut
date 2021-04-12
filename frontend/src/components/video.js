@@ -5,6 +5,7 @@ import './pages.scss';
 import thumbnail from "../images/thumbnail.png";
 import playButton from "../images/playbutton.png"
 import {BiStar} from "react-icons/bi";
+import {fetchDataFromYoutube} from "./api.js";
 
 export function Video(object) {
   console.log(object.cardbox)
@@ -55,56 +56,38 @@ export function Video(object) {
     <>
       <CardDeck style={{margin: '10px'}}>
         {object.cardbox.map((cards, i) => (
-              <div style={{maxWidth: '20%'}}>
-                {console.log("change")}
-                <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
+          <div style={{maxWidth: '20%'}}>
 
-                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
+            <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
+              <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
                 <Card.Img variant="top" src={cards.image} />
 
                 {/*  Please do not delete */}
-                  {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                      <iframe className="embed-responsive-item"
-                        src={cards.image}
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  */}
+                {/*  <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
+                  <iframe className="embed-responsive-item"
+                    src={cards.image}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                */}
 
-              <div style={{maxWidth: '20%'}} key={i}>
 
-                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >
-                <Card.Img variant="top" src={thumbnail} />
-               {/*  Please do not delete */}
-                {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                   <iframe className="embed-responsive-item"
-                 src={cards.image}
-              allowFullScreen
-            ></iframe>
-          </div>  */}
-                  <Card.ImgOverlay className="home-card-box-video-image">
-                    <Card.Title>{cards.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
-                  </Card.ImgOverlay>
 
-                  <Card.Body>
-                    <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
-                      <BiStar className="star" color="gold" size= "2em"  />
-                    </Button>
+                <Card.Body>
+                  <Card.Title>{cards.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
+                  
+                  <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
+                    <BiStar className="star" color="gold" size= "2em"  />
+                  </Button>
 
-                    {cards.star}
-                  </Card.Body>
-
-                </Card>
-
-              </div>
-
-            ))}
-          </CardDeck>
-        </Carousel.Item>
-
-      ))}
-      </Carousel>
+                  {cards.star}
+                </Card.Body>
+              </Card>
+            </a>
+          </div>
+        ))}
+      </CardDeck>
     </>
   );
 };

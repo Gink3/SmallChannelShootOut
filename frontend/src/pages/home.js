@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardDeck,Tabs,Tab } from "react-bootstrap";
 import './pages.scss';
 import '../components/base.scss'
 import SearchBar from "../components/searchbar";
+import {Video} from "../components/video";
+
 import { Navbar, Nav} from "react-bootstrap";
 
 import thumbnail from "../images/thumbnail.png";
@@ -81,32 +83,31 @@ function Home() {
 
         <Tab className="" eventKey="trending" title="Trending">
           <Container fluid>
-
+            {/*<Video cardbox={[]} query='trending' />*/}
           </Container>
         </Tab>
 
         <Tab className="" eventKey="gaming" title="Gaming">
           <Container fluid>
-          <Video cardbox={[]} query='gaming' />
-
+            {/*<Video cardbox={[]} query='gaming' />*/}
           </Container>
         </Tab>
 
         <Tab className="" eventKey="news" title="News">
           <Container fluid>
-
+            {/*<Video cardbox={[]} query='news' />*/}
           </Container>
         </Tab>
 
         <Tab className="" eventKey="music" title="Music">
           <Container fluid>
-
+            {/*<Video cardbox={[]} query='music' />*/}
           </Container>
         </Tab>
 
         <Tab className="" eventKey="movies" title="Movies">
           <Container fluid>
-
+            {/*<Video cardbox={[]} query='movies' />*/}
           </Container>
         </Tab>
       </Tabs>
@@ -156,15 +157,17 @@ function Home() {
         <Video cardbox={cardbox}/>
 
         <br/>
-
       </Container>
+              */}
+
     </>
   );
 }
 export default Home;
 ///////////////////////////////Do not delete :)
 
-/*<div className="homebox">
+/*
+<div className="homebox">
             <Intro videoboxes={videoboxObj} />
 
             </div>
@@ -187,4 +190,5 @@ function Intro(props) {
       </ul>
     </section>
   );
-} */
+} 
+*/
