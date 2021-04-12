@@ -10,7 +10,7 @@ export const logoutRouter = router.get('/logout', auth, (req,res) => {
         expires: new Date(0)
     }).send();
  
-
+    console.log("Logout: " + req.user);
     
 }
 catch(error) {

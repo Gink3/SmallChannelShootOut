@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Modal from 'react-bootstrap/Modal'
 import {Button, Form} from "react-bootstrap";
 import "../style/signup.scss";
 import axios from 'axios'; 
+import AuthContext from '../context/authcontext.js';
+import { useHistory } from 'react-router-dom';
   
 function Login(props) {
+  const history = useHistory(); 
+  const {getLoggedIn} = useContext(AuthContext)
 
   const[logUser, setUserData] = useState({
     email: "", 
@@ -16,6 +20,11 @@ const formSubmit= async (e) => {
   e.preventDefault(); 
 axios.post('http://localhost:5000/login', logUser, {
   withCredentials:true
+}).then ( () => {
+  getLoggedIn();
+  history.push("/");
+  history.go(0);
+  
 });
 
 }

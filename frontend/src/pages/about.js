@@ -20,74 +20,64 @@ const cardbox=[
   const cardbox1=[
     {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
   ];
-  
+
 
 function about(){
-    return(            
-        <> 
+    return(
+        <>
         {/* <div class="row"> */}
         <Row className="justify-content-center">
         <Col md={6}>
         <div className="silver">
          {/*silver*/}
          <div className="column" style={{maxWidth: '640px', marginLeft: '17%', marginTop: '22.4%'}}>
-              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '13%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >               
+              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '13%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
                   <Card.Title>Silver Medal</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Channel</Card.Subtitle>
                 </Card.ImgOverlay>
               </Card>
-             
-              <img src={silverpillar} style={{marginTop: '10px', marginLeft: '10%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}}  />
-              
+              <div style={{marginLeft: '7%'}}>
+              <img src={silverpillar} height="428px" width="433px" />
+              </div>
           </div>
         </div>
-        </Col>
-        <Col md={6}>
 
         <div className="gold">
          {/*gold*/}
-         <div className="column" style={{maxWidth: '640px', marginLeft: '17%'}}>
-              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '10%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >               
+         <div class="column" style={{maxWidth: '640px', marginLeft: '23%'}}>
+              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '13%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
                   <Card.Title>Gold Medal</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Channel</Card.Subtitle>
                 </Card.ImgOverlay>
               </Card>
-             {/*  <div style={{marginLeft: '7%'}}> */}
-              <img src={goldpillar} style={{marginTop: '10px', marginLeft: '9%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}}  className="img-fluid"/>
-              {/* </div> */}
+              <div style={{marginLeft: '7%'}}>
+              <img src={goldpillar} height="571px" width="433px"/>
+              </div>
           </div>
           </div>
-  </Col>
-  </Row>
-  
-<Row>
-  <Col md={6}>
- 
-        
+
+        <div class="bronze">
          {/*bronze*/}
-         <div className="column" style={{maxWidth: '640px', marginLeft: '22%', marginTop: '6%'}}>
-              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '8%', minWidth: '190%', maxWidth: '190%', flexGrow: 1}} >               
+         <div class="column" style={{maxWidth: '640px', marginLeft: '23%', marginTop: '36%'}}>
+              <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '8%', minWidth: '190%', maxWidth: '190%', flexGrow: 1}} >
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
                   <Card.Title>Bronze Medal</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">Channel</Card.Subtitle>
                 </Card.ImgOverlay>
               </Card>
-              {/* <div style={{marginLeft: '2%'}}> */}
-              <img src={bronzepillar} style={{marginTop: '7px', marginLeft: '8%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} height="341px" width="433px"/>
-            {/*   </div> */}
-           
+              <div style={{marginLeft: '2%'}}>
+              <img src={bronzepillar} height="341px" width="433px"/>
+              </div>
+          </div>
         </div>
-        </Col>
-</Row>
-        {/* </div> */}
-        
 
-        
+        </div>
+
           <div style={{borderTop: "4px solid #000 " }}></div>
          <br></br>
 {/*
@@ -96,7 +86,7 @@ function about(){
          <Video cardbox={cardbox} />
          <Video cardbox={cardbox} />
 */}
-        </>    
+        </>
     );
 }
 export default about;

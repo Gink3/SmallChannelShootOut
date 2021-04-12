@@ -1,12 +1,11 @@
 import "./App.scss";
-
+import  { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import {AuthContextProvider} from "./context/authcontext.js"
 import NavigationBar  from "./components/navbar";
 import Footer         from "./components/footer";
 import VideoTemplate  from "./components/video-template";
-
 import MakeAccount    from './pages/makeacc';
 import Home           from './pages/home';
 import Talk           from './pages/talk';
@@ -21,17 +20,21 @@ import Fashion        from './pages/voting/fashion';
 import News           from './pages/voting/news';
 
 function App() {
- 
   return (
-      <>
+      <AuthContextProvider>
+
         <Router>
 
           <NavigationBar/>
           
+
           <Switch>
+            
             <Route path="/signup" exact component={MakeAccount} />
-            <Route path="/home" exact component={Home}/>
+            <Route path="/" exact component={Home}/>
+            
             <Route path="/talk" exact component={Talk}/>
+      
             <Route path="/about" exact component={About}/>
             <Route path="/account" exact component={Account}/>
             <Route path="/bestchoice" exact component={BestChoice}/>
@@ -48,7 +51,8 @@ function App() {
           <Footer/>
 
         </Router>
-      </>
+
+        </AuthContextProvider>
   );
 }
 

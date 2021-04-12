@@ -7,25 +7,20 @@ import axios from 'axios';
 
 function CreateThread(){
     const[postThread, setThreadData] = useState({
-        userName: "",
         link: "", 
         title: "", 
-        body: "",
-        comments: "",
-        likes: 0,
-        dislikes: 0,
-        
+        body: "", 
     }); 
 
     const formSubmit= async (e) => {
         e.preventDefault(); 
-        axios.post('http://localhost:5000/talk', postThread).then (function(response){
+        axios.post('http://localhost:5000/signup', postThread).then (function(response){
         if(response.data.Message === "Successful"){
             window.location = '/';
-            alert(response.data.Message); //do something when create thread is successful
+            alert(response.data.Message); //do something when signup is successsfull (probably go to the login page)
         }
         else {
-            alert(response.data.Message); 
+            alert(response.data.Message); //showing the server message
         }
     });
 }

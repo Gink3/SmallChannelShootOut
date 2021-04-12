@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './pages.scss';
-import {BiStar} from "react-icons/bi";
-import {fetchDataFromYoutube} from "../components/api.js";
 
-export function Video(object) {  
+import thumbnail from "../images/thumbnail.png";
+import playButton from "../images/playbutton.png"
+import {BiStar} from "react-icons/bi";
+
+export function Video(object) {
   console.log(object.cardbox)
   const truncate = (str, n) => {
     return (str.length > n) ? str.substr(0, n-3) + '...' : str;
   }
-  
+
   var array = fetchDataFromYoutube(object.query);
   array.then(function(result){
 
@@ -18,21 +20,21 @@ export function Video(object) {
       for(var i = 0; i < videosPerPage; i++){
         var card = {
           image: result.items[i].snippet.thumbnails.medium.url,
-          title: result.items[i].snippet.title, 
-          subtitle: result.items[i].snippet.channelTitle, 
+          title: result.items[i].snippet.title,
+          subtitle: result.items[i].snippet.channelTitle,
           videoId: result.items[i].id.videoId,
           channelId: result.items[i].snippet.channelId,
-          star: 0 
+          star: 0
         }
-  
+
         object.cardbox.push(card);
       }
   })
-  
-  
+
+
   const [count, setCount] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   const likeVideo = (cards,i ) => {
     console.log(cards.star);
     (isVisible) ?(cards.star -= 1):(cards.star += 1);
@@ -43,10 +45,10 @@ export function Video(object) {
   /*
   function likeVideo(cards,i) {
   console.log(cards.star);
-    
+
   (isVisible) ? setCount(count - 1) : setCount(count + 1);
   setIsVisible(!isVisible);
-  }  
+  }
   */
 
   return (
@@ -57,7 +59,7 @@ export function Video(object) {
                 {console.log("change")}
                 <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
 
-                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} > 
+                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
                 <Card.Img variant="top" src={cards.image} />
 
                 {/*  Please do not delete */}
@@ -66,26 +68,43 @@ export function Video(object) {
                         src={cards.image}
                         allowFullScreen
                       ></iframe>
-                    </div>  
+                    </div>
                   */}
 
-                  <Card.Body>
-                    <Card.Title>{truncate((cards.title), 51)}</Card.Title>
+              <div style={{maxWidth: '20%'}} key={i}>
+
+                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >
+                <Card.Img variant="top" src={thumbnail} />
+               {/*  Please do not delete */}
+                {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
+                   <iframe className="embed-responsive-item"
+                 src={cards.image}
+              allowFullScreen
+            ></iframe>
+          </div>  */}
+                  <Card.ImgOverlay className="home-card-box-video-image">
+                    <Card.Title>{cards.title}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
+                  </Card.ImgOverlay>
+
+                  <Card.Body>
                     <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
                       <BiStar className="star" color="gold" size= "2em"  />
                     </Button>
 
-                    {cards.star}                  
+                    {cards.star}
                   </Card.Body>
 
                 </Card>
-                </a>
 
               </div>
 
             ))}
           </CardDeck>
+        </Carousel.Item>
+
+      ))}
+      </Carousel>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Breadcrumb} from 'react-bootstrap';
-import {Container} from "react-bootstrap";
+import { Breadcrumb } from 'react-bootstrap';
+import {   Container, Row, Col, CardDeck } from "react-bootstrap";
 import '../pages.scss';
 import {Video} from "../../components/video.js"
 

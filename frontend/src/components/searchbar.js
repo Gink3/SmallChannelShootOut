@@ -10,25 +10,24 @@ import {Video} from "../components/video.js";
 var searchQuery;
 
 class SearchBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-  
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-        searchQuery = this.state.value;
+    state = {
+        query: 'Search...'
+    };
+
+    /* When the user types in the search bar */
+    handleChange = (event) => {
+        this.setState({
+            query: event.target.value
+        });
+    };
+
+    /* When the user submits the query */
+    handleSubmit = event => {
         event.preventDefault();
         console.log(searchQuery);
     }
 
-  
+
     render() {
       return (
         <div className="container">
@@ -40,5 +39,5 @@ class SearchBar extends React.Component {
         </div>
       );
     }
-  }
-export default SearchBar; 
+}
+export default SearchBar;

@@ -3,9 +3,9 @@ import express from 'express'
 const router = express.Router(); 
 
 export const talkRouter = router.post('/talk',  async (req, res) => {
-   var {userName, link, title, body, comments, likes, dislikes} = req.body; 
+   var {link, title, body} = req.body; 
     try {
-        const newThread = new Thread({userName, link, title, body, comments, likes, dislikes}); 
+        const newThread = new Thread({link, title, body}); 
         newThread.save(); 
     }
     catch(error) {

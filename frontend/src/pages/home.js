@@ -1,18 +1,17 @@
 import React, {useState} from 'react';
-import {Container, Tab, Tabs, Row, Col} from "react-bootstrap";
-import thumbnail from "../images/thumbnail.png";
+import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './pages.scss';
 import '../components/base.scss'
 import SearchBar from "../components/searchbar";
 import { Navbar, Nav} from "react-bootstrap";
 
-import {Video} from "../components/video.js";
+import thumbnail from "../images/thumbnail.png";
 
 //<div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
 //{console.log("Hello!")}
 //</div>
 
-function Home(){
+function Home() {
   return(
     <>
     {/*
@@ -72,43 +71,43 @@ function Home(){
           </Col>
         </Row>
       </Tab.Container>
-      
+
     {/*
       <div>
         <input type="text" />
       </div>
     */}
       <Tabs>
-        
+
         <Tab className="" eventKey="trending" title="Trending">
           <Container fluid>
 
-          </Container>            
+          </Container>
         </Tab>
-     
+
         <Tab className="" eventKey="gaming" title="Gaming">
           <Container fluid>
           <Video cardbox={[]} query='gaming' />
 
-          </Container>            
+          </Container>
         </Tab>
 
         <Tab className="" eventKey="news" title="News">
           <Container fluid>
 
-          </Container>            
+          </Container>
         </Tab>
 
         <Tab className="" eventKey="music" title="Music">
           <Container fluid>
 
-          </Container>            
+          </Container>
         </Tab>
 
         <Tab className="" eventKey="movies" title="Movies">
           <Container fluid>
 
-          </Container>            
+          </Container>
         </Tab>
       </Tabs>
 
@@ -123,19 +122,16 @@ function Home(){
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-
-        {returnData('comedy')}
         <Video cardbox={cardbox} />
 
         <br/>
+
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/gaming">
             <h2>Gaming</h2>
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-
-        {returnData('gaming')}
         <Video cardbox={cardbox} />
 
         <br/>
@@ -147,8 +143,6 @@ function Home(){
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-
-        {returnData('fashion')}
         <Video cardbox={cardbox} />
 
         <br/>
@@ -159,25 +153,11 @@ function Home(){
           </a>
         </div>
         <div style={{borderTop: "4px solid #000 " }}></div>
-
-        {returnData('news')}
         <Video cardbox={cardbox}/>
 
         <br/>
 
-        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <a href="/voting/news">
-            <h2>Music</h2>
-          </a>
-        </div>
-        <div style={{borderTop: "4px solid #000 " }}></div>
-
-        {returnData('music')}
-        <Video cardbox={cardbox}/>
-
-        <br/>
-*/}
-
+      </Container>
     </>
   );
 }

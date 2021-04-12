@@ -2,15 +2,9 @@
 
 API STUFF:
 
-API KEY: AIzaSyCQCCOurp1uYGYyj_hJT1GYGrAlbPEGxBs
-
-Current Tutorial Video: https://www.youtube.com/watch?v=v9ew8ltRbWI&ab_channel=CODERSNEVERQUIT
-
 Content Details:                https://www.googleapis.com/youtube/v3/activities?part=snippet%2CcontentDetails&channelId=Channel_id&key=API
 All Threads Related to Channel: https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&allThreadsRelatedToChannelId=Channel_id&key=YOUR_API_KEY
 Comment Threads:                https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Video_id&key=YOUR_API_KEY
-
-https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=songs&type=video&key=[YOUR_API_KEY]
 
 */
 
@@ -35,4 +29,3 @@ export function fetchDataFromYoutube(topic){
     })
     .catch(err => console.log(err))
 }
-

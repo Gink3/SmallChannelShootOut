@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
+console.log("YES");
 
 function VideoTemplate() {
-  return (
-    <>
+    console.log("YES");
+    return (
+      <>
             <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} >               
                 <Card.Img variant="top" src={thumbnail} />
                {/*  Please do not delete */}
@@ -24,7 +26,7 @@ function VideoTemplate() {
 
 
                 </Card>      
-    </>
-  );
+                </>
+    );
 };
 export default VideoTemplate;
