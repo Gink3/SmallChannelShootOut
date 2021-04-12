@@ -4,22 +4,12 @@ import './pages.scss';
 import {BiStar} from "react-icons/bi";
 import {fetchDataFromYoutube} from "../components/api.js";
 
-const cardbox=[
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-];
-
 export function Video(object) {  
-  
-  console.log(object)
   console.log(object.cardbox)
   const truncate = (str, n) => {
     return (str.length > n) ? str.substr(0, n-3) + '...' : str;
   }
-  /*
+  
   var array = fetchDataFromYoutube(object.query);
   array.then(function(result){
 
@@ -38,7 +28,7 @@ export function Video(object) {
         object.cardbox.push(card);
       }
   })
-  */
+  
   
   const [count, setCount] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -61,10 +51,10 @@ export function Video(object) {
 
   return (
     <>
-          <CardDeck style={{margin: '10px'}}>
-            {/*object.*/}
-            {cardbox.map((cards, i) => (
+      <CardDeck style={{margin: '10px'}}>
+        {object.cardbox.map((cards, i) => (
               <div style={{maxWidth: '20%'}}>
+                {console.log("change")}
                 <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
 
                 <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} > 

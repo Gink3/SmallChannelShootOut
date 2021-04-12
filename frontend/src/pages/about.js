@@ -28,9 +28,9 @@ function about(){
         {/* <div class="row"> */}
         <Row className="justify-content-center">
         <Col md={6}>
-        <div class="silver">
+        <div className="silver">
          {/*silver*/}
-         <div class="column" style={{maxWidth: '640px', marginLeft: '17%', marginTop: '22.4%'}}>
+         <div className="column" style={{maxWidth: '640px', marginLeft: '17%', marginTop: '22.4%'}}>
               <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '13%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >               
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
@@ -46,9 +46,9 @@ function about(){
         </Col>
         <Col md={6}>
 
-        <div class="gold">
+        <div className="gold">
          {/*gold*/}
-         <div class="column" style={{maxWidth: '640px', marginLeft: '17%'}}>
+         <div className="column" style={{maxWidth: '640px', marginLeft: '17%'}}>
               <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '10%', minWidth: '190%', maxWidth: '190%',  flexGrow: 1}} >               
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
@@ -69,7 +69,7 @@ function about(){
  
         
          {/*bronze*/}
-         <div class="column" style={{maxWidth: '640px', marginLeft: '22%', marginTop: '6%'}}>
+         <div className="column" style={{maxWidth: '640px', marginLeft: '22%', marginTop: '6%'}}>
               <Card className="home-card-box" style={{marginTop: '10px', marginLeft: '8%', minWidth: '190%', maxWidth: '190%', flexGrow: 1}} >               
                <Card.Img variant="top" src={thumbnail} />
                 <Card.ImgOverlay>
@@ -90,12 +90,12 @@ function about(){
         
           <div style={{borderTop: "4px solid #000 " }}></div>
          <br></br>
-
+{/*
          <Video cardbox={cardbox} />
          <Video cardbox={cardbox} />
          <Video cardbox={cardbox} />
          <Video cardbox={cardbox} />
-
+*/}
         </>    
     );
 }

@@ -14,7 +14,7 @@ https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=son
 
 */
 
-const KEY = 'AIzaSyAqikspDfGLsWFqNq60qSsZyjtD1rUK5GQ';
+const KEY = 'AIzaSyA3-DS4lNWkaw-6K3WAvY2q4QFptnTdUL0';
 
 export function fetchDataFromYoutube(topic){
     var baseURL = 'https://www.googleapis.com/youtube/v3/';
@@ -27,6 +27,7 @@ export function fetchDataFromYoutube(topic){
     var regionCode = 'US';
     var chart = 'mostPopular'
 
+    console.log("API Used!")
     return fetch(`${baseURL}search?part=${part}&maxResults=${maxResults}&q=${topicId}&type=${type}&regionCode=${regionCode}&key=${key}`)
     .then(res => res.json())
     .then(json => {

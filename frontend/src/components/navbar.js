@@ -79,13 +79,7 @@ function Topbar() {
                 </span>
               </OverlayTrigger>
               &nbsp;&nbsp;&nbsp;
-          </NavLink>
-
-            
-
-            {/*Search Bar*/}
-            <SearchBar/>
-            
+          </NavLink>                 
           </Nav>
 
 

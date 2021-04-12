@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import {Container, Tab, Tabs, Row, Col} from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
 import './pages.scss';
+import '../components/base.scss'
+import SearchBar from "../components/searchbar";
+import { Navbar, Nav} from "react-bootstrap";
 
 import {Video} from "../components/video.js";
-
-//var cardbox = [];
 
 //<div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
 //{console.log("Hello!")}
@@ -14,39 +15,101 @@ import {Video} from "../components/video.js";
 function Home(){
   return(
     <>
+    {/*
+      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+        <Row>
+          <Col sm={1}>
+            <Nav variant="pills" className="flex-column">
+              <Nav.Item>
+                <Nav.Link eventKey="first">Trending</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Gaming</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="third">Music</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="fourth">News</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="fifth">Movies</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="sixth">Science and Technology</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="seventh">Fashion</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={11}>
+            <Tab.Content>
+
+              <Tab.Pane eventKey="first">
+                <Video cardbox={[]} query='trending' />
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="second">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="third">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="fourth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="fifth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="sixth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="seventh">
+              </Tab.Pane>
+
+            </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
+      
+    {/*
+      <div>
+        <input type="text" />
+      </div>
+    */}
       <Tabs>
+        
         <Tab className="" eventKey="trending" title="Trending">
           <Container fluid>
-            <Video cardbox={[]} query='trending' />
 
           </Container>            
         </Tab>
      
         <Tab className="" eventKey="gaming" title="Gaming">
           <Container fluid>
-            <Video cardbox={[]} query='gaming' />
+          <Video cardbox={[]} query='gaming' />
+
           </Container>            
         </Tab>
 
-   {/*
         <Tab className="" eventKey="news" title="News">
           <Container fluid>
-            <Video query='news' />
+
           </Container>            
         </Tab>
 
         <Tab className="" eventKey="music" title="Music">
           <Container fluid>
-            <Video query='music' />
+
           </Container>            
         </Tab>
 
         <Tab className="" eventKey="movies" title="Movies">
           <Container fluid>
-            <Video query='movies' />
+
           </Container>            
         </Tab>
-        */}
       </Tabs>
 
       <br/>
