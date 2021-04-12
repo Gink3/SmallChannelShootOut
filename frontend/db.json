@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "title": "Video Meaning",
+      "user": "John",
+      "timestamp": "2 sec ago",
+      "body": "Video is an electronic medium for the recording, copying, playback, broadcasting, and display of moving visual media. Video was first developed for mechanical television systems, which were quickly replaced by cathode ray tube systems which were later replaced by flat panel displays of several types. Wikipedia",
+      "likes": "62",
+      "dislike": "32",
+      "postId": 1
+    },
+    {
+      "title": "Comments ",
+      "user": "User12",
+      "timestamp": "20 sec ago",
+      "body": "The comments section is a feature of online blogs, news websites, and other websites in which the publishers invite the audience to comment on the published content. This is a continuation of the older practice of publishing letters to the editor.",
+      "likes": "5.4k",
+      "dislike": "32",
+      "postId": 2
+    }
+  ],
+  "comments": [
+    {
+      "comment": "First comment",
+      "postId": 1,
+      "id": 1
+    },
+    {
+      "comment": "Nice video",
+      "postId": 1,
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
