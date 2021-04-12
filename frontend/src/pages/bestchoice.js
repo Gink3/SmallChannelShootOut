@@ -20,7 +20,6 @@ function bestChoice(){
             </a>
           </div>
           <div style={{borderTop: "4px solid #000 " }}></div>
-          <Video cardbox={cardbox} />
   
           <br/>  
 
@@ -30,9 +29,6 @@ function bestChoice(){
             </a>
           </div>
           <div style={{borderTop: "4px solid #000 " }}></div>
-          <Video cardbox={cardbox} />
-          <Video cardbox={cardbox} />
-          <Video cardbox={cardbox} />
 
           <br/>  
         </Container>

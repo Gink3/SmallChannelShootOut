@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import AuthContext from "../context/authcontext.js"
 import {Button, Form, Row, Col, Container} from "react-bootstrap";
 import "../style/signup.scss";
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function MakeAccount(){
-
+    const history = useHistory(); 
+    const {loggedIn} = useContext(AuthContext);
     const[postUser, setUserData] = useState({
         firstName: "", 
         lastName: "", 
@@ -19,13 +22,15 @@ function MakeAccount(){
       axios.post('http://localhost:5000/signup', postUser, {
           withCredentials:true
         }).then(function(res){
-            alert(res.data.store);
+            history.push("/")
+            history.go(0);
         }); 
       
     }
 
         return (
-            <>
+                 <>
+                 {loggedIn==false && (
                 <Container fluid>
                     <div className="d-flex justify-content-center header  ">
                         <h2>  Create your ShootOut Account</h2>
@@ -84,6 +89,7 @@ function MakeAccount(){
                         </Col>
                     </Row>
                 </Container>
+                )}
             </>
         );
 }

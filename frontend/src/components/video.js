@@ -5,15 +5,37 @@ import './pages.scss';
 import thumbnail from "../images/thumbnail.png";
 import playButton from "../images/playbutton.png"
 import {BiStar} from "react-icons/bi";
+import {fetchDataFromYoutube} from "./api.js";
 
-import Carousel from 'react-bootstrap/Carousel'
+export function Video(object) {
+  console.log(object.cardbox)
+  const truncate = (str, n) => {
+    return (str.length > n) ? str.substr(0, n-3) + '...' : str;
+  }
 
-const turns = ["1", "2", "3"];
+  var array = fetchDataFromYoutube(object.query);
+  array.then(function(result){
 
-export function Video(props) {
+      var videosPerPage = 50;
+
+      for(var i = 0; i < videosPerPage; i++){
+        var card = {
+          image: result.items[i].snippet.thumbnails.medium.url,
+          title: result.items[i].snippet.title,
+          subtitle: result.items[i].snippet.channelTitle,
+          videoId: result.items[i].id.videoId,
+          channelId: result.items[i].snippet.channelId,
+          star: 0
+        }
+
+        object.cardbox.push(card);
+      }
+  })
+
+
   const [count, setCount] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
-  
+
   const likeVideo = (cards,i ) => {
     console.log(cards.star);
     (isVisible) ?(cards.star -= 1):(cards.star += 1);
@@ -24,57 +46,48 @@ export function Video(props) {
   /*
   function likeVideo(cards,i) {
   console.log(cards.star);
-    
+
   (isVisible) ? setCount(count - 1) : setCount(count + 1);
   setIsVisible(!isVisible);
-  }  
+  }
   */
 
   return (
     <>
-      <Carousel controls={false} interval={null}>
+      <CardDeck style={{margin: '10px'}}>
+        {object.cardbox.map((cards, i) => (
+          <div style={{maxWidth: '20%'}}>
 
-      {/* loops "turns" number of times. the number is equal to how many elements are within 'turns' */}
-      {turns.map((turn) => (
+            <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
+              <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
+                <Card.Img variant="top" src={cards.image} />
 
-        <Carousel.Item key={turn}>
-          <CardDeck style={{margin: '10px'}}>
-            {props.cardbox.map((cards, i) => (
+                {/*  Please do not delete */}
+                {/*  <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
+                  <iframe className="embed-responsive-item"
+                    src={cards.image}
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                */}
 
-              <div style={{maxWidth: '20%'}} key={i}>
 
-                <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem',  flexGrow: 1}} > 
-                <Card.Img variant="top" src={thumbnail} />
-               {/*  Please do not delete */}
-                {/* <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                   <iframe className="embed-responsive-item"
-                 src={cards.image}
-              allowFullScreen
-            ></iframe>
-          </div>  */}
-                  <Card.ImgOverlay className="home-card-box-video-image">
-                    <Card.Title>{cards.title}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
-                  </Card.ImgOverlay>
 
-                  <Card.Body>
-                    <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
-                      <BiStar className="star" color="gold" size= "2em"  />
-                    </Button>
+                <Card.Body>
+                  <Card.Title>{cards.title}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
+                  
+                  <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
+                    <BiStar className="star" color="gold" size= "2em"  />
+                  </Button>
 
-                    {cards.star}                  
-                  </Card.Body>
-
-                </Card>
-
-              </div>
-
-            ))}
-          </CardDeck>
-        </Carousel.Item>
-
-      ))}
-      </Carousel>
+                  {cards.star}
+                </Card.Body>
+              </Card>
+            </a>
+          </div>
+        ))}
+      </CardDeck>
     </>
   );
 };

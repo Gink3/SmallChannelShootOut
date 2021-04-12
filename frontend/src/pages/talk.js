@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
+import AuthContext from "../context/authcontext.js"
 import { Button, Card,  Container, Row, Col, Form, Toast } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
@@ -15,16 +16,16 @@ import {useParams} from "react-router-dom";
 
 
 const threadbox=[
-    {title:"Thread 1", user:"User01", timestamp:"2 sec ago", likes:"62", dislike:"32"},
-    {title:"Thread 2", user:"User12", timestamp:"20 sec ago", likes:"5.4k", dislike:"32"},
-    {title:"Thread 3", user:"User23", timestamp:"1 min ago", likes:"69k", dislike:"32"},
-    {title:"Thread 4", user:"User34", timestamp:"2 min ago", likes:"0", dislike:"32"},
-    {title:"Thread 5", user:"User45", timestamp:"2 min ago", likes:"777", dislike:"32"},
-    {title:"Thread 6", user:"User56", timestamp:"3 min ago", likes:"15k", dislike:"32"},
-    {title:"Thread 7", user:"User67", timestamp:"4 min ago", likes:"420", dislike:"32"},
-    {title:"Thread 8", user:"User78", timestamp:"10 min ago", likes:"15k", dislike:"32"},
-    {title:"Thread 9", user:"User89", timestamp:"45 min ago", likes:"10k", dislike:"32"},
-    {title:"Thread 10", user:"User90", timestamp:"1 hr ago", likes:"3", dislike:"32"},
+    {title:"Thread 1", user:"User01", timestamp:"just now", likes:"62"},
+    {title:"Thread 2", user:"User12", timestamp:"just now", likes:"5.4k"},
+    {title:"Thread 3", user:"User23", timestamp:"just now", likes:"69k"},
+    {title:"Thread 4", user:"User34", timestamp:"2 min ago", likes:"0"},
+    {title:"Thread 5", user:"User45", timestamp:"2 min ago", likes:"777"},
+    {title:"Thread 6", user:"User56", timestamp:"3 min ago", likes:"15k"},
+    {title:"Thread 7", user:"User67", timestamp:"4 min ago", likes:"420"},
+    {title:"Thread 8", user:"User78", timestamp:"10 min ago", likes:"15k"},
+    {title:"Thread 9", user:"User89", timestamp:"45 min ago", likes:"10k"},
+    {title:"Thread 10", user:"User90", timestamp:"1 hr ago", likes:"3"},
 ];
 
  /* function Thread(props) {
@@ -97,6 +98,7 @@ const threadbox=[
           </Card.Body>
         </Card>
       ))}
+
     </>
   );
 } */
@@ -106,6 +108,7 @@ function Talk() {
   
   return (
     <>
+
       <Container fluid>
         <br />
 
@@ -139,6 +142,7 @@ function Talk() {
           </Col>
         </Row>
       </Container>
+   
     </>
   );
 }

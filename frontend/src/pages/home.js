@@ -1,33 +1,121 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardDeck,Tabs,Tab } from "react-bootstrap";
 import './pages.scss';
+import '../components/base.scss'
+import SearchBar from "../components/searchbar";
+import {Video} from "../components/video";
+
+import { Navbar, Nav} from "react-bootstrap";
 
 import thumbnail from "../images/thumbnail.png";
 
-import {BiStar} from "react-icons/bi";
-import {Video} from "../components/video.js";
-
-const cardbox=[
-  {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-];
+//<div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
+//{console.log("Hello!")}
+//</div>
 
 function Home() {
   return(
     <>
-      <Container fluid>
-        <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
-          <a href="/bestchoice" style={{margin: '0px'}}>
-            <h2>Trending</h2>
-          </a>
-        </div>
-        <div style={{borderTop: "4px solid #000 " }}></div>
-        <Video cardbox={cardbox} />
+    {/*
+      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+        <Row>
+          <Col sm={1}>
+            <Nav variant="pills" className="flex-column">
+              <Nav.Item>
+                <Nav.Link eventKey="first">Trending</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="second">Gaming</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="third">Music</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="fourth">News</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="fifth">Movies</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="sixth">Science and Technology</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link eventKey="seventh">Fashion</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Col>
+          <Col sm={11}>
+            <Tab.Content>
 
-        <br/>
+              <Tab.Pane eventKey="first">
+                <Video cardbox={[]} query='trending' />
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="second">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="third">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="fourth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="fifth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="sixth">
+              </Tab.Pane>
+
+              <Tab.Pane eventKey="seventh">
+              </Tab.Pane>
+
+            </Tab.Content>
+          </Col>
+        </Row>
+      </Tab.Container>
+
+    {/*
+      <div>
+        <input type="text" />
+      </div>
+    */}
+      <Tabs>
+
+        <Tab className="" eventKey="trending" title="Trending">
+          <Container fluid>
+            {/*<Video cardbox={[]} query='trending' />*/}
+          </Container>
+        </Tab>
+
+        <Tab className="" eventKey="gaming" title="Gaming">
+          <Container fluid>
+            {/*<Video cardbox={[]} query='gaming' />*/}
+          </Container>
+        </Tab>
+
+        <Tab className="" eventKey="news" title="News">
+          <Container fluid>
+            {/*<Video cardbox={[]} query='news' />*/}
+          </Container>
+        </Tab>
+
+        <Tab className="" eventKey="music" title="Music">
+          <Container fluid>
+            {/*<Video cardbox={[]} query='music' />*/}
+          </Container>
+        </Tab>
+
+        <Tab className="" eventKey="movies" title="Movies">
+          <Container fluid>
+            {/*<Video cardbox={[]} query='movies' />*/}
+          </Container>
+        </Tab>
+      </Tabs>
+
+      <br/>
+
+
+{/*
 
         <div className="d-flex justify-content-left header" style={{padding: '0px', marginTop: '10px'}}>
           <a href="/voting/sports">
@@ -69,15 +157,17 @@ function Home() {
         <Video cardbox={cardbox}/>
 
         <br/>
-
       </Container>
+              */}
+
     </>
   );
 }
 export default Home;
 ///////////////////////////////Do not delete :)
 
-/*<div className="homebox">
+/*
+<div className="homebox">
             <Intro videoboxes={videoboxObj} />
 
             </div>
@@ -100,4 +190,5 @@ function Intro(props) {
       </ul>
     </section>
   );
-} */
+} 
+*/

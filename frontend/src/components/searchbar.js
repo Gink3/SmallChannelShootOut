@@ -1,5 +1,13 @@
 import React from "react";
 import "./base.scss";
+import {fetchDataFromYoutube} from "../components/api.js";
+import { Link } from 'react-router-dom'
+import {Redirect} from 'react-router-dom';
+import { withRouter } from 'react-router';
+import {Home} from "../pages/home.js"
+import {Video} from "../components/video.js";
+
+var searchQuery;
 
 class SearchBar extends React.Component {
     state = {
@@ -16,19 +24,20 @@ class SearchBar extends React.Component {
     /* When the user submits the query */
     handleSubmit = event => {
         event.preventDefault();
-        this.props.handleFormSubmit(this.state.query);
+        console.log(searchQuery);
     }
 
-    render(){
-        return(
-            <div className="container nav">
-                <form onSubmit={this.handleSubmit}>
-                    <div className="search">
-                        <input onChange={this.handleChange} name='video-search' type="text" value={this.state.term}/>
-                    </div>
-                </form>
-            </div>
-        )
+
+    render() {
+      return (
+        <div className="container">
+            <form onSubmit={this.handleSubmit}>
+                <div className="search">
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />
+                </div>
+            </form>
+        </div>
+      );
     }
 }
-export default SearchBar; 
+export default SearchBar;
