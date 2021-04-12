@@ -24,6 +24,7 @@ function App() {
  
   return (
       <>
+     
         
         <Router>
 
@@ -50,6 +51,7 @@ function App() {
           <Footer/>
 
         </Router>
+      
       </>
   );
 }

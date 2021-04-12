@@ -5,7 +5,14 @@ import {AiOutlinePlus} from "react-icons/ai";
 import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
 import toast from "../images/toast.png";
 import AddComment from "../components/comment/addcomment";
+import ShowComment from "../components/comment/showcomment";
  /* import AdSense from 'react-adsense';  */
+import { useQuery } from 'react-query';
+import { Get } from '../components/utilities';
+import Thread from './thread';
+import {useParams} from "react-router-dom";
+
+
 
 const threadbox=[
     {title:"Thread 1", user:"User01", timestamp:"2 sec ago", likes:"62", dislike:"32"},
@@ -20,14 +27,19 @@ const threadbox=[
     {title:"Thread 10", user:"User90", timestamp:"1 hr ago", likes:"3", dislike:"32"},
 ];
 
-function Thread(props) {
+ /* function Thread(props) {
+  const [commentShow, setcommentShow] = useState(false); 
+  const {isLoading, error, data} = useQuery("postList",() =>{
+    return Get('http://localhost:3009/posts');
+});
+ console.log("data", data);
   
   return (
-    <>
-      {props.threadbox.map((thread, i) => (
+    <> 
+      {props.threadbox.map((thread, postId) => (
         <Card
           className="backside"
-          key={i}
+          key={postId}
           style={{ minWidth: "18rem", flexGrow: 1 }}
         >
           <Card.Body>
@@ -53,7 +65,6 @@ function Thread(props) {
             ></div>
             <br />
             <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-            
             <p>
               sdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -69,61 +80,66 @@ function Thread(props) {
             &nbsp;
             {thread.likes}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {/*   <Button variant=""> */}
+           
             <FiThumbsDown className="dislike-btn" size="1.5em" color="red" />
             &nbsp;
             {thread.dislike}
-            {/*   </Button> */}
+           
             &nbsp;&nbsp;&nbsp;
-            <Button className="btn-comment" variant="">
-             Comments
+           <Button
+              className="btn-comment"
+              variant=""
+            >
+              Comments
             </Button>
-   <AddComment/>
-           
-           
+            <AddComment />
+            <ShowComment />
           </Card.Body>
         </Card>
       ))}
     </>
   );
-}
+} */
 
-function talk(){
-  return(
+function Talk() {
+  console.log(useParams());
+  
+  return (
     <>
       <Container fluid>
-        <br/>
+        <br />
 
-        <Button className="plus" variant="" href="/createthread"  >
-          <AiOutlinePlus size="3em"/>Create a thread!
+        <Button className="plus" variant="" href="/createthread">
+          <AiOutlinePlus size="3em" />
+          Create a thread!
         </Button>
 
-        <br/><br/>
+        <br />
+        <br />
 
-        <div style={{borderTop: "4px solid #000 " }}></div>
-        <br/>
+        <div style={{ borderTop: "4px solid #000 " }}></div>
+        <br />
 
-        
-<Row className="justify-content-center ml-md-2 ">
-  <Col md={7}>
-  <div className="">
-          <Thread threadbox={threadbox} />
-        </div>
-  </Col>
-  <Col md={3}>
-  Ads:
-  {/* <Adsense
+        <Row className="justify-content-center ml-md-2 ">
+          <Col md={7}>
+            <div className="">
+              <Thread />
+              {/*  <Thread/> */}
+            </div>
+          </Col>
+          <Col md={3}>
+            Ads:
+            {/* <Adsense
   client="ca-pub-7640562161899788"
   slot="7259870550"
 /> */}
-  {/* <br/>
+            {/* <br/>
   sdLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-   */}</Col>
-</Row>
-        
-
+   */}
+          </Col>
+        </Row>
       </Container>
     </>
   );
 }
-export default talk;
+export default Talk;
