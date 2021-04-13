@@ -3,12 +3,12 @@
   border-radius: 9px;
   min-width: 100%;
   margin: 5px;
-  border: 2px solid lighten(crimson, 30%);
+  border: 1px solid lighten(crimson, 30%);
   transition: box-shadow 2s;
   &:hover {
     transition: box-shadow 500ms;
     box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.3);
-    border: 2px solid lighten(crimson, 10%);
+    border: 1px solid lighten(crimson, 10%);
   }
 }
 
@@ -19,15 +19,16 @@
 
 .plus {
   //plus button
+  // width: 100%;
   color: white;
-  background-color: lighten(crimson, 20%);
-  border-radius: 33px;
+  background-color: darken(#ffffff, 15%); /* lighten(crimson, 20%); */
+  border-radius: 13px;
   &:hover {
     color: darken(white, 20%);
   }
-  &:active {
+  /*  &:active {
     transform: scale(1.2);
-  }
+  } */
 }
 
 .toast-container {
@@ -53,7 +54,7 @@
   margin-top: 5px;
 }
 
-.btn-comment {
+/* .btn-comment {
   border: none;
   transition: box-shadow 1s;
 
@@ -66,6 +67,35 @@
   &:active {
     background-color: darken(white, 5%);
   }
+  &:focus {
+    box-shadow: none;
+  }
+} */
+.create-thread {
+  width: 100%;
+  outline: none;
+  margin-top: 9px;
+  margin-left: 2px;
+  margin-right: 3px;
+  padding: 10px;
+  border-radius: 7px;
+  display: inline-block;
+  height: 2%;
+  //border: 1px solid crimson;
+  background-color: darken(white, 2%);
+  box-sizing: border-box;
+  &:active {
+    border: 1px solid crimson;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+    border: 1px solid crimson;
+    background-color: white;
+  }
+}
+.plusfix {
   &:focus {
     box-shadow: none;
   }

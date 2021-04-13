@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import AuthContext from "../context/authcontext.js"
-import { Button, Container, Row, Col, Form, Toast } from "react-bootstrap";
+import { Button, Container, Row, Col, Form, Toast, InputGroup } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
 /* import AdSense from 'react-adsense';  */
@@ -16,23 +16,36 @@ function Talk() {
 
       <Container fluid>
         <br />
-
-        <Button className="plus" variant="" href="/createthread">
-          <AiOutlinePlus size="3em" />
-          Create a thread!
-        </Button>
-
-        <br />
-        <br />
-
-        <div style={{ borderTop: "4px solid #000 " }}></div>
-        <br />
-
+        
         <Row className="justify-content-center ml-md-2 ">
           <Col md={7}>
+            
+          <Button variant="" style={{width: '100%'}} href="/createthread" className="plusfix"> 
+          <Form.Row >
+                    <Form.Group as={Col} className="plus" href="/createthread">
+                        <InputGroup  >
+                            <InputGroup.Prepend >
+                                <InputGroup.Text  className="plus">
+                                <AiOutlinePlus size="3em" />
+                                </InputGroup.Text>
+                            </InputGroup.Prepend>
+                            <Form.Control
+                              readOnly
+                                type="text"
+                                className="create-thread"
+                                placeholder="Create a thread . ."
+                                href="/createthread"
+                            />
+                        </InputGroup>
+                    </Form.Group>
+                </Form.Row>
+
+</Button>
+
+        <br></br>
             <div className="">
               <Thread />
-              {/*  <Thread/> */}
+              
             </div>
           </Col>
           <Col md={3}>

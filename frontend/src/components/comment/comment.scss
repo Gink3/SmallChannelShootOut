@@ -1,0 +1,19 @@
+.btn-showcomments {
+  border: none;
+  transition: box-shadow 1s;
+
+  &:hover {
+    //color: azure;
+    background-color: darken(white, 10%);
+    transition: box-shadow 700ms;
+    box-shadow: 0 0 25px 0 darken(white, 10%), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+
+    text-decoration: none;
+  }
+  &:active {
+    background-color: darken(white, 5%);
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
