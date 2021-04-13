@@ -6,7 +6,7 @@ Content Details:                https://www.googleapis.com/youtube/v3/activities
 All Threads Related to Channel: https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&allThreadsRelatedToChannelId=Channel_id&key=YOUR_API_KEY
 Comment Threads:                https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Video_id&key=YOUR_API_KEY
 
-*/
+
 
 const KEY = 'AIzaSyA3-DS4lNWkaw-6K3WAvY2q4QFptnTdUL0';
 
@@ -29,3 +29,20 @@ export function fetchDataFromYoutube(topic){
     })
     .catch(err => console.log(err))
 }
+*/
+
+import axios from 'axios';
+const KEY = 'AIzaSyA3-DS4lNWkaw-6K3WAvY2q4QFptnTdUL0'; // mention your youtube API key here
+
+console.log("API Used!")
+
+export default axios.create({
+    baseURL: 'https://www.googleapis.com/youtube/v3/',
+    params: {
+        part: 'snippet',
+        maxResults: 5,
+        type: 'video',
+        regionCode: 'US',
+        key: KEY
+    }
+})
