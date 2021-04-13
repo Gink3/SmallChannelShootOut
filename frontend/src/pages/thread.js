@@ -71,14 +71,17 @@ if(error){
               &nbsp;&nbsp;&nbsp;
               
              
-             <Button
+             {/* <Button
                 className="btn-comment"
                 variant=""
+                onClick={() => {
+                 (CommentShow)?setCommentShow(false): setCommentShow(true);
+                }}
               >
                 Comments
-              </Button>
-              <AddComment postId={thread.postId}/>
-              <ShowComment postId={thread.postId}/>
+              </Button> */}
+            <AddComment postId={thread.postId}/>
+          <ShowComment postId={thread.postId}/>
             </Card.Body>
           </Card> 
        

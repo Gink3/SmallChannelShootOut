@@ -38,6 +38,7 @@ function AddComment({ postId }) {
           <Form onSubmit={onsubmitHandle}>
             <Form.Group>
               <Form.Control
+                required
                 as="textarea"
                 rows={1}
                 style={{ borderRadius: "19px" }}
