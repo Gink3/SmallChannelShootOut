@@ -27,19 +27,19 @@ $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
   /* &:first-child:hover {
     margin: 0 30px;
   } */
+}
 
-  .star {
-    border: none;
-    //  background-color: $list-bg;
-    .star-icon {
-      background-color: $list-bg;
-    }
-    &:hover {
-      transform: scale(1.2);
-    }
-    &:active {
-      transform: scale(1.2) rotate(50deg);
-    }
+.star {
+  border: none;
+  //  background-color: $list-bg;
+  .star-icon {
+    background-color: $list-bg;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+  &:active {
+    transform: scale(1.2) rotate(50deg);
   }
 }
 
