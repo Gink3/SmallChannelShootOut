@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './comment.scss'
 import { useQuery } from 'react-query';
 import { Get } from '../utilities';
 import Accordion from 'react-bootstrap/Accordion'
 import { Button, Card } from "react-bootstrap";
-
+import Spinner from 'react-bootstrap/Spinner'
 
 const ShowComment=({postId})=>{
 var count=0;
@@ -14,7 +14,7 @@ var count=0;
     });
 
     if (isLoading){
-        return <div>Loading...</div>;
+        return <div><Spinner animation="grow" /></div>;
     }
     if(error){
         return <div>Something went wrong :(</div>

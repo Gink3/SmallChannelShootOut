@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, Form, Toast } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, Form, Toast, Spinner } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
 import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
@@ -16,7 +16,7 @@ function Thread(){
   });
    
    if (isLoading){
-    return <div>Loading...</div>;
+    return <div ><Spinner  style={{marginTop:'30%', marginLeft:'50%'}} animation="border" /></div>;
 }
 if(error){
     return <div>Something went wrong :(</div>
