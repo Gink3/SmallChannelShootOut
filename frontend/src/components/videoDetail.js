@@ -13,7 +13,6 @@ const VideoDetail = ({ video }) => {
                 vote on your favorite videos each week and see the results of that vote at our Best Choice page.
             </h5>
         </div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <h2>See your videos below.</h2>
 
     </div>;
