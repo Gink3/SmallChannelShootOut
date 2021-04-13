@@ -5,7 +5,6 @@ import './pages.scss';
 import thumbnail from "../images/thumbnail.png";
 import playButton from "../images/playbutton.png"
 import {BiStar} from "react-icons/bi";
-import {fetchDataFromYoutube} from "./api.js";
 
 export function Video(object) {
   console.log(object.cardbox)
@@ -13,6 +12,7 @@ export function Video(object) {
     return (str.length > n) ? str.substr(0, n-3) + '...' : str;
   }
 
+  /*
   var array = fetchDataFromYoutube(object.query);
   array.then(function(result){
 
@@ -31,6 +31,7 @@ export function Video(object) {
         object.cardbox.push(card);
       }
   })
+  */
 
 
   const [count, setCount] = useState([]);
