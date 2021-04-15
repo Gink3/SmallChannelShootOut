@@ -1,5 +1,4 @@
 .landingPage{
-    height: 731px;
     padding: 30px;
     text-align: center;
 }
@@ -23,6 +22,7 @@
 .jumbotron{
     margin-left: 19%;
     background-color: transparent;
+    padding-top: 30px;
 }
 
 .jumbotron-video{
@@ -44,6 +44,16 @@
     border: black;
     border-radius: 4px;
     float: left;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.videoItemTitle{
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 .videoItemContent{

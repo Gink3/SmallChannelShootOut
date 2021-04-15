@@ -23,14 +23,23 @@ const VideoItem = ({video , handleVideoSelect}) => {
 
     return (
         <>
-            <div className='videoItem' onClick={ () => handleVideoSelect(video)}>
-                <img className='videoItemImage' src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
+            <div className='videoItem'>
+                <img className='videoItemImage' onClick={ () => handleVideoSelect(video)} src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
                 <div className='videoItemContent'>
-                    <h4>{video.snippet.title}</h4>
-                    <div className='videoItemCreator'>{video.snippet.channelTitle}</div>
+                    <div onClick={ () => handleVideoSelect(video)} className='videoItemTitle'>
+                        <h4>
+                            {video.snippet.title}
+                        </h4>
+                    </div>
+
+                    <div className='videoItemCreator'>
+                        <h5>
+                            {video.snippet.channelTitle}
+                        </h5>
+                    </div>
 
                     {/* YouTube Video ID */}
-                    <h4>Video ID: {video.id.videoId}</h4>
+                    <p>Video ID: {video.id.videoId}</p>
 
                     {/* Star Button */}
                     <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>
