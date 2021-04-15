@@ -1,69 +1,106 @@
 {
   "posts": [
     {
-      "title": "Video Meaning",
+      "link": "No links",
+      "title": "Software Engineering",
+      "body": "Okay",
+      "likes": 0,
+      "dislike": 0,
       "user": "John",
       "timestamp": "2 sec ago",
-      "body": "Video is an electronic medium for the recording, copying, playback, broadcasting, and display of moving visual media. Video was first developed for mechanical television systems, which were quickly replaced by cathode ray tube systems which were later replaced by flat panel displays of several types. Wikipedia",
-      "likes": "62",
-      "dislike": "32",
-      "postId": 1
+      "id": 1
     },
     {
-      "title": "Comments ",
-      "user": "User12",
-      "timestamp": "20 sec ago",
-      "body": "The comments section is a feature of online blogs, news websites, and other websites in which the publishers invite the audience to comment on the published content. This is a continuation of the older practice of publishing letters to the editor.",
-      "likes": "5.4k",
-      "dislike": "32",
-      "postId": 2
+      "link": "No links",
+      "title": "try",
+      "body": "yes",
+      "likes": 0,
+      "dislike": 0,
+      "user": "John",
+      "timestamp": "2 sec ago",
+      "id": 2
+    },
+    {
+      "link": "",
+      "title": "Third post",
+      "body": "This is a a testing comment",
+      "likes": 0,
+      "dislike": 0,
+      "user": "John",
+      "timestamp": "2 sec ago",
+      "id": 3
+    },
+    {
+      "link": "No links",
+      "title": "Interesting vote",
+      "body": "yes",
+      "likes": 0,
+      "dislike": 0,
+      "user": "John",
+      "timestamp": "2 sec ago",
+      "id": 4
+    },
+    {
+      "link": "No links",
+      "title": "eeeeeeeeeee",
+      "body": "eeeeeeeeeeeeeeeee",
+      "likes": 0,
+      "dislike": 0,
+      "user": "John",
+      "timestamp": "2 sec ago",
+      "id": 5
     }
   ],
   "comments": [
     {
-      "comment": "gg",
-      "postId": 1,
+      "comment": "dsdsd",
+      "postId": 4,
       "id": 1
     },
     {
-      "comment": "this is it",
-      "postId": 1,
+      "comment": "csdfd",
+      "postId": 2,
       "id": 2
     },
     {
-      "comment": "sdkjsd",
+      "comment": "mn",
       "postId": 2,
       "id": 3
     },
     {
-      "comment": "last",
-      "postId": 2,
+      "comment": "bnnbn",
+      "postId": 1,
       "id": 4
     },
     {
-      "comment": "dsd",
-      "postId": 2,
+      "comment": "first",
+      "postId": 1,
       "id": 5
     },
     {
-      "comment": "dsdsd",
-      "postId": 1,
+      "comment": "second",
+      "postId": 2,
       "id": 6
     },
     {
-      "comment": "I agree ",
-      "postId": 1,
+      "comment": "third",
+      "postId": 3,
       "id": 7
     },
     {
-      "comment": "jjbjbh",
-      "postId": 1,
+      "comment": "fourth",
+      "postId": 4,
       "id": 8
     },
     {
-      "comment": "cxcx",
+      "comment": "fdfdf",
       "postId": 1,
       "id": 9
+    },
+    {
+      "comment": "😀",
+      "postId": 1,
+      "id": 10
     }
   ],
   "profile": {
