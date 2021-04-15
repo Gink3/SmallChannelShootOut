@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
-import { Button, Tabs, Tab, Card,  Container, Row, Col, Form } from "react-bootstrap";
+import { Button, Tabs, Tab, Container,  Form, Modal } from "react-bootstrap";
 import "../style/createthread.scss";
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 
-
-function CreateThread(){
+ function CreateThread(props){
+     /*
     const[postThread, setThreadData] = useState({
         link: "", 
         title: "", 
@@ -23,18 +24,51 @@ function CreateThread(){
             alert(response.data.Message); //showing the server message
         }
     });
+} */
+const[postThread, setThreadData] = useState({
+    link: "ghhg", 
+    title: "", 
+    body: "", 
+    likes:0,
+    dislike: 0,
+    user:"John",
+    timestamp: "2 sec ago",
+}); 
+const {push} = useHistory();
+const formSubmit= (e) => {
+    e.preventDefault(); 
+    axios.post('http://localhost:3009/posts', postThread)
+    .then(()=>{
+        console.log("Createthread");
+        push("/talk");
+    }).catch((error)=>
+    {
+        console.log(error);
+    })     
+
 }
 
 
     return(            
         <>
             <Container fluid>
-                    <div className="d-flex justify-content-center header  ">
-                        <h2>Create a post</h2>
-                    </div>
-                    <Row className="justify-content-md-center ">
+            <Modal
+        {...props}
+        size="md"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+       
+        className="login-design"
+      >
+          <Modal.Header   closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">Create a Thread </Modal.Title>
+        </Modal.Header>
+                    
+        <Modal.Body style={{backgroundColor:'#BFBFBF'}}>
 
-                        <Col md={4}>
+                   {/*  <Row className="justify-content-md-center ">
+
+                        <Col md={4}> */}
 
                             <Form onSubmit={formSubmit}>
                                 <br/>
@@ -82,8 +116,16 @@ function CreateThread(){
                                 </Button>
                                 <br />
                             </Form>
-                        </Col>
-                    </Row>
+                       {/*  </Col>
+                    </Row> */}
+                    </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
+
+
                 </Container>
         </>    
     );

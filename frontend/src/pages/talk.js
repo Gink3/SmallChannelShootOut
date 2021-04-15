@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import AuthContext from "../context/authcontext.js"
 import { Button, Container, Row, Col, Form, Toast, InputGroup } from "react-bootstrap";
 import "../style/talk.scss";
@@ -6,11 +6,12 @@ import {AiOutlinePlus} from "react-icons/ai";
 /* import AdSense from 'react-adsense';  */
 import Thread from './thread';
 import {useParams} from "react-router-dom";
+import CreateThread from './createthread.js';
  
 
 function Talk() {
   console.log(useParams());
-  
+  const [showpostmodal, setpostmodal]=useState(false);
   return (
     <>
 
@@ -20,7 +21,7 @@ function Talk() {
         <Row className="justify-content-center ml-md-2 ">
           <Col md={7}>
             
-          <Button variant="" style={{width: '100%'}} href="/createthread" className="plusfix"> 
+          <Button variant="" style={{width: '100%'}} onClick={()=>setpostmodal(true)} className="plusfix"> 
           <Form.Row >
                     <Form.Group as={Col} className="plus" href="/createthread">
                         <InputGroup  >
@@ -41,8 +42,8 @@ function Talk() {
                 </Form.Row>
 
 </Button>
-
-        <br></br>
+    <CreateThread show={showpostmodal} onHide={()=>setpostmodal(false)}/>
+        
             <div className="">
               <Thread />
               

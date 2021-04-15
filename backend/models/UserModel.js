@@ -32,6 +32,9 @@ date: {
     type: Date, 
     default: Date.now
 },
+votedVideo: [{
+    type: String,
+}], 
 });
 
 
