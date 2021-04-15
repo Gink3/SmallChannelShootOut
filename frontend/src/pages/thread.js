@@ -9,8 +9,12 @@ import ShowComment from "../components/comment/showcomment";
  /* import AdSense from 'react-adsense';  */
 import { useQuery } from 'react-query';
 import { Get } from '../components/utilities';
+ 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Thread(){
+ /*  const notify = () => toast("A post has been created"); */
      const {isLoading, error, data} = useQuery("postList",() =>{
       return Get('http://localhost:3009/posts');
   });
@@ -69,7 +73,7 @@ if(error){
               {thread.dislike}
              
               &nbsp;&nbsp;&nbsp;
-              
+              <ToastContainer />
              
               
             <AddComment postId={thread.id}/>

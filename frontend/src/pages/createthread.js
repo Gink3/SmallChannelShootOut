@@ -3,11 +3,14 @@ import { Button, Tabs, Tab, Container,  Form, Modal } from "react-bootstrap";
 import "../style/createthread.scss";
 import axios from 'axios';
 import { queryClient } from '../reactQuery';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
  function CreateThread(props) {
-   const [postThread, setThreadData] = useState({
-     link: "No links",
+   
+     const [postThread, setThreadData] = useState({
+     link: "",
      title: "",
      body: "",
      likes: 0,
@@ -18,8 +21,7 @@ import { queryClient } from '../reactQuery';
 
    const formSubmit = (e) => {
      e.preventDefault();
-     axios
-       .post("http://localhost:3009/posts", postThread)
+     axios.post("http://localhost:3009/posts", postThread)
        .then(() => {
          setThreadData({
            link: "",
@@ -30,9 +32,11 @@ import { queryClient } from '../reactQuery';
            user: "John",
            timestamp: "2 sec ago",
          });
+         toast("Post created!");
          queryClient.refetchQueries(["postList"]);
        })
        .catch((error) => {
+         
          console.log(error);
        });
    };
@@ -87,9 +91,9 @@ import { queryClient } from '../reactQuery';
                  </Tab>
                  <Tab className="" eventKey="threadTypeLink" title="Link">
                    <div className="box2">
-                     <Form.Group controlId="Title">
+                     {/* <Form.Group controlId="Title">
                        <Form.Control required type="text" placeholder="Title" />
-                     </Form.Group>
+                     </Form.Group> */}
 
                      <Form.Group controlId="Link">
                        <Form.Control
@@ -106,22 +110,22 @@ import { queryClient } from '../reactQuery';
                        />
                      </Form.Group>
 
-                     <Form.Group controlId="Comment">
+                    {/*  <Form.Group controlId="Comment">
                        <Form.Control
                          required
                          type="text"
                          placeholder="Comment"
                        />
-                     </Form.Group>
+                     </Form.Group> */}
                    </div>
                  </Tab>
-                 <Tab
+                 {/* <Tab
                    className=""
                    eventKey="threadTypeDrafts"
                    title="From Drafts"
                  >
                    No drafts saved.
-                 </Tab>
+                 </Tab> */}
                </Tabs>
 
                <br />
@@ -135,7 +139,7 @@ import { queryClient } from '../reactQuery';
                >
                  Post
                </Button>
-               <Button
+              {/*  <Button
                  variant=""
                  className="btn_createacc"
                  size="lg"
@@ -143,7 +147,8 @@ import { queryClient } from '../reactQuery';
                  block
                >
                  Save as Draft
-               </Button>
+               </Button> */}
+            
                <br />
              </Form>
            </Modal.Body>
