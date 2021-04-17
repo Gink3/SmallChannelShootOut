@@ -1,25 +1,15 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './video.scss';
 import './pages.scss';
-
+import { Button } from "react-bootstrap";
+import {AiFillStar} from "react-icons/ai";
 import {BiStar} from "react-icons/bi";
 
 const VideoItem = ({video , handleVideoSelect}) => {
-    const [count, setCount] = useState([]);
-    const [isVisible, setIsVisible] = useState(false);
-
-    var votes = 0;
-
-    const likeVideo = (votes) => {
-        console.log("Votes Before: " + votes);
-        votes+=1;
-        console.log("Votes After: " + votes);
-
-        //(isVisible) ?(votes -= 1):(votes += 1);
-        /* (isVisible) ? setCount(count - 1): setCount(count + 1); */
-        //setIsVisible(!isVisible);
-    };
+    const dateString = video.snippet.publishedAt;
+    const year = dateString.slice(0,4);
+    const month = dateString.slice(5,7);
+    const day = dateString.slice(8,10);
 
     return (
         <>
@@ -33,25 +23,21 @@ const VideoItem = ({video , handleVideoSelect}) => {
                     </div>
 
                     <div className='videoItemCreator'>
-                        <h5>
-                            {video.snippet.channelTitle}
-                        </h5>
+                        <p>
+                            {video.snippet.channelTitle}  |  {year}-{month}-{day}  |  <AiFillStar className='voteIcon'/> 0
+                        </p>
+
+                        <div className='videoItemDescription'>
+                            <p>
+                                {video.snippet.description} 
+                            </p>
+                        </div>
                     </div>
 
                     {/* YouTube Video ID */}
-                    <p>Video ID: {video.id.videoId}</p>
-
-                    {/* Star Button */}
-                    <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>
-                        <BiStar className="star" color="gold" size= "2em"  />
-                    </Button>
-
-                    {/* Vote Count */}
-                    {votes}
+                    {/* <p>Video ID: {video.id.videoId}</p> */}
                 </div>
             </div>
-
-            <div style={{borderTop: "4px solid #000 " }}></div>
         </>
     )
 };
