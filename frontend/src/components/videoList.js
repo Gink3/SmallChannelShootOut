@@ -9,6 +9,6 @@ const VideoList = ({videos , handleVideoSelect}) => {
         // console.log(video.id);
     });
 
-    return <div>{renderedVideos}</div>;
+    return <div className='videoList'>{renderedVideos}</div>;
 };
 export default VideoList;

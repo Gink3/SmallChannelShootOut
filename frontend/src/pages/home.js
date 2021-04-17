@@ -35,18 +35,17 @@ class Home extends React.Component {
         return (
           <>
             <div className="home1" style={{marginTop: '1em'}}>
-                <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className="home2">
-                  <div className="homevideodetail" style={{}}>
-                    <VideoDetail video={this.state.selectedVideo}/>
-                  </div>
+              <SearchBar handleFormSubmit={this.handleSubmit}/>
+              
+              <div className="homevideodetail" style={{}}>
+                <VideoDetail video={this.state.selectedVideo}/>
+              </div>
 
-                  <div style={{borderTop: "4px solid #000 " }}></div>
+              <div style={{borderTop: "4px solid #000 " }}></div>
 
-                  <div className="homevideolist" style={{}}>
-                    <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-                  </div>
-                </div>
+              <div className="homevideolist" style={{width: '80%'}}>
+                <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+              </div>
             </div>
           </>
         )
