@@ -10,6 +10,8 @@ const makeReply=({reply, commentId})=>{
 
 const Addreply=({commentId})=>{
     const[reply, setReply]= useState("");
+    const[showreply, setShowreply]= useState(false);
+
     const mutation=useMutation(makeReply);
     const onsubmit=(e)=>{
         e.preventDefault();
@@ -18,6 +20,7 @@ const Addreply=({commentId})=>{
             {
                 onSuccess:()=>{
                     queryClient.refetchQueries(["replyList"]);
+                    setShowreply(false);
                 },
             }
             );
@@ -26,6 +29,9 @@ const Addreply=({commentId})=>{
 
     return(
         <>
+         <Button onClick={()=> (showreply)? setShowreply(false):setShowreply(true)} className="reply" variant="">Reply</Button>
+                {showreply &&
+                          (
             <Form onSubmit={onsubmit} style={{marginLeft:'1rem'}}> 
             <Form.Group>
               <Form.Control
@@ -33,7 +39,7 @@ const Addreply=({commentId})=>{
                 as="textarea"
                 rows={1}
                 style={{ borderRadius: "19px" }}
-                placeholder="Write a comment..."
+                placeholder="@name "
                 onChange={(x) => setReply(x.target.value)}
                 value={reply}
               />
@@ -47,6 +53,7 @@ const Addreply=({commentId})=>{
               REPLY
             </Button>
           </Form>
+          )}
         </>
     );
     };

@@ -18,8 +18,10 @@
   }
 }
 .reply {
+  cursor: pointer;
   color: darken(white, 29%);
   font-weight: 700;
+  margin-right: 9rem;
   &:hover {
     color: rgb(23, 64, 199);
   }

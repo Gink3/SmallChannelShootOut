@@ -3,7 +3,7 @@
     {
       "link": "owIwffqXOvs",
       "title": "Software Engineering",
-      "body": "mn",
+      "body": "bnb",
       "likes": 0,
       "dislike": 0,
       "user": "John",
@@ -11,169 +11,21 @@
       "id": 1
     },
     {
-      "link": "owIwffqXOvs",
-      "title": "Software Engineerings",
-      "body": "ssa",
+      "link": "zbYf5_S7oJo",
+      "title": "second",
+      "body": "gg",
       "likes": 0,
       "dislike": 0,
       "user": "John",
       "timestamp": "2 sec ago",
       "id": 2
-    },
-    {
-      "link": "j5-yKhDd64s",
-      "title": "Software Engineering",
-      "body": "bnbbnb",
-      "likes": 0,
-      "dislike": 0,
-      "user": "John",
-      "timestamp": "2 sec ago",
-      "id": 3
     }
   ],
   "comments": [
-    {
-      "comment": "dsdd",
-      "postId": 4,
-      "id": 1
-    },
-    {
-      "comment": "second",
-      "postId": 5,
-      "id": 2
-    },
-    {
-      "comment": "best vdo",
-      "postId": 6,
-      "id": 3
-    },
-    {
-      "comment": "I am first here",
-      "postId": 1,
-      "id": 4
-    },
-    {
-      "comment": "vbbv",
-      "postId": 1,
-      "id": 5
-    },
-    {
-      "comment": "bvvb",
-      "postId": 2,
-      "id": 6
-    },
-    {
-      "comment": "bnb",
-      "postId": 3,
-      "id": 7
-    },
-    {
-      "comment": "hhh",
-      "postId": 3,
-      "id": 8
-    },
-    {
-      "comment": "wow",
-      "postId": 2,
-      "id": 9
-    }
+  
   ],
   "replys": [
-    {
-      "reply": "dsdsd",
-      "commentId": 4,
-      "id": 1
-    },
-    {
-      "reply": "fdf",
-      "commentId": 5,
-      "id": 2
-    },
-    {
-      "reply": "wow",
-      "commentId": 5,
-      "id": 3
-    },
-    {
-      "reply": "this is it",
-      "commentId": 4,
-      "id": 4
-    },
-    {
-      "reply": "fd",
-      "commentId": 4,
-      "id": 5
-    },
-    {
-      "reply": "xd",
-      "commentId": 4,
-      "id": 6
-    },
-    {
-      "reply": "dsddsddddddddddd",
-      "commentId": 4,
-      "id": 7
-    },
-    {
-      "reply": "we",
-      "commentId": 6,
-      "id": 8
-    },
-    {
-      "reply": "ds",
-      "commentId": 6,
-      "id": 9
-    },
-    {
-      "reply": "ok",
-      "commentId": 6,
-      "id": 10
-    },
-    {
-      "reply": "nmn",
-      "commentId": 7,
-      "id": 11
-    },
-    {
-      "reply": "kkk",
-      "commentId": 8,
-      "id": 12
-    },
-    {
-      "reply": "zxxzx",
-      "commentId": 4,
-      "id": 13
-    },
-    {
-      "reply": "last",
-      "commentId": 4,
-      "id": 14
-    },
-    {
-      "reply": "set",
-      "commentId": 5,
-      "id": 15
-    },
-    {
-      "reply": "@John you are right",
-      "commentId": 4,
-      "id": 16
-    },
-    {
-      "reply": "yess correct",
-      "commentId": 5,
-      "id": 17
-    },
-    {
-      "reply": "bv bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
-      "commentId": 4,
-      "id": 18
-    },
-    {
-      "reply": "sick",
-      "commentId": 7,
-      "id": 19
-    }
+    
   ],
   "profile": {
     "name": "typicode"

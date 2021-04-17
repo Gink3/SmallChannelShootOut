@@ -83,7 +83,7 @@ if(error){
               {thread.dislike}
              
               &nbsp;&nbsp;&nbsp;
-              <ToastContainer />
+              {/* <ToastContainer /> */}
              
               
             <AddComment postId={thread.id}/>
@@ -93,7 +93,7 @@ if(error){
        
           </>);
       })}
-        
+        <ToastContainer />
       </>
     );
   }
