@@ -17,3 +17,13 @@
     box-shadow: none;
   }
 }
+.reply {
+  color: darken(white, 29%);
+  font-weight: 700;
+  &:hover {
+    color: rgb(23, 64, 199);
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}

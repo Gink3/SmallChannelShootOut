@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, Form, Toast, Spinner } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
 import "../style/talk.scss";
 import {AiOutlinePlus} from "react-icons/ai";
 import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
@@ -14,7 +14,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Thread(){
- /*  const notify = () => toast("A post has been created"); */
+ 
+  
+
+
      const {isLoading, error, data} = useQuery("postList",() =>{
       return Get('http://localhost:3009/posts');
   });
@@ -57,9 +60,16 @@ if(error){
               <div
                 style={{ borderTop: "4px solid #E5E4E2 ", borderRadius: "15px" }}
               ></div>
-              <br />
+              
               <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-              {thread.body}
+              &nbsp;{thread.body}
+              <br/><br/>
+              <div style={ {borderRadius: '9px'  }} className="embed-responsive embed-responsive-16by9">
+                  <iframe className="embed-responsive-item"
+                    src={`https://www.youtube.com/embed/${thread.link}`}
+                    allowFullScreen
+                  ></iframe>
+                </div>
             
               <hr style={{ height: "2px", color: "#E5E4E2" }} />
               &nbsp;&nbsp;&nbsp;

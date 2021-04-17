@@ -21,6 +21,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
    const formSubmit = (e) => {
      e.preventDefault();
+    if (postThread.link!="" && postThread.title!="" && postThread.body!="" ){
+     var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = postThread.link.match(regExp);
+    
+   setThreadData(postThread.link=match[2]);
+        /* if (match && match[2].length == 11) {
+        return match[2];
+    } else {
+        return 'error';
+    }*/
      axios.post("http://localhost:3009/posts", postThread)
        .then(() => {
          setThreadData({
@@ -39,7 +49,14 @@ import 'react-toastify/dist/ReactToastify.css';
          
          console.log(error);
        });
-   };
+   }
+   else
+   {
+    toast.error("All feild must be filled!");
+
+   }
+}
+
 
    return (
      <>
@@ -66,7 +83,7 @@ import 'react-toastify/dist/ReactToastify.css';
                    <div className="box2">
                      <Form.Group controlId="Title">
                        <Form.Control
-                         required
+                         
                          type="text"
                          placeholder="Title"
                          value={postThread.title}
@@ -78,24 +95,43 @@ import 'react-toastify/dist/ReactToastify.css';
                          }
                        />
                      </Form.Group>
-                     <textarea
-                       className="box3"
-                       rows="5"
-                       placeholder="Write your post here."
-                       value={postThread.body}
-                       onChange={(e) =>
-                         setThreadData({ ...postThread, body: e.target.value })
-                       }
-                     />
+                     <Form.Group>
+              <Form.Control
+                required
+                as="textarea"
+                rows={7}
+                
+                placeholder="Write your post here."
+                value={postThread.body}
+                onChange={(e) =>
+                  setThreadData({ ...postThread, body: e.target.value })
+                }
+              />
+            </Form.Group>
+                    
+                     <Form.Group controlId="Link">
+                       <Form.Control
+                        
+                         type="text"
+                         placeholder="Youtube link .."
+                         value={postThread.link}
+                         onChange={(e) =>
+                           setThreadData({
+                             ...postThread,
+                             link: e.target.value,
+                           })
+                         }
+                       />
+                     </Form.Group>
                    </div>
                  </Tab>
-                 <Tab className="" eventKey="threadTypeLink" title="Link">
-                   <div className="box2">
+                {/*  <Tab className="" eventKey="threadTypeLink" title="Link">
+                   <div className="box2"> */}
                      {/* <Form.Group controlId="Title">
                        <Form.Control required type="text" placeholder="Title" />
                      </Form.Group> */}
 
-                     <Form.Group controlId="Link">
+                     {/* <Form.Group controlId="Link">
                        <Form.Control
                          required
                          type="text"
@@ -108,7 +144,7 @@ import 'react-toastify/dist/ReactToastify.css';
                            })
                          }
                        />
-                     </Form.Group>
+                     </Form.Group> */}
 
                     {/*  <Form.Group controlId="Comment">
                        <Form.Control
@@ -117,8 +153,8 @@ import 'react-toastify/dist/ReactToastify.css';
                          placeholder="Comment"
                        />
                      </Form.Group> */}
-                   </div>
-                 </Tab>
+                {/*    </div> */}
+                {/*  </Tab> */}
                  {/* <Tab
                    className=""
                    eventKey="threadTypeDrafts"
@@ -136,6 +172,7 @@ import 'react-toastify/dist/ReactToastify.css';
                  size="lg"
                  type="submit"
                  block
+                 
                >
                  Post
                </Button>
