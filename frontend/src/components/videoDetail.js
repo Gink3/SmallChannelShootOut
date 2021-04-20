@@ -57,6 +57,7 @@ const VideoDetail = ({ video }) => {
             <h2>{video.snippet.title}</h2>
             <h5>{video.snippet.channelTitle}  |  {year}-{month}-{day}</h5>
             <p>{video.snippet.description}</p>
+            <p>Video ID: {video.id.videoId}</p>
 
             {/* Star Button */}
             <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>
