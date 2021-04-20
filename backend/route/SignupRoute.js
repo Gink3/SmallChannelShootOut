@@ -8,7 +8,9 @@ const router = express.Router();
 ///signup 
 export const signUpRouter = router.post('/signup',  async (req, res) => {
    var {firstName, lastName, userName, email, password, verifyPaswrd} = req.body; //storing the data got from frontend
-
+ 
+   //making sure the email is lower case
+   email.toLowerCase(); 
    //check to see if all fields have input
    if (firstName == "" || userName == "" || email == "" || password == "" || verifyPaswrd == ""){
         return res.json({Message:"Please enter all fields." });  
@@ -23,7 +25,16 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
    if (password != verifyPaswrd){
        return res.json({Message:"Confirm your password again."})
    } 
-    try {
+
+   function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+if(!validateEmail(email)){
+    return res.json({Message:"Invalid email address."})
+}
+ try {
         //encrypting the password
         password = bcrypt.hashSync(password, 12);
         const newUser = new User({firstName, lastName, userName, email, password}); //setting up new user

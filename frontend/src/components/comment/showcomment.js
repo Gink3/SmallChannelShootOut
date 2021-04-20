@@ -35,7 +35,7 @@ var commentCount=0;
                  } 
               })}
              
-              ({commentCount}) Comment(s) <MdExpandMore/>
+              ({commentCount}) Comment{commentCount > 1 ? "s" : ""} <MdExpandMore/>
 
               </Accordion.Toggle>
             </Card.Header>
@@ -60,7 +60,7 @@ var commentCount=0;
                 }}
                 key={commentListing.id}
               >
-                <div style={{ fontWeight: "bold" }}>John: </div>
+                <div style={{ fontWeight: "bold" }}>{commentListing.author}: </div>
                 {commentListing.comment}<br/>
               
                  <Addreply commentId={commentListing.id}/> 
