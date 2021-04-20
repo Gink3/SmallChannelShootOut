@@ -39,7 +39,7 @@ const Showreply = ({ commentId }) => {
         style={{ marginLeft: "3rem", color: "burlywood" }}
       >
         {" "}
-        ({replyCount}) Replies(y) <MdExpandMore/>{" "}
+        ({replyCount}) Repl{replyCount > 1 ? "ies" : "y"} <MdExpandMore/>{" "}
       </span>
       {showreply &&
                           (
@@ -59,7 +59,7 @@ const Showreply = ({ commentId }) => {
                   }}
                   key={replying.id}
                 >
-                  <div style={{ fontWeight: "bold" }}>John: </div>
+                  <div style={{ fontWeight: "bold" }}>{replying.authorName}: </div>
                   {replying.reply}
                   <br></br>
                   <Addreply commentId={replying.commentId} />

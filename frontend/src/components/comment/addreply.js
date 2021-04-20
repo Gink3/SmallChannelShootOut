@@ -4,19 +4,30 @@ import { useMutation } from 'react-query';
 import { Post } from '../utilities';
 import { Button, Form } from 'react-bootstrap';
 import { queryClient } from '../../reactQuery';
-const makeReply=({reply, commentId})=>{
-    return Post (" http://localhost:3009/replys", {reply, commentId});
+const makeReply=({reply, commentId, authorName})=>{
+    return Post (" http://localhost:3009/replys", {reply, commentId, authorName})
 };
 
 const Addreply=({commentId})=>{
+  const replier="Doe";
+
     const[reply, setReply]= useState("");
     const[showreply, setShowreply]= useState(false);
 
+
     const mutation=useMutation(makeReply);
+    const [authorName, setAuthorName] = useState('Doe');
+
     const onsubmit=(e)=>{
         e.preventDefault();
+        setAuthorName(replier);
+        
+        console.log(authorName);
+        console.log(replier);
+
+
         mutation.mutate(
-            {reply, commentId},
+            {reply, commentId, authorName},
             {
                 onSuccess:()=>{
                     queryClient.refetchQueries(["replyList"]);
@@ -25,6 +36,9 @@ const Addreply=({commentId})=>{
             }
             );
     setReply("");
+   
+    
+
     };
 
     return(
@@ -49,6 +63,7 @@ const Addreply=({commentId})=>{
               variant="primary"
               type="submit"
               style={{ borderRadius: "7px" }}
+              
             >
               REPLY
             </Button>

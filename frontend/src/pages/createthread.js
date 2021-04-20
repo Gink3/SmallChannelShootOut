@@ -14,9 +14,10 @@ import 'react-toastify/dist/ReactToastify.css';
      title: "",
      body: "",
      likes: 0,
+     isLiked:[],
      dislike: 0,
      user: "John",
-     timestamp: "2 sec ago",
+     timestamp: "",
    });
 
    const formSubmit = (e) => {
@@ -31,6 +32,8 @@ import 'react-toastify/dist/ReactToastify.css';
     } else {
         return 'error';
     }*/
+    var today = new Date();
+    setThreadData(postThread.timestamp=today);
      axios.post("http://localhost:3009/posts", postThread)
        .then(() => {
          setThreadData({
@@ -38,11 +41,12 @@ import 'react-toastify/dist/ReactToastify.css';
            title: "",
            body: "",
            likes: 0,
+           isLiked:[],
            dislike: 0,
            user: "John",
            timestamp: "2 sec ago",
          });
-         toast("Post created!");
+         toast.success("Post created Sucessfully!");
          queryClient.refetchQueries(["postList"]);
        })
        .catch((error) => {
@@ -52,7 +56,7 @@ import 'react-toastify/dist/ReactToastify.css';
    }
    else
    {
-    toast.error("All feild must be filled!");
+    toast.error("Error: All feild must be filled!");
 
    }
 }

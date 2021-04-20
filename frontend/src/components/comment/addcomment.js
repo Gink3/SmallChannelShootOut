@@ -6,20 +6,25 @@ import {Post} from '../utilities';
 
 
 
-const makeComment = ({comment, postId})=>{
-    return Post('http://localhost:3009/comments', {comment, postId});
+const makeComment = ({comment, postId, author})=>{
+    return Post('http://localhost:3009/comments', {comment, postId, author});
     
 };
 
 function AddComment({ postId }) {
+  const user="John";
+
   const [comment, setComment] = useState("");
+  const [author, setAuthor] = useState("John");
+
   const mutation = useMutation(makeComment);
 
   const onsubmitHandle = (event) => {
     event.preventDefault();
-
+    setAuthor(user);
+  
     mutation.mutate(
-      { comment, postId },
+      { comment, postId, author},
       {
         onSuccess: () => {
           queryClient.refetchQueries(["commentList"]);
@@ -27,6 +32,9 @@ function AddComment({ postId }) {
       }
     );
     setComment("");
+   
+    
+
   };
 
   return (

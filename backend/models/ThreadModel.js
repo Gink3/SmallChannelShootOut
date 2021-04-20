@@ -32,6 +32,9 @@ likes: {
     trim: true, 
     default: 0
 },
+isLiked:[{
+    type:Number
+}],
 dislikes: {
     type:Number,
     trim: true, 
