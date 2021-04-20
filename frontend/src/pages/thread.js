@@ -1,16 +1,65 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, Form, Toast, Spinner } from "react-bootstrap";
+import { Button, Card, Spinner } from "react-bootstrap";
 import "../style/talk.scss";
-import {AiOutlinePlus} from "react-icons/ai";
 import {FiThumbsDown, FiThumbsUp} from "react-icons/fi";
 import toast from "../images/toast.png";
 import AddComment from "../components/comment/addcomment";
 import ShowComment from "../components/comment/showcomment";
  /* import AdSense from 'react-adsense';  */
-import { useQuery } from 'react-query';
+import { useMutation, useQuery } from 'react-query';
 import { Get } from '../components/utilities';
+ 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
+import { queryClient } from '../reactQuery';
+
+const updateLike=({id, likes, isLiked})=>{
+  return axios.patch(`http://localhost:3009/posts/${id}`, {id, likes, isLiked});
+}
 
 function Thread(){
+  const mutation = useMutation(updateLike);
+var x= new Boolean(false);
+  const [userId, setuserId] = useState('');
+  const likeThread=(id, likes, isLiked)=>{
+    const tractId='5b1111111';
+    setuserId(tractId);
+    var found=false;
+    
+    /* {isLiked.filter(name => name.includes(tractId)).map((filteredName,i) => (
+      
+     (filteredName == tractId) ? isLiked.splice(2,1)&&(found=true)&& (likes=likes-1)&&console.log(i) : ""
+    
+    )
+    )} */
+    for (var i =0; i<isLiked.length; i++){
+     if  (isLiked[i] == tractId){
+      isLiked.splice(i,1);
+      found=true;
+      likes=likes-1;
+     /*  console.log("already"); */
+     }
+    }
+    if (!found){
+      isLiked.push(tractId);
+      likes=likes+1;
+      /* console.log(found) */
+    }
+   
+    
+    
+      mutation.mutate(
+        {id, likes, isLiked},
+        {
+          onSuccess: ()=>{
+            queryClient.refetchQueries(["postList"]);
+          }
+        }
+
+      );
+     }
+
      const {isLoading, error, data} = useQuery("postList",() =>{
       return Get('http://localhost:3009/posts');
   });
@@ -21,6 +70,8 @@ function Thread(){
 if(error){
     return <div>Something went wrong :(</div>
 }
+
+  
     
     return (
       <> 
@@ -53,41 +104,47 @@ if(error){
               <div
                 style={{ borderTop: "4px solid #E5E4E2 ", borderRadius: "15px" }}
               ></div>
-              <br />
+              
               <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-              {thread.body}
+              &nbsp;{thread.body}
+              <br/><br/>
+              <div style={ {borderRadius: '9px'  }} className="embed-responsive embed-responsive-16by9">
+                  <iframe className="embed-responsive-item"
+                    src={`https://www.youtube.com/embed/${thread.link}`}
+                    allowFullScreen
+                  ></iframe>
+                </div>
             
               <hr style={{ height: "2px", color: "#E5E4E2" }} />
               &nbsp;&nbsp;&nbsp;
-              <FiThumbsUp className="like-btn" size="1.5em" color="green" />
-              &nbsp;
+
+
+
+              <Button variant="" className="like-btn" onClick={()=>{likeThread(thread.id, thread.likes, thread.isLiked)}} >
+              <FiThumbsUp size="1.5em" color="green" className="like-btn" />
+              </Button>
               {thread.likes}
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               
+
+
+              &nbsp;&nbsp;&nbsp;
+              <Button variant="" className="dislike-btn">
               <FiThumbsDown className="dislike-btn" size="1.5em" color="red" />
-              &nbsp;
+              </Button>
               {thread.dislike}
              
               &nbsp;&nbsp;&nbsp;
-              
+              {/* <ToastContainer /> */}
              
-             {/* <Button
-                className="btn-comment"
-                variant=""
-                onClick={() => {
-                 (CommentShow)?setCommentShow(false): setCommentShow(true);
-                }}
-              >
-                Comments
-              </Button> */}
-            <AddComment postId={thread.postId}/>
-          <ShowComment postId={thread.postId}/>
+              
+            <AddComment postId={thread.id}/>
+          <ShowComment postId={thread.id}/>
             </Card.Body>
           </Card> 
        
           </>);
       })}
-        
+        <ToastContainer />
       </>
     );
   }

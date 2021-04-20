@@ -1,13 +1,17 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import './video.scss';
 import './pages.scss';
 import axios from 'axios';
 
-
+import { Button } from "react-bootstrap";
+import {AiFillStar} from "react-icons/ai";
 import {BiStar} from "react-icons/bi";
 
 const VideoItem = ({video , handleVideoSelect}) => {
+    const dateString = video.snippet.publishedAt;
+    const year = dateString.slice(0,4);
+    const month = dateString.slice(5,7);
+    const day = dateString.slice(8,10);
     const [count, setCount] = useState([]);
     const [isVisible, setIsVisible] = useState(false);
     const [videoID, setVideoID]=useState({
@@ -40,28 +44,34 @@ const VideoItem = ({video , handleVideoSelect}) => {
         //setIsVisible(!isVisible);
     };
 
+
     return (
         <>
             <div className='videoItem' onClick={ () => handleVideoSelect(video)}>
                 <img className='videoItemImage' src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
                 <div className='videoItemContent'>
-                    <h4>{video.snippet.title}</h4>
-                    <div className='videoItemCreator'>{video.snippet.channelTitle}</div>
+                    <div onClick={ () => handleVideoSelect(video)} className='videoItemTitle'>
+                        <h4>
+                            {video.snippet.title}
+                        </h4>
+                    </div>
+
+                    <div className='videoItemCreator'>
+                        <p>
+                            {video.snippet.channelTitle}  |  {year}-{month}-{day}  |  <AiFillStar className='voteIcon'/> 0
+                        </p>
+
+                        <div className='videoItemDescription'>
+                            <p>
+                                {video.snippet.description} 
+                            </p>
+                        </div>
+                    </div>
 
                     {/* YouTube Video ID */}
-                    <h4>Video ID: {video.id.videoId}</h4>
-
-                    {/* Star Button */}
-                    <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>
-                        <BiStar className="star" color="gold" size= "2em"  />
-                    </Button>
-
-                    {/* Vote Count */}
-                    {votes}
+                    {/* <p>Video ID: {video.id.videoId}</p> */}
                 </div>
             </div>
-
-            <div style={{borderTop: "4px solid #000 " }}></div>
         </>
     )
 };

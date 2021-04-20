@@ -1,71 +1,36 @@
 {
   "posts": [
     {
-      "title": "Video Meaning",
+      "link": "j5-yKhDd64s",
+      "title": "dsds",
+      "body": "mnn",
+      "likes": 93,
+      "isLiked": [
+        "4b1111111",
+        "3b1111111",
+        "5b1111111"
+      ],
+      "dislike": 0,
       "user": "John",
-      "timestamp": "2 sec ago",
-      "body": "Video is an electronic medium for the recording, copying, playback, broadcasting, and display of moving visual media. Video was first developed for mechanical television systems, which were quickly replaced by cathode ray tube systems which were later replaced by flat panel displays of several types. Wikipedia",
-      "likes": "62",
-      "dislike": "32",
-      "postId": 1
-    },
-    {
-      "title": "Comments ",
-      "user": "User12",
-      "timestamp": "20 sec ago",
-      "body": "The comments section is a feature of online blogs, news websites, and other websites in which the publishers invite the audience to comment on the published content. This is a continuation of the older practice of publishing letters to the editor.",
-      "likes": "5.4k",
-      "dislike": "32",
-      "postId": 2
+      "timestamp": "2021-04-19T05:19:20.509Z",
+      "id": 3
     }
   ],
   "comments": [
     {
-      "comment": "gg",
-      "postId": 1,
+      "comment": " nvb",
+      "postId": 3,
+      "author": "John",
       "id": 1
     },
     {
-      "comment": "this is it",
-      "postId": 1,
+      "comment": "nnmn",
+      "postId": 3,
+      "author": "John",
       "id": 2
-    },
-    {
-      "comment": "sdkjsd",
-      "postId": 2,
-      "id": 3
-    },
-    {
-      "comment": "last",
-      "postId": 2,
-      "id": 4
-    },
-    {
-      "comment": "dsd",
-      "postId": 2,
-      "id": 5
-    },
-    {
-      "comment": "dsdsd",
-      "postId": 1,
-      "id": 6
-    },
-    {
-      "comment": "I agree ",
-      "postId": 1,
-      "id": 7
-    },
-    {
-      "comment": "jjbjbh",
-      "postId": 1,
-      "id": 8
-    },
-    {
-      "comment": "cxcx",
-      "postId": 1,
-      "id": 9
     }
   ],
+  "replys": [],
   "profile": {
     "name": "typicode"
   }

@@ -1,14 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './comment.scss'
 import { useQuery } from 'react-query';
 import { Get } from '../utilities';
 import Accordion from 'react-bootstrap/Accordion'
 import { Button, Card } from "react-bootstrap";
 import Spinner from 'react-bootstrap/Spinner'
+import Addreply from './addreply';
+import Showreply from './showreply';
+import {MdExpandMore} from 'react-icons/md';
 
 const ShowComment=({postId})=>{
-var count=0;
-/* console.log(postId); */
+var commentCount=0;
     const {isLoading, error, data} = useQuery("commentList",() =>{
         return Get("http://localhost:3009/comments");
     });
@@ -26,20 +28,20 @@ var count=0;
         <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header>
-              <Accordion.Toggle as={Button} className="btn-showcomments" variant="" eventKey="1" style={{ fontWeight: "bold", fontSize: "1.5rem",color: 'black' }}>
+              <Accordion.Toggle as={Button} className="btn-showcomments" variant="" eventKey="1" style={{ fontWeight: "bold", fontSize: "1rem",color: 'black' }}>
               {data.data.map((c) => {
                  if (postId == c.postId){
-                  count=count+1;
+                  commentCount=commentCount+1;
                  } 
               })}
              
-              ({count}) Comment(s)
+              ({commentCount}) Comment{commentCount > 1 ? "s" : ""} <MdExpandMore/>
 
               </Accordion.Toggle>
             </Card.Header>
             <Accordion.Collapse eventKey="1">
               <Card.Body>
-              {(count == 0)&&
+              {(commentCount == 0)&&
                   (<div>No comments yet!   Be the first to comment!</div>)
               }
               {data.data.map((commentListing) => {
@@ -54,12 +56,19 @@ var count=0;
                   backgroundColor: "whitesmoke",
                   marginLeft: "5px",
                   marginTop: "5px",
-                  padding: ".5rem",
+                  padding: ".5rem"
                 }}
                 key={commentListing.id}
               >
-                <div style={{ fontWeight: "bold" }}>John: </div>
-                {commentListing.comment}
+                <div style={{ fontWeight: "bold" }}>{commentListing.author}: </div>
+                {commentListing.comment}<br/>
+              
+                 <Addreply commentId={commentListing.id}/> 
+                     
+                 <Showreply commentId={commentListing.id}/>
+                         
+              
+
                
               </div>
               

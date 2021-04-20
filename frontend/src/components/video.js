@@ -63,17 +63,7 @@ export function Video(object) {
               <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', flexGrow: 1}} key={i} >
                 <Card.Img variant="top" src={cards.image} />
 
-                {/*  Please do not delete */}
-                {/*  <div style={ {borderRadius: 9  }} className="embed-responsive embed-responsive-16by9">
-                  <iframe className="embed-responsive-item"
-                    src={cards.image}
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                */}
-
-
-
+               
                 <Card.Body>
                   <Card.Title>{cards.title}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{cards.subtitle}</Card.Subtitle>
