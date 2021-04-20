@@ -2,19 +2,13 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema; 
 
 const VideoSchema = new Schema({
-link: {
-    type:String,
-    trim: true, 
+videoId: {
+    type:String, 
     default: ""
 },
-creator: {
-    type:String,
-    trim: true, 
-    default: ""
-},
-date: {
-    type: Date, 
-    default: Date.now
+votes: {
+    type: Number, 
+    default: 0
 },
 });
 

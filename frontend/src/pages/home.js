@@ -9,22 +9,65 @@ import VideoList from '../components/videoList';
 import VideoDetail from '../components/videoDetail';
 
 class Home extends React.Component {
+    resultsPerPage = 15;
+
     state = {
+        channelIds: [],
+        channelIdString: '',
+        validVideos: [],
         videos: [],
         selectedVideo: null
     }
 
     handleSubmit = async (termFromSearchBar) => {
-        const response = await youtube.get('/search', {
-            params: {
-                q: termFromSearchBar
-            }
-        })
+      //clears previous lists
 
+      //GET search bar response 
+      const response = await youtube.get('/search', {
+        params: {
+          part: 'snippet',
+          maxResults: this.resultsPerPage,
+          type: 'video',
+          regionCode: 'US',
+          q: termFromSearchBar
+        }
+      })
+
+      //concat all channel ids into 1 string
+      for(var i = 0; i < this.resultsPerPage; i++){
         this.setState({
-            videos: response.data.items
+          channelIdString: this.state.channelIdString.concat(response.data.items[i].snippet.channelId + ",")
         })
-        console.log("this is resp",response);
+      }
+      //remove last ',' from string
+      this.setState({
+        channelIdString: this.state.channelIdString.substring(0, this.state.channelIdString.length - 1)
+      })
+
+      //csv string of all channel ids
+      console.log("channelStyring", this.state.channelIdString)
+
+      //GET all channel info from channel string
+      const response2 = await youtube.get('/channels',{
+        params: {
+          part: 'statistics',
+          id: this.state.channelIdString
+        }
+      })
+
+      //only allows videos that have under 100,000 subscribers
+      for(var i = 0; i < this.resultsPerPage; i++){
+        if(response2.data.items[0].statistics.subscriberCount <= 1000000){
+          this.setState({
+            validVideos: this.state.validVideos.concat(response.data.items[i])
+          })
+        }
+      }
+
+      //sets videos == validVideos
+      this.setState({
+          videos: this.state.validVideos
+      })
     };
 
     handleVideoSelect = (video) => {

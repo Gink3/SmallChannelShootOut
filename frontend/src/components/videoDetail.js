@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import './video.scss';
 import { Button } from "react-bootstrap";
 import {BiStar} from "react-icons/bi";
+import axios from 'axios';
 
 const VideoDetail = ({ video }) => {
-  const [count, setCount] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
-
+  const [videoID, setVideoID]=useState({
+    votedVideo: ""
+});
   if (!video) {
     return <div className="landingPage">
         <h1>Welcome to Small Channel Shootout!</h1>
@@ -26,13 +27,17 @@ const VideoDetail = ({ video }) => {
   var votes = 0;
 
   const likeVideo = (votes) => {
-      console.log("Votes Before: " + votes);
-      votes+=1;
-      console.log("Votes After: " + votes);
-
-      //(isVisible) ?(votes -= 1):(votes += 1);
-      /* (isVisible) ? setCount(count - 1): setCount(count + 1); */
-      //setIsVisible(!isVisible);
+      setVideoID({votedVideo:video.id.videoId});  
+       axios.all( [
+       axios.post('http://localhost:5000/video',videoID , {
+        withCredentials:true
+      }),
+       axios.post('http://localhost:5000/vote',videoID, {
+        withCredentials:true
+      })
+  ]).then((error)=>{
+      console.log(error); 
+  })
   };
 
   const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
@@ -52,6 +57,7 @@ const VideoDetail = ({ video }) => {
             <h2>{video.snippet.title}</h2>
             <h5>{video.snippet.channelTitle}  |  {year}-{month}-{day}</h5>
             <p>{video.snippet.description}</p>
+            <p>Video ID: {video.id.videoId}</p>
 
             {/* Star Button */}
             <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>

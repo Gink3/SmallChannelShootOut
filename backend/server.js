@@ -11,6 +11,7 @@ import {threadRouter} from './route/GettalkRoute.js';
 import {isLoggedInRouter} from './route/isLoggedInroute.js' //importing route for isLoggedIn
 import {userInfoRouter} from './route/getUserInfo.js'
 import {voteRouter} from './route/voteRoute.js'
+import {videoRouter} from './route/videoRoute.js'
 import dotenv from 'dotenv'; 
 import cookieParser from 'cookie-parser';
 dotenv.config(); 
@@ -41,6 +42,7 @@ app.get('/thread', threadRouter); //route for getting thread posts
 app.get ('/isLoggedIn',isLoggedInRouter); //check if user are logged in 
 app.get('/userInfo', userInfoRouter); //check if user are not logged in
 app.post ('/vote', voteRouter); //voting router
+app.post('/video', videoRouter); //video routing 
 app.listen(port, () => {
     console.log(`Server is runnig in port: ${port}`)
 });

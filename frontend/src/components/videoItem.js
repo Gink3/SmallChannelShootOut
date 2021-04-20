@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import './video.scss';
 import './pages.scss';
-import { Button } from "react-bootstrap";
 import {AiFillStar} from "react-icons/ai";
-import {BiStar} from "react-icons/bi";
+
 
 const VideoItem = ({video , handleVideoSelect}) => {
     const dateString = video.snippet.publishedAt;
@@ -13,8 +12,8 @@ const VideoItem = ({video , handleVideoSelect}) => {
 
     return (
         <>
-            <div className='videoItem'>
-                <img className='videoItemImage' onClick={ () => handleVideoSelect(video)} src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
+            <div className='videoItem' onClick={ () => handleVideoSelect(video)}>
+                <img className='videoItemImage' src={video.snippet.thumbnails.medium.url} alt={video.snippet.description}/>
                 <div className='videoItemContent'>
                     <div onClick={ () => handleVideoSelect(video)} className='videoItemTitle'>
                         <h4>
