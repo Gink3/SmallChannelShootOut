@@ -12,37 +12,22 @@ const VideoItem = ({video , handleVideoSelect}) => {
     const year = dateString.slice(0,4);
     const month = dateString.slice(5,7);
     const day = dateString.slice(8,10);
-    const [count, setCount] = useState([]);
-    const [isVisible, setIsVisible] = useState(false);
     const [videoID, setVideoID]=useState({
         votedVideo: ""
     });
-    const [video_id, setVideo_ID]=useState({
-        videoId: ""
-    });
-    var votes = 0;
-
-    const likeVideo = async (votes) => {
-        setVideoID({votedVideo:video.id.videoId}); 
-        //setVideo_ID({videoId:video.id.videoId});  
-        await axios.all( [
-         axios.post('http://localhost:5000/video',videoID , {
-          withCredentials:true
-        }),
-         axios.post('http://localhost:5000/vote',videoID, {
-          withCredentials:true
-        })
-    ]).then((error)=>{
-        console.log(error); 
+    setVideoID({votedVideo:video.id.videoId}); 
+    //setVideo_ID({videoId:video.id.videoId});  
+     axios.all( [
+     axios.post('http://localhost:5000/video',videoID , {
+      withCredentials:true
+    }),
+     axios.post('http://localhost:5000/vote',videoID, {
+      withCredentials:true
     })
-        console.log("Votes Before: " + votes);
-        votes+=1;
-        console.log("Votes After: " + votes);
+]).then((error)=>{
+    console.log(error); 
+})
 
-        //(isVisible) ?(votes -= 1):(votes += 1);
-        /* (isVisible) ? setCount(count - 1): setCount(count + 1); */
-        //setIsVisible(!isVisible);
-    };
 
 
     return (
