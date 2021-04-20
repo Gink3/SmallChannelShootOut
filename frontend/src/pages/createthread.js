@@ -10,17 +10,17 @@ import 'react-toastify/dist/ReactToastify.css';
  function CreateThread(props) {
    
      const [postThread, setThreadData] = useState({
+     userName:"John",
      link: "",
      title: "",
      body: "",
      likes: 0,
      isLiked:[],
      dislike: 0,
-     user: "John",
      timestamp: "",
    });
 
-   const formSubmit = (e) => {
+   const formSubmit = async(e) => {
      e.preventDefault();
     if (postThread.link!="" && postThread.title!="" && postThread.body!="" ){
      var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
@@ -32,19 +32,26 @@ import 'react-toastify/dist/ReactToastify.css';
     } else {
         return 'error';
     }*/
+
+    /* Backup API: "http://localhost:3009/posts" */
+   
+
     var today = new Date();
     setThreadData(postThread.timestamp=today);
-     axios.post("http://localhost:3009/posts", postThread)
+     axios.post("http://localhost:5000/talk", postThread, {
+      withCredentials:true
+     })
+     
        .then(() => {
          setThreadData({
+           userName:"John",
            link: "",
            title: "",
            body: "",
            likes: 0,
            isLiked:[],
            dislike: 0,
-           user: "John",
-           timestamp: "2 sec ago",
+           timestamp: "",
          });
          toast.success("Post created Sucessfully!");
          queryClient.refetchQueries(["postList"]);
