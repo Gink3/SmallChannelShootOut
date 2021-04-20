@@ -1,34 +1,14 @@
 import React, {useState} from 'react';
 import './video.scss';
 import './pages.scss';
-import axios from 'axios';
-
-import { Button } from "react-bootstrap";
 import {AiFillStar} from "react-icons/ai";
-import {BiStar} from "react-icons/bi";
+
 
 const VideoItem = ({video , handleVideoSelect}) => {
     const dateString = video.snippet.publishedAt;
     const year = dateString.slice(0,4);
     const month = dateString.slice(5,7);
     const day = dateString.slice(8,10);
-    const [videoID, setVideoID]=useState({
-        votedVideo: ""
-    });
-    setVideoID({votedVideo:video.id.videoId}); 
-    //setVideo_ID({videoId:video.id.videoId});  
-     axios.all( [
-     axios.post('http://localhost:5000/video',videoID , {
-      withCredentials:true
-    }),
-     axios.post('http://localhost:5000/vote',videoID, {
-      withCredentials:true
-    })
-]).then((error)=>{
-    console.log(error); 
-})
-
-
 
     return (
         <>
