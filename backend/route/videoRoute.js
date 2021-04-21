@@ -4,7 +4,7 @@ import {auth} from '../middleware/authentication.js'
 import Video from '../models/VideoModel.js'
 
 
-export const videoRouter = router.post('/video', auth,  async (req,res) => {
+export const videoRouter = router.post('/video',auth, async (req,res) => {
     try {
         var {videoId, videoTitle, channelTitle} = req.body;
        // var videoId = votedVideo; 

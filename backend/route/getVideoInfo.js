@@ -3,7 +3,7 @@ import Video from '../models/VideoModel.js' //importing models from user models 
 import {auth} from '../middleware/authentication.js'
 
 const router = express.Router(); 
-export const videoInfoRouter = router.get('/videoInfo', auth,  async (req, res) => {
+export const videoInfoRouter = router.get('/videoInfo',  async (req, res) => {
 
     try {
         Video.find({}, (err, result)=> {
