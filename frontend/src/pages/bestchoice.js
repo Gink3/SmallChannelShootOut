@@ -15,7 +15,7 @@ function bestChoice(){
   axios.get('http://localhost:5000/videoInfo', {
         withCredentials:true
     }).then((response)=>{
-      console.log(response); 
+      console.log(response.data);
     })
 
     return(
