@@ -6,6 +6,14 @@ videoId: {
     type:String, 
     default: ""
 },
+videoTitle:{
+    type:String, 
+    default:""
+},
+channelTitle:{
+    type:String, 
+    default:""
+},
 votes: {
     type: Number, 
     default: 0

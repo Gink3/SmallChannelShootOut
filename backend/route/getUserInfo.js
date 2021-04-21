@@ -8,6 +8,9 @@ export const userInfoRouter = router.get('/userInfo', auth,  async (req, res) =>
 
     try {
         const oldUser = await User.findOne({_id: req.user});
+        if(!oldUser){
+            return res.json("Something went wrong"); 
+        }
         res.json(oldUser); 
      }
      catch(error) {
