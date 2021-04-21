@@ -12,15 +12,16 @@ class Home extends React.Component {
     resultsPerPage = 15;
 
     state = {
-        channelIds: [],
         channelIdString: '',
         validVideos: [],
-        videos: [],
         selectedVideo: null
     }
 
     handleSubmit = async (termFromSearchBar) => {
       //clears previous lists
+      this.setState({
+      //  validVideos: this.state.validVideos.splice(0, 14),
+      })
 
       //GET search bar response 
       const response = await youtube.get('/search', {
@@ -64,10 +65,7 @@ class Home extends React.Component {
         }
       }
 
-      //sets videos == validVideos
-      this.setState({
-          videos: this.state.validVideos
-      })
+      console.log(this.state.validVideos, this.state.selectedVideo)
     };
 
     handleVideoSelect = (video) => {
@@ -87,7 +85,7 @@ class Home extends React.Component {
               <div style={{borderTop: "4px solid #000 " }}></div>
 
               <div className="homevideolist" style={{width: '80%'}}>
-                <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.validVideos}/>
               </div>
             </div>
           </>

@@ -32,7 +32,11 @@ export function fetchDataFromYoutube(topic){
 */
 
 import axios from 'axios';
+<<<<<<< HEAD
 const KEY = 'AIzaSyC_gKkSiptZVehp-wnp5YP4WpIWbmbXEmU'; //youtube API key here
+=======
+const KEY = 'AIzaSyC7ZnUtcIMuxEMKKsX3-b00x0TUKJGj_Nk'; //youtube API key here
+>>>>>>> 8ed35ba80653bba5b336284bc957b03e6ec0f37c
 
 console.log("API Used!")
 
