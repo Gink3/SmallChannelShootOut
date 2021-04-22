@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema; 
 
 const CommentSchema = new Schema({
-autorName: {
+authorName: {
     type:String,
     trim: true, 
     default: ""

@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { Button, Card,  Form } from "react-bootstrap";
 import {useMutation} from 'react-query';
 import { queryClient } from '../../reactQuery';
-import {Post} from '../utilities';
-
+import axios from 'axios';
 
 
 const makeComment = ({comment, postId, author})=>{
-    return Post('http://localhost:5000/comment', {comment, postId, author});
+
+    return axios.post('http://localhost:5000/comment', {comment, postId, author}, {
+      withCredentials:true
+     });
     
 };
 

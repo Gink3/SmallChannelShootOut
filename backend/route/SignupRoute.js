@@ -8,9 +8,8 @@ const router = express.Router();
 ///signup 
 export const signUpRouter = router.post('/signup',  async (req, res) => {
    var {firstName, lastName, userName, email, password, verifyPaswrd} = req.body; //storing the data got from frontend
- 
-   //making sure the email is lower case
-   email.toLowerCase(); 
+   
+
    //check to see if all fields have input
    if (firstName == "" || userName == "" || email == "" || password == "" || verifyPaswrd == ""){
         return res.json({Message:"Please enter all fields." });  

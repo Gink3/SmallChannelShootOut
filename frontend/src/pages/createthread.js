@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
  function CreateThread(props) {
    
      const [postThread, setThreadData] = useState({
-     userName:"John",
+     userName:"",
      link: "",
      title: "",
      body: "",
@@ -44,7 +44,7 @@ import 'react-toastify/dist/ReactToastify.css';
      
        .then(() => {
          setThreadData({
-           userName:"John",
+           userName:"",
            link: "",
            title: "",
            body: "",

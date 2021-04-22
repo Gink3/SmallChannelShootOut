@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './comment.scss'
 import { useMutation } from 'react-query';
-import { Post } from '../utilities';
+import axios from 'axios'; 
 import { Button, Form } from 'react-bootstrap';
 import { queryClient } from '../../reactQuery';
 const makeReply=({reply, commentId, authorName})=>{
-    return Post (" http://localhost:5000/reply", {reply, commentId, authorName})
+    return axios.post(" http://localhost:5000/reply", {reply, commentId, authorName}, {
+      withCredentials:true
+     })
 };
 
 const Addreply=({commentId})=>{

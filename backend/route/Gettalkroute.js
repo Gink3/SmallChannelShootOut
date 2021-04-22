@@ -12,7 +12,7 @@ export const threadRouter = router.get("/thread", (req, res) => {
       } else {
         res.json(result);
       }
-    });
+    }).sort({date:-1});
   } catch (error) {
     res.status(409).json({ message: error.message });
   }

@@ -1,10 +1,14 @@
 import Comment from '../models/CommentModel.js'
 import express from 'express'
 const router = express.Router(); 
+import {auth} from '../middleware/authentication.js'
+import User from '../models/UserModel.js' //importing models from user models from mongodb
 
 
-export const postcommentRouter = router.post('/comment',  async (req, res) => {
-    var {author, comment, postId} = req.body; 
+export const postcommentRouter = router.post('/comment', auth, async (req, res) => {
+  const oldUser = await User.findOne({_id: req.user});
+  var author = oldUser.userName;
+    var { comment, postId} = req.body; 
      try {
          const newComment = new Comment({author, comment, postId}); 
          newComment.save(); 

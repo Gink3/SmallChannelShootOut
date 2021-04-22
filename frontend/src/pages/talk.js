@@ -9,6 +9,7 @@ import Thread from './thread';
 import CreateThread from './createthread.js';
 
 function Talk() {
+  const {loggedIn} = useContext(AuthContext);
  
   const [showpostmodal, setpostmodal]=useState(false);
   return (
@@ -19,7 +20,7 @@ function Talk() {
         
         <Row className="justify-content-center ml-md-2 ">
           <Col md={7}>
-            
+          {loggedIn==true && ( 
           <Button variant="" style={{width: '100%'}} onClick={()=>setpostmodal(true)} className="plusfix"> 
           <Form.Row >
                     <Form.Group as={Col} className="plus" href="/createthread">
@@ -41,6 +42,7 @@ function Talk() {
                 </Form.Row>
 
 </Button>
+          )}
     <CreateThread show={showpostmodal} onHide={()=>setpostmodal(false)}/>
         
             <div className="">

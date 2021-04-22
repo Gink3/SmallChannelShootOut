@@ -1,9 +1,13 @@
 import Reply from '../models/ReplyModel.js'
 import express from 'express'
 const router = express.Router(); 
+import {auth} from '../middleware/authentication.js'
+import User from '../models/UserModel.js' //importing models from user models from mongodb
 
-export const postreplyRouter = router.post('/reply',  async (req, res) => {
-    var {authorName, reply, commentId} = req.body; 
+export const postreplyRouter = router.post('/reply', auth, async (req, res) => {
+  const oldUser = await User.findOne({_id: req.user});
+  var authorName = oldUser.userName
+    var {reply, commentId} = req.body; 
      try {
          const newReply = new Reply({authorName, reply, commentId}); 
          newReply.save(); 
