@@ -18,14 +18,14 @@
   margin-top: 1rem;
   border-radius: 9px;
   caret-color: crimson;
-  box-shadow: 0 0 9px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 9px 0 black, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   color: darken(white, 20%);
   font-size: 1.4rem;
   font-weight: 600;
   &:focus {
     color: darken(white, 60%);
     box-shadow: none;
-    box-shadow: 0 0 55px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 55px 0 black, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
