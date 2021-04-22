@@ -1,6 +1,7 @@
 import React from 'react';
 import { Breadcrumb, Container } from 'react-bootstrap';
 import {Video} from "../components/video.js";
+import axios from "axios"
 
 const cardbox=[
     {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
@@ -11,6 +12,12 @@ const cardbox=[
 ];
 
 function bestChoice(){
+  axios.get('http://localhost:5000/videoInfo', {
+        withCredentials:true
+    }).then((response)=>{
+      console.log(response.data);
+    })
+
     return(
       <>
         <Container fluid>

@@ -16,6 +16,7 @@ import {isLoggedInRouter} from './route/isLoggedInroute.js' //importing route fo
 import {userInfoRouter} from './route/getUserInfo.js'
 import {voteRouter} from './route/voteRoute.js'
 import {videoRouter} from './route/videoRoute.js'
+import {videoInfoRouter} from './route/getVideoInfo.js'
 import dotenv from 'dotenv'; 
 import cookieParser from 'cookie-parser';
 dotenv.config(); 
@@ -52,6 +53,7 @@ app.get ('/isLoggedIn',isLoggedInRouter); //check if user are logged in
 app.get('/userInfo', userInfoRouter); //check if user are not logged in
 app.post ('/vote', voteRouter); //voting router
 app.post('/video', videoRouter); //video routing 
+app.get('/videoInfo', videoInfoRouter); //get information from video database
 app.listen(port, () => {
     console.log(`Server is runnig in port: ${port}`)
 });

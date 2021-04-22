@@ -8,6 +8,11 @@ const VideoDetail = ({ video }) => {
   const [videoID, setVideoID]=useState({
     votedVideo: ""
 });
+const [VideoDetail, setVideoDetail] = useState({
+  videoId:"", 
+  videoTitle:"", 
+  channelTitle: ""
+})
   if (!video) {
     return <div className="landingPage">
         <h1>Welcome to Small Channel Shootout!</h1>
@@ -24,12 +29,13 @@ const VideoDetail = ({ video }) => {
     </div>;
   }
 
-  var votes = 0;
+  var votes = 0
 
   const likeVideo = (votes) => {
-      setVideoID({votedVideo:video.id.videoId});  
+      setVideoID({votedVideo:votes}); 
+      setVideoDetail({videoId:votes, videoTitle:video.snippet.title, channelTitle:video.snippet.channelTitle}) 
        axios.all( [
-       axios.post('http://localhost:5000/video',videoID , {
+       axios.post('http://localhost:5000/video',VideoDetail , {
         withCredentials:true
       }),
        axios.post('http://localhost:5000/vote',videoID, {
@@ -60,7 +66,7 @@ const VideoDetail = ({ video }) => {
             <p>Video ID: {video.id.videoId}</p>
 
             {/* Star Button */}
-            <Button className="star-btn" variant="" onClick={() => likeVideo(votes) }>
+            <Button className="star-btn" variant="" onClick={() => likeVideo(video.id.videoId) }>
               <BiStar className="star" color="gold" size= "3em"  />
             </Button>
 
