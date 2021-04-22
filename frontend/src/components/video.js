@@ -50,8 +50,12 @@ export function Video(object) {
                   <Button className="star-btn" variant="" onClick={() => likeVideo(cards, i) }>
                     <BiStar className="star" color="gold" size= "2em"  />
                   </Button>
+          <span style={{color:'whitesmoke'}}>
+          {cards.votes}
 
-                  {cards.votes}
+          </span>
+
+         
                 </Card.Body>
               </Card>
             </a>

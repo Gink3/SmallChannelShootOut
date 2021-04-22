@@ -15,7 +15,7 @@ function footer(){
           <img src={logo} alt="logo" width="70px" style={{paddingTop: '20px'}}/>
         </a>
 
-        <footer className="footer footer_make">
+        <footer className="footer footer_make" style={{color: 'white'}}>
           <br/>
 
           {/*Main Content*/}
