@@ -97,7 +97,7 @@ if(error){
                   <img src={toast} className="rounded mr-2" />
                   &nbsp;
                   <span>{thread.title}</span>
-                  <span> &nbsp; &nbsp; ||&nbsp; {thread.userName}</span>
+                  <span> &nbsp;|| &nbsp;{thread.userName}</span>
                 </div>
                 <div
                   className="d-flex justify-content-end mt-sm-6"
@@ -111,6 +111,7 @@ if(error){
               ></div>
               
               <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
+              <br/>
               &nbsp;{thread.body}
               <br/><br/>
               <div style={ {borderRadius: '9px'  }} className="embed-responsive embed-responsive-16by9">
