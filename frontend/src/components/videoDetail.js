@@ -40,7 +40,8 @@ const [VideoDetail, setVideoDetail] = useState({
         videoTitle: video.snippet.title, 
         channelTitle: video.snippet.channelTitle, 
         videoThubnail: video.snippet.thumbnails.medium.url,
-        videoPublishDate: video.snippet.publishedAt}) 
+        videoPublishDate: video.snippet.publishedAt
+      }) 
 
        axios.all( [
        axios.post('http://localhost:5000/video',VideoDetail , {
