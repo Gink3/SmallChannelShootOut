@@ -19,11 +19,20 @@ const updateLike=({_id, likes, isLiked})=>{
 }
 
 function Thread(){
+  const [userId, setUserId]=useState('');
+   
+    axios.get('http://localhost:5000/userInfo', {
+        withCredentials:true
+    }).then (function(response){
+       const userId = response.data._id;
+       setUserId(userId);
+        });
   const mutation = useMutation(updateLike);
 var x= new Boolean(false);
   /* const [userId, setuserId] = useState('') */;
   const likeThread=(_id, likes, isLiked)=>{
-    const tractId='5b1111111';
+    const tractId=userId;
+    console.log(tractId);
     /* setuserId(tractId); */
     var found=false;
     
