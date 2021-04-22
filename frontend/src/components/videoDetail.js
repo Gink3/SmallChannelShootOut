@@ -72,7 +72,7 @@ const [VideoDetail, setVideoDetail] = useState({
             <h2>{video.snippet.title}</h2>
             <h5>{video.snippet.channelTitle}  |  {year}-{month}-{day}</h5>
             <p>{video.snippet.description}</p>
-            <p>Video ID: {video.id.videoId}</p>
+            {/*<p>Video ID: {video.id.videoId}</p>*/}
 
             {/* Star Button */}
             <Button className="star-btn" variant="" onClick={() => likeVideo(video.id.videoId) }>
@@ -81,7 +81,7 @@ const [VideoDetail, setVideoDetail] = useState({
 
             {/* Vote Count */}
             <div className='numVotes'>
-              <h2>{votes}</h2>
+              {/*<h2>{votes}</h2>*/}
             </div>
         </div>
     </div>

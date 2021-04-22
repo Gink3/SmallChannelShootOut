@@ -23,7 +23,7 @@ const VideoItem = ({video , handleVideoSelect}) => {
 
                     <div className='videoItemCreator'>
                         <p>
-                            {video.snippet.channelTitle}  |  {year}-{month}-{day}  |  <AiFillStar className='voteIcon'/> 0
+                            {video.snippet.channelTitle}  |  {year}-{month}-{day}  {/*|  <AiFillStar className='voteIcon'/> 0 */}
                         </p>
 
                         <div className='videoItemDescription'>

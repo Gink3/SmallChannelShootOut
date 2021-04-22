@@ -80,7 +80,7 @@ class Home extends React.Component {
         return (
           <>
             <div className="home1" >
-            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'#4d0026'}}>
+            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'crimson'}}>
               <SearchBar handleFormSubmit={this.handleSubmit}/>         
               <div className="homevideodetail" style={{}}>
                 <VideoDetail video={this.state.selectedVideo}/>
