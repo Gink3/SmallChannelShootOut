@@ -16,7 +16,7 @@ const [VideoDetail, setVideoDetail] = useState({
   if (!video) {
     return <div className="landingPage">
         <h1>Welcome to Small Channel Shootout!</h1>
-        <h2>Begin exploring by searching for your favorite videos above.</h2>
+        <h2 style={{color:'white'}}>Begin exploring by searching for your favorite videos above.</h2>
         <br/>
         <div className="landingPageParagraph">
             <h5>
@@ -24,9 +24,9 @@ const [VideoDetail, setVideoDetail] = useState({
                 vote on your favorite videos each week and see the results of that vote at our Best Choice page.
             </h5>
         </div>
-        <h2>See your videos below.</h2>
+        <h2 style={{color:'white'}}>See your videos below.</h2>
 
-    </div>;
+    </div>
   }
 
   var votes = 0

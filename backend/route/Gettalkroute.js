@@ -37,8 +37,8 @@ export const changethreadRouter = router.patch('/thread/:id', async (req, res) =
     try {
        
         const id=req.params.id;
-        
-        const result = await Thread.findByIdAndUpdate({_id: id}, req.body, {new: true});
+        var likes = req.body; 
+        const result = await Thread.findByIdAndUpdate({_id: id}, {likes: likes}, {new: true});
         console.log(result);
         res.json(result);
     } catch (error) {

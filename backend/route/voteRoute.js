@@ -6,6 +6,7 @@ import User from '../models/UserModel.js'
 
 export const voteRouter = router.post('/vote', auth, async (req,res) => {
     try {
+        console.log(req.body);
         var {votedVideo} = req.body;
         if(votedVideo == ""){
             return res.json("Cannot vote. try again")
