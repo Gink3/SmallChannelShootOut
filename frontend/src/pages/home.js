@@ -44,7 +44,7 @@ class Home extends React.Component {
       this.setState({
         channelIdString: this.state.channelIdString.substring(0, this.state.channelIdString.length - 1)
       })
-
+      
       //csv string of all channel ids
       console.log("channelStyring", this.state.channelIdString)
 

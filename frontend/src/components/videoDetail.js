@@ -11,7 +11,9 @@ const VideoDetail = ({ video }) => {
 const [VideoDetail, setVideoDetail] = useState({
   videoId:"", 
   videoTitle:"", 
-  channelTitle: ""
+  channelTitle: "",
+  videoThubnail: "",
+  videoPublishDate: ""
 })
   if (!video) {
     return <div className="landingPage">
@@ -32,8 +34,14 @@ const [VideoDetail, setVideoDetail] = useState({
   var votes = 0
 
   const likeVideo = (votes) => {
-      setVideoID({votedVideo:votes}); 
-      setVideoDetail({videoId:votes, videoTitle:video.snippet.title, channelTitle:video.snippet.channelTitle}) 
+      setVideoID({votedVideo: votes}); 
+      setVideoDetail({
+        videoId: votes, 
+        videoTitle: video.snippet.title, 
+        channelTitle: video.snippet.channelTitle, 
+        videoThubnail: video.snippet.thumbnails.medium.url,
+        videoPublishDate: video.snippet.publishedAt}) 
+
        axios.all( [
        axios.post('http://localhost:5000/video',VideoDetail , {
         withCredentials:true
