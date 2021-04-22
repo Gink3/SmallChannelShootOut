@@ -100,7 +100,6 @@ function Account(){
                     <Row>
                         <Col>
                             <CardDeck>
-                                <Video cardbox={cardbox} />
                             </CardDeck>
                         </Col>
                     </Row>
@@ -112,7 +111,6 @@ function Account(){
                     <Row>
                         <Col>
                             <CardDeck>
-                                <Video cardbox={cardbox} />
                             </CardDeck>
                         </Col>
                     </Row>
