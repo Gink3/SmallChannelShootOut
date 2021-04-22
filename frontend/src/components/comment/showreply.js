@@ -13,7 +13,7 @@ const Showreply = ({ commentId }) => {
   const [showreply, setShowreply] = useState(false);
 
   const { isLoading, error, data } = useQuery("replyList", () => {
-    return Get("http://localhost:3009/replys");
+    return Get("http://localhost:5000/reply");
   });
 
   if (isLoading) {
@@ -48,7 +48,7 @@ const Showreply = ({ commentId }) => {
         if (commentId == replying.commentId) {
           return (
             <>
-              <div key={replying.id}>
+              <div key={replying._id}>
                 <div
                   style={{
                     borderRadius: "5px",
@@ -57,7 +57,7 @@ const Showreply = ({ commentId }) => {
                     marginTop: "5px",
                     padding: ".5rem",
                   }}
-                  key={replying.id}
+                  key={replying._id}
                 >
                   <div style={{ fontWeight: "bold" }}>{replying.authorName}: </div>
                   {replying.reply}

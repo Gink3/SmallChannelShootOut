@@ -5,7 +5,7 @@ import { Post } from '../utilities';
 import { Button, Form } from 'react-bootstrap';
 import { queryClient } from '../../reactQuery';
 const makeReply=({reply, commentId, authorName})=>{
-    return Post (" http://localhost:3009/replys", {reply, commentId, authorName})
+    return Post (" http://localhost:5000/reply", {reply, commentId, authorName})
 };
 
 const Addreply=({commentId})=>{

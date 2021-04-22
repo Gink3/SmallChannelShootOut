@@ -133,8 +133,8 @@ if(error){
               {/* <ToastContainer /> */}
              
               
-            <AddComment postId={thread.id}/>
-          <ShowComment postId={thread.id}/>
+            <AddComment postId={thread._id}/>
+          <ShowComment postId={thread._id}/>
             </Card.Body>
           </Card> 
        

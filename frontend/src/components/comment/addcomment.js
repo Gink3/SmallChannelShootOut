@@ -7,7 +7,7 @@ import {Post} from '../utilities';
 
 
 const makeComment = ({comment, postId, author})=>{
-    return Post('http://localhost:3009/comments', {comment, postId, author});
+    return Post('http://localhost:5000/comment', {comment, postId, author});
     
 };
 

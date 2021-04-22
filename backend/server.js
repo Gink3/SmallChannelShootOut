@@ -9,7 +9,8 @@ import {talkRouter} from './route/TalkRoute.js';
 import {threadRouter} from './route/GettalkRoute.js'; 
 import {changethreadRouter} from './route/GettalkRoute.js'; 
 import {idthreadRouter} from './route/GettalkRoute.js'; 
-
+import {getcommentRouter, postcommentRouter } from './route/commentRoute.js';
+import {getreplyRouter, postreplyRouter} from './route/replyRoute.js';
 
 
 import {isLoggedInRouter} from './route/isLoggedInroute.js' //importing route for isLoggedIn
@@ -19,6 +20,7 @@ import {videoRouter} from './route/videoRoute.js'
 import {videoInfoRouter} from './route/getVideoInfo.js'
 import dotenv from 'dotenv'; 
 import cookieParser from 'cookie-parser';
+
 dotenv.config(); 
 
 const app = express();
@@ -46,6 +48,14 @@ app.get('/logout', logoutRouter); //route for logout
 app.get('/thread', threadRouter); //route for getting thread posts
 app.patch('/thread/:id', changethreadRouter); //route for getting thread posts ids
 app.get('/thread/:id', idthreadRouter); //route for getting thread posts ids
+
+app.get('/comment', getcommentRouter); //route for getting comment posts
+app.post('/comment', postcommentRouter); //route for posting posts
+
+app.post('/reply', postreplyRouter); //route for getting reply
+app.get('/reply', getreplyRouter); //route for getting reply
+
+
 
 
 

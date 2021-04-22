@@ -4,7 +4,7 @@ const router = express.Router();
 
 export const threadRouter = router.get("/thread", (req, res) => {
   try {
-      
+    
     Thread.find({}, (err, result) => {
         
       if (err) {

@@ -12,7 +12,7 @@ import {MdExpandMore} from 'react-icons/md';
 const ShowComment=({postId})=>{
 var commentCount=0;
     const {isLoading, error, data} = useQuery("commentList",() =>{
-        return Get("http://localhost:3009/comments");
+        return Get("http://localhost:5000/comment");
     });
 
     if (isLoading){
@@ -49,7 +49,7 @@ var commentCount=0;
                 if (postId == commentListing.postId){
                   
           return (
-            <div key={commentListing.id}>
+            <div key={commentListing._id}>
               <div
                 style={{
                   borderRadius: "5px",
@@ -58,14 +58,14 @@ var commentCount=0;
                   marginTop: "5px",
                   padding: ".5rem"
                 }}
-                key={commentListing.id}
+                key={commentListing._id}
               >
                 <div style={{ fontWeight: "bold" }}>{commentListing.author}: </div>
                 {commentListing.comment}<br/>
               
-                 <Addreply commentId={commentListing.id}/> 
+                 <Addreply commentId={commentListing._id}/> 
                      
-                 <Showreply commentId={commentListing.id}/>
+                 <Showreply commentId={commentListing._id}/>
                          
               
 
