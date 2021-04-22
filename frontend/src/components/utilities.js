@@ -11,3 +11,7 @@ export const Get = (url) =>{
 export const Put = (url, valObject) =>{
     return axios.put(url, valObject);
 }
+
+export const Patch = (url, valObject) =>{
+    return axios.patch(url, valObject);
+}

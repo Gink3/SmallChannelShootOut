@@ -22,11 +22,11 @@ body: {
     trim: true, 
     default: ""
 },
-comments: {
+/* comments: {
     type:String,
     trim: true, 
     default: ""
-},
+}, */
 likes: {
     type:Number,
     trim: true, 

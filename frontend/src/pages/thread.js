@@ -13,24 +13,22 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { queryClient } from '../reactQuery';
-
-const updateLike=({id, likes, isLiked})=>{
-  return axios.patch(`http://localhost:3009/posts/${id}`, {id, likes, isLiked});
+/* BAckUp API:`http://localhost:3009/posts/${id}` */
+const updateLike=({_id, likes, isLiked})=>{
+  return axios.patch(`http://localhost:5000/${_id}`, {_id, likes, isLiked});
 }
 
 function Thread(){
   const mutation = useMutation(updateLike);
 var x= new Boolean(false);
-  const [userId, setuserId] = useState('');
-  const likeThread=(id, likes, isLiked)=>{
+  /* const [userId, setuserId] = useState('') */;
+  const likeThread=(_id, likes, isLiked)=>{
     const tractId='5b1111111';
-    setuserId(tractId);
+    /* setuserId(tractId); */
     var found=false;
     
     /* {isLiked.filter(name => name.includes(tractId)).map((filteredName,i) => (
-      
      (filteredName == tractId) ? isLiked.splice(2,1)&&(found=true)&& (likes=likes-1)&&console.log(i) : ""
-    
     )
     )} */
     for (var i =0; i<isLiked.length; i++){
@@ -38,19 +36,15 @@ var x= new Boolean(false);
       isLiked.splice(i,1);
       found=true;
       likes=likes-1;
-     /*  console.log("already"); */
      }
     }
     if (!found){
       isLiked.push(tractId);
       likes=likes+1;
-      /* console.log(found) */
     }
-   
-    
     
       mutation.mutate(
-        {id, likes, isLiked},
+        {_id, likes, isLiked},
         {
           onSuccess: ()=>{
             queryClient.refetchQueries(["postList"]);
@@ -59,9 +53,10 @@ var x= new Boolean(false);
 
       );
      }
-
+     /* Backup API: "http://localhost:3009/posts" ===> This runs on json server */
+/* DB API:"http://localhost:5000/thread" */
      const {isLoading, error, data} = useQuery("postList",() =>{
-      return Get('http://localhost:3009/posts');
+      return Get("http://localhost:5000/thread");
   });
    
    if (isLoading){
@@ -71,7 +66,6 @@ if(error){
     return <div>Something went wrong :(</div>
 }
 
-  
     
     return (
       <> 
@@ -80,9 +74,11 @@ if(error){
         <>
            <Card
             className="backside"
-            key={thread.id}
+            key={thread._id}
             style={{ minWidth: "18rem", flexGrow: 1 }}
           >
+  {console.log(thread._id)}
+
             <Card.Body>
               <Card.Title
                 style={{ backgroundColor: "white", borderRadius: "5px" }}
@@ -92,13 +88,13 @@ if(error){
                   <img src={toast} className="rounded mr-2" />
                   &nbsp;
                   <span>{thread.title}</span>
-                  <span> &nbsp; &nbsp; ||&nbsp; {thread.user}</span>
+                  <span> &nbsp; &nbsp; ||&nbsp; {thread.userName}</span>
                 </div>
                 <div
                   className="d-flex justify-content-end mt-sm-6"
                   style={{ marginTop: "9px", color: "#B6B6B4" }}
                 >
-                  <small>{thread.timestamp}&nbsp;&nbsp;&nbsp;</small>
+                  <small>{thread.date}&nbsp;&nbsp;&nbsp;</small>
                 </div>
               </Card.Title>
               <div
@@ -120,7 +116,7 @@ if(error){
 
 
 
-              <Button variant="" className="like-btn" onClick={()=>{likeThread(thread.id, thread.likes, thread.isLiked)}} >
+              <Button variant="" className="like-btn" onClick={()=>{likeThread(thread._id, thread.likes, thread.isLiked)}} >
               <FiThumbsUp size="1.5em" color="green" className="like-btn" />
               </Button>
               {thread.likes}
@@ -131,7 +127,7 @@ if(error){
               <Button variant="" className="dislike-btn">
               <FiThumbsDown className="dislike-btn" size="1.5em" color="red" />
               </Button>
-              {thread.dislike}
+              {thread.dislikes}
              
               &nbsp;&nbsp;&nbsp;
               {/* <ToastContainer /> */}

@@ -4,7 +4,14 @@ import mongoose from 'mongoose';
 import {signUpRouter} from './route/SignupRoute.js'; //importing route for signup
 import {loginRouter} from './route/LoginRoute.js'; //importing route forr login
 import {logoutRouter} from './route/LogoutRoute.js'; //importing route for logout
+
 import {talkRouter} from './route/TalkRoute.js'; 
+import {threadRouter} from './route/GettalkRoute.js'; 
+import {changethreadRouter} from './route/GettalkRoute.js'; 
+import {idthreadRouter} from './route/GettalkRoute.js'; 
+
+
+
 import {isLoggedInRouter} from './route/isLoggedInroute.js' //importing route for isLoggedIn
 import {userInfoRouter} from './route/getUserInfo.js'
 import {voteRouter} from './route/voteRoute.js'
@@ -36,6 +43,12 @@ app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); //route for signup
 app.post('/login', loginRouter);  //route for login
 app.get('/logout', logoutRouter); //route for logout
+app.get('/thread', threadRouter); //route for getting thread posts
+app.patch('/thread/:id', changethreadRouter); //route for getting thread posts ids
+app.get('/thread/:id', idthreadRouter); //route for getting thread posts ids
+
+
+
 app.get ('/isLoggedIn',isLoggedInRouter); //check if user are logged in 
 app.get('/userInfo', userInfoRouter); //check if user are not logged in
 app.post ('/vote', voteRouter); //voting router

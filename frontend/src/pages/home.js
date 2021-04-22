@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Button, Card,  Container, Row, Col, CardDeck,Tabs,Tab } from "react-bootstrap";
+/* import { Button, Card,  Container, Row, Col, CardDeck,Tabs,Tab } from "react-bootstrap"; */
 import './pages.scss';
 import '../components/video.scss';
 import '../components/base.scss'
@@ -7,6 +7,7 @@ import SearchBar from '../components/searchbar';
 import youtube from '../components/api';
 import VideoList from '../components/videoList';
 import VideoDetail from '../components/videoDetail';
+/* import background from "../images/thumbnail.png"; */
 
 class Home extends React.Component {
     resultsPerPage = 15;
@@ -75,13 +76,13 @@ class Home extends React.Component {
     render() {
         return (
           <>
-            <div className="home1" style={{marginTop: '1em'}}>
-              <SearchBar handleFormSubmit={this.handleSubmit}/>
-              
+            <div className="home1" >
+            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'#4d0026'}}>
+              <SearchBar handleFormSubmit={this.handleSubmit}/>         
               <div className="homevideodetail" style={{}}>
                 <VideoDetail video={this.state.selectedVideo}/>
               </div>
-
+              </div>
               <div style={{borderTop: "4px solid #000 " }}></div>
 
               <div className="homevideolist" style={{width: '80%'}}>
