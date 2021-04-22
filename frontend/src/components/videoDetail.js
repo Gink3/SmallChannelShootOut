@@ -39,7 +39,7 @@ const [VideoDetail, setVideoDetail] = useState({
         videoId: votes, 
         videoTitle: video.snippet.title, 
         channelTitle: video.snippet.channelTitle, 
-        videoThubnail: video.snippet.thumbnails.medium.url,
+        videoThumbnail: video.snippet.thumbnails.medium.url,
         videoPublishDate: video.snippet.publishedAt
       }) 
 
