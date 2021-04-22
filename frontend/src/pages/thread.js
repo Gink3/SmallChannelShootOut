@@ -15,7 +15,7 @@ import axios from 'axios';
 import { queryClient } from '../reactQuery';
 /* BAckUp API:`http://localhost:3009/posts/${id}` */
 const updateLike=({_id, likes, isLiked})=>{
-  return axios.patch(`http://localhost:5000/${_id}`, {_id, likes, isLiked});
+  return axios.patch(`http://localhost:5000/thread/${_id}`, {_id, likes, isLiked});
 }
 
 function Thread(){

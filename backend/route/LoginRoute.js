@@ -6,6 +6,7 @@ const router = express.Router();
 
 export const loginRouter = router.post('/login',  async (req, res) => {
    const {email, password} = req.body; 
+   
     try{
         const oldUser = await User.findOne({email: email}); //see of the email address exists in database
         if (email == "" || password == "" ){

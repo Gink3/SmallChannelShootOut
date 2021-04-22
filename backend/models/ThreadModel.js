@@ -33,7 +33,7 @@ likes: {
     default: 0
 },
 isLiked:[{
-    type:Number
+    type:String
 }],
 dislikes: {
     type:Number,
