@@ -19,7 +19,7 @@ votes: {
     default: 0
 },
 
-  videoThubnail:{
+  videoThumbnail:{
       type: String,
       default : ""
   },
