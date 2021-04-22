@@ -6,7 +6,7 @@ import Video from '../models/VideoModel.js'
 
 export const videoRouter = router.post('/video',auth, async (req,res) => {
     try {
-        var {videoId, videoTitle, channelTitle} = req.body;
+        var {videoId, videoTitle, channelTitle,  videoThumbnail, videoPublishDate} = req.body;
        // var videoId = votedVideo; 
         if(videoId == ""){
             return res.send("No video ID"); 
@@ -26,7 +26,7 @@ export const videoRouter = router.post('/video',auth, async (req,res) => {
           return res.json("vote increased");
         }
         else {
-            const newVideo = new Video({videoId,videoTitle, channelTitle, votes: 1}); 
+            const newVideo = new Video({videoId,videoTitle, channelTitle, votes: 1, videoThumbnail, videoPublishDate}); 
             newVideo.save(); 
             return res.json("votes saved");    
         }

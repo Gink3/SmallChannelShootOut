@@ -65,7 +65,10 @@ class Home extends React.Component {
           })
         }
       }
-
+      
+      this.setState({
+        channelIdString: ''
+      })
       console.log(this.state.validVideos, this.state.selectedVideo)
     };
 

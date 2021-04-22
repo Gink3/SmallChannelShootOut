@@ -40,7 +40,7 @@ export function Video(object) {
             
             <a target="_blank" href={`https://www.youtube.com/watch?v=${cards.videoId}&ab_channel=${cards.channelId}`}>
               <Card className="home-card-box-video" style={{marginTop: '12px', minWidth: '18rem', minHeight: '10rem', flexGrow: 1}} key={i} >
-                <Card.Img variant="top" src={cards.image} />
+                <Card.Img variant="top" src={cards.videoThumbnail} />
 
                
                 <Card.Body>

@@ -2,6 +2,7 @@ import React from 'react';
 import './pages.scss';
 import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
 import thumbnail from "../images/thumbnail.png";
+import axios from "axios"
 
 import goldpillar from "../images/GoldPillar.png";
 import silverpillar from "../images/SilverPillar.png";
@@ -9,18 +10,16 @@ import bronzepillar from "../images/BronzePillar.png";
 
 import {Video} from "../components/video.js";
 
-const cardbox=[
-    {image:'https://www.youtube.com/embed/tgbNymZ7vqY?rel=0',title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  ];
-
-  const cardbox1=[
-    {title:"Video Title", subtitle:"Generic Small Channel", star:0, text:" Video description, creator, view count, etc..."},
-  ];
+var cardbox=[];
   
+axios.get('http://localhost:5000/videoInfo', {
+  withCredentials:true
+}).then((response)=>{
+  cardbox = response.data
+  console.log(cardbox)
+}).catch((error) => {
+  console.log(error)
+})
 
 function about(){
   return(
