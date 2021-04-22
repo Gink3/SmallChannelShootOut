@@ -14,15 +14,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { queryClient } from '../reactQuery';
 /* BAckUp API:`http://localhost:3009/posts/${id}` */
-const updateLike=({id, likes, isLiked})=>{
-  return axios.patch(`http://localhost:3009/posts/${id}`, {id, likes, isLiked});
+const updateLike=({_id, likes, isLiked})=>{
+  return axios.patch(`http://localhost:5000/${_id}`, {_id, likes, isLiked});
 }
 
 function Thread(){
   const mutation = useMutation(updateLike);
 var x= new Boolean(false);
   /* const [userId, setuserId] = useState('') */;
-  const likeThread=(id, likes, isLiked)=>{
+  const likeThread=(_id, likes, isLiked)=>{
     const tractId='5b1111111';
     /* setuserId(tractId); */
     var found=false;
@@ -44,7 +44,7 @@ var x= new Boolean(false);
     }
     
       mutation.mutate(
-        {id, likes, isLiked},
+        {_id, likes, isLiked},
         {
           onSuccess: ()=>{
             queryClient.refetchQueries(["postList"]);
