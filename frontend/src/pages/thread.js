@@ -8,7 +8,7 @@ import ShowComment from "../components/comment/showcomment";
  /* import AdSense from 'react-adsense';  */
 import { useMutation, useQuery } from 'react-query';
 import { Get } from '../components/utilities';
- 
+import Moment from 'react-moment';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
@@ -94,7 +94,7 @@ if(error){
                   className="d-flex justify-content-end mt-sm-6"
                   style={{ marginTop: "9px", color: "#B6B6B4" }}
                 >
-                  <small>{thread.date}&nbsp;&nbsp;&nbsp;</small>
+                  <small><Moment fromNow>{thread.date}</Moment>&nbsp;&nbsp;&nbsp;</small>
                 </div>
               </Card.Title>
               <div
