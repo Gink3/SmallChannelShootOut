@@ -18,6 +18,16 @@ votes: {
     type: Number, 
     default: 0
 },
+
+  videoThubnail:{
+      type: String,
+      default : ""
+  },
+videoPublishDate: {
+   type: String ,
+   default: ""
+},
+
 });
 
 
