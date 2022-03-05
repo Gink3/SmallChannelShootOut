@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A website for small content creators to post their content and let the viewing audience vote",
   "main": "index.js",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  },
   "scripts": {
     "fe": "cd frontend && npm start",
     "be": "cd backend && npm start",
