@@ -1,0 +1,22 @@
+{
+  "name": "smallchannelshootout",
+  "version": "1.0.0",
+  "description": "A website for small content creators to post their content and let the viewing audience vote",
+  "main": "index.js",
+  "scripts": {
+    "fe": "cd frontend && npm start",
+    "be": "cd backend && npm start",
+    "start": "concurrently \"npm rum be\" \"npm run fe\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gink3/SmallChannelShootOut.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gink3/SmallChannelShootOut/issues"
+  },
+  "homepage": "https://github.com/Gink3/SmallChannelShootOut#readme"
+}
