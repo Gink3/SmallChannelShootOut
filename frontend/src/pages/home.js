@@ -80,7 +80,7 @@ class Home extends React.Component {
         return (
           <>
             <div className="home1" >
-            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'crimson'}}>
+            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'light coral'}}>
               <SearchBar handleFormSubmit={this.handleSubmit}/>         
               <div className="homevideodetail" style={{}}>
                 <VideoDetail video={this.state.selectedVideo}/>
@@ -128,3 +128,4 @@ function Intro(props) {
   );
 } 
 */
+

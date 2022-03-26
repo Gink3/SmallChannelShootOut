@@ -6,21 +6,11 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  background: #BD6B73;
 }
 
-body {
-  //background-color: lighten(#39404e, 10%); //rgb(221, 217, 217);
-  //color: aliceblue;
-
-  //background: url("../images/BCK_Light.png");
-
-  background: white;
-}
-//.light-mode{
-
-//}
 .dark-mode {
-  background: url("../images/BCK_Dark.png");
+  background: rgb(49, 47, 47);;
 }
 .container {
   position: absolute;
@@ -200,6 +190,10 @@ body {
 }
 /////////////////////////////////
 .footer_make {
+  position: sticky;
+  position: absolute;
+  bottom:0;
+  width: 100%;
   background-color: black;
 }
 .active-link {

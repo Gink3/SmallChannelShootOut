@@ -15,21 +15,21 @@ function footer(){
           <img src={logo} alt="logo" width="70px" style={{paddingTop: '20px'}}/>
         </a>
 
-        <footer className="footer footer_make" style={{color: 'white'}}>
+        <footer className="footer" style={{color: 'white'}}>
           <br/>
 
           {/*Main Content*/}
-          <div className= "footer footer_make"> 
-            <span className="footer footer_make">
-              &nbsp; &copy; 2021 &nbsp;
+          <div className= "footer"> 
+            <span className="footer">
+              &nbsp; &copy; 2022 &nbsp;
               <FaRobot className="footer_make" size="2em"/> 
-              &nbsp;Beep Boop Inc.
+              &nbsp;HTML Coding
             </span>
           </div>
 
           {/*Mail Icon*/}
-          <div className="d-flex justify-content-center footer_make">
-            <span className="footer_make"><HiOutlineMail className="footer_make" size="2em"/> 
+          <div className="d-flex justify-content-center">
+            <span className="footer_make"><HiOutlineMail className="footer_make" size="1em"/> 
               &nbsp;
             </span>
 
@@ -46,3 +46,4 @@ function footer(){
     );
 }
 export default footer;
+
