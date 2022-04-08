@@ -37,7 +37,8 @@ function Topbar() {
 
   return (
     <>
-    <LoadingBar color="#f11946" ref={ref} />
+    <LoadingBar class="load" ref={ref} />
+
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
         <Navbar.Brand onClick={handleLoadSomething} href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
         <Navbar.Toggle
@@ -51,11 +52,11 @@ function Topbar() {
 
            {/*Homepage Link*/}
           <NavLink to='/' className="icon" onClick={handleLoadSomething} exact activeClassName="active-link" style={{marginTop:'6px', marginLeft:'3px'}}>
-          <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
-           <span className="d-inline-block">
-                  <AiOutlineHome style={{marginLeft: '9px'}} size="2em"/>
-                </span>
-              </OverlayTrigger>&nbsp;&nbsp;&nbsp;
+            <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Home</Tooltip>}>
+              <span className="d-inline-block">
+                <AiOutlineHome style={{marginLeft: '9px'}} size="2em"/>
+              </span>
+            </OverlayTrigger>&nbsp;&nbsp;&nbsp;
           </NavLink>
 
 

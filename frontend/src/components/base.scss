@@ -1,4 +1,12 @@
-$Navcolor: black; // green; //rgb(165, 82, 96); //crimson;
+//Color Palette:
+$cust-red:       #A30B37;
+$cust-lt-red:    #BD6B73;
+$cust-purple:    #BBB6DF;
+$cust-lt-purple: #C6C8EE;
+$cust-white:     #FCFCFF;
+
+$nav-color: $cust-red;
+
 html,
 body {
   width: 100%;
@@ -6,12 +14,13 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background: #BD6B73;
+  background: $cust-lt-red; //$cust-white
 }
 
 .dark-mode {
   background: rgb(49, 47, 47);;
 }
+
 .container {
   position: absolute;
   margin: auto;
@@ -30,12 +39,12 @@ body {
     left: 0;
     width: 50px;
     height: 50px;
-    background: $Navcolor;
+    background: $nav-color;
     border-radius: 50%;
     transition: all 1s;
     z-index: 4;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: 0 0 25px 0 $Navcolor;
+    box-shadow: 0 0 25px 0 $nav-color;
 
     &:hover {
       cursor: pointer;
@@ -82,9 +91,9 @@ body {
     outline: none;
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background: lighten($Navcolor, 15%);
+    background: lighten($nav-color, 15%);
     color: white;
-    text-shadow: 0 0 10px $Navcolor;
+    text-shadow: 0 0 10px $nav-color;
     padding: 0 80px 0 20px;
     border-radius: 30px;
     box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
@@ -130,9 +139,14 @@ body {
   }
 }
 
-.nav {
-  background-color: black;
+.load {
+  color: "$cust-white";
 }
+
+.nav {
+  background-color: $nav-color;
+}
+
 .btn-nav {
   &:active {
     .icon {
@@ -140,18 +154,20 @@ body {
     }
   }
 }
+
 .icon {
-  background-color: black;
-  color: aliceblue; ////////////////////////////
+  background-color: $nav-color;
+  color: $cust-white; 
   position: relative;
   margin-left: 5px;
   &:active {
     transform: scale(1.2);
   }
   &:hover {
-    color: crimson;
+    color: $cust-purple;
   }
 }
+
 .your-acc-icon {
   background-color: white;
 }
@@ -197,11 +213,11 @@ body {
   background-color: black;
 }
 .active-link {
-  color: crimson;
+  color: $cust-lt-purple;
   @media (min-width: 992px) {
-    border-bottom: 3px solid red;
+    border-bottom: 3px solid $cust-lt-purple;
     margin-bottom: -16px;
-    color: crimson;
+    color: $cust-lt-purple;
   }
 }
 .active-right {

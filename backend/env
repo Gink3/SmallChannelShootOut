@@ -1,0 +1,2 @@
+ATLAS_URI=mongodb+srv://SCS_User_1:Go7VhYr7d0LVgoAZ@smallchannelshootout.vcosb.mongodb.net/SCS-DB?retryWrites=true&w=majority
+JWT_PASS=Go7VhYr7d0LVgoAZ
