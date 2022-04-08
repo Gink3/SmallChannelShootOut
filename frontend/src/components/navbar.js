@@ -6,7 +6,7 @@ import {NavLink} from 'react-router-dom'
 import LoadingBar from "react-top-loading-bar";
 
 
-import logo from "../images/SCS_Block.svg";
+import logo from "../images/SCS_Target3_Transparent.svg";
 import {FaUserPlus} from "react-icons/fa";
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai";
 import {RiMessage3Line} from "react-icons/ri";
@@ -34,9 +34,10 @@ function Topbar() {
          ref.current.complete();
     }, 1000);
   };
+
   return (
     <>
-<LoadingBar color="#f11946" ref={ref} />
+    <LoadingBar color="#f11946" ref={ref} />
       <Navbar collapseOnSelect expand="lg" variant="dark" className="nav">
         <Navbar.Brand onClick={handleLoadSomething} href="/"><img src={logo} alt="logo" width="50px" className=""/></Navbar.Brand>
         <Navbar.Toggle
