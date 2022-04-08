@@ -1,13 +1,13 @@
 import React, {useState, useRef, useContext} from "react";
 import "./base.scss";
-import { Navbar, Nav} from "react-bootstrap";
+import {Navbar, Nav} from "react-bootstrap";
 import {OverlayTrigger, Tooltip } from 'react-bootstrap'
-import { NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import LoadingBar from "react-top-loading-bar";
 
 
-import logo from "../images/SCSLogo_SimpleBB.png";
-import { FaUserPlus} from "react-icons/fa";
+import logo from "../images/SCS_Block.svg";
+import {FaUserPlus} from "react-icons/fa";
 import {AiOutlineHome, AiOutlineTrophy} from "react-icons/ai";
 import {RiMessage3Line} from "react-icons/ri";
 import {BiLogIn} from "react-icons/bi";
@@ -15,11 +15,11 @@ import {BiLogIn} from "react-icons/bi";
 import {BiPoll} from "react-icons/bi";
 import {RiAccountCircleLine} from "react-icons/ri";
 
-import Login   from '../pages/login';
+import Login from '../pages/login';
 
 import {BiMoon} from 'react-icons/bi'
 import AuthContext from "../context/authcontext.js"
-//import { checkLogin } from "../context/authcontext.js"
+//import {checkLogin} from "../context/authcontext.js"
 
 function Topbar() {
   const {loggedIn} = useContext(AuthContext);
