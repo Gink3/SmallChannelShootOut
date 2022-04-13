@@ -53,6 +53,11 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+// Test if the db connection is successfully opened
+db.once('open', function () {
+    console.log("Connection Successful");
+});
+
 app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); //route for signup
 app.post('/login', loginRouter);  //route for login
