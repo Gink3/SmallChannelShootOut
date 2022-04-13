@@ -33,13 +33,25 @@ app.use(cors({
 app.use(express.json()); 
 app.use(cookieParser());
 
+console.log(process.env.ATLAS_URI); 
 const uri = process.env.ATLAS_URI; //uri for mongodb
 
-mongoose.connect (uri, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(uri, {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+});()=> {
+    console.log("connected to DB")
+}
 
 mongoose.connection.once('open', () => {
     console.log("MongoDB has connected succesfully");
 })
+
+//Get the default connection
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.post('/talk', talkRouter);
 app.post('/signup', signUpRouter); //route for signup
