@@ -12,7 +12,7 @@ function footer(){
 
         {/*Logo*/}
         <a href="/"> 
-          <img src={logo} alt="logo" width="70px" style={{paddingTop: '20px'}}/>
+          <img src={logo} alt="logo" width="70px" style={{paddingTop: '10px'}}/>
         </a>
 
         <footer className="footer" style={{color: 'white'}}>

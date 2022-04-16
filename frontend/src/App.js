@@ -8,15 +8,16 @@ import VideoTemplate  from "./components/video-template";
 import MakeAccount    from './pages/makeacc';
 import Home           from './pages/home';
 import Talk           from './pages/talk';
-import About          from './pages/about';
+import Leaderboard          from './pages/leaderboard';
 import Account        from './pages/account';
 import BestChoice     from './pages/bestchoice';
 import CreateThread   from './pages/createthread';
-
+import About          from './pages/about';
 import Gaming         from './pages/voting/gaming';
 import Sports         from './pages/voting/sports';
 import Fashion        from './pages/voting/fashion';
 import News           from './pages/voting/news';
+import leaderboard from "./pages/leaderboard.js";
 
 function App() {
   return (
@@ -34,11 +35,11 @@ function App() {
             
             <Route path="/talk" exact component={Talk}/>
       
-            <Route path="/about" exact component={About}/>
+            <Route path="/leaderboard" exact component={Leaderboard}/>
             <Route path="/account" exact component={Account}/>
             <Route path="/bestchoice" exact component={BestChoice}/>
             <Route path="/createthread" exact component={CreateThread}/>
-
+            <Route path="/about" exact component={About}/>
             <Route path="/voting/gaming" exact component={Gaming}/>
             <Route path="/voting/fashion" exact component={Fashion}/>
             <Route path="/voting/sports" exact component={Sports}/>
