@@ -11,7 +11,14 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
     // The try block was not being run so we are disregarding anything after this block
     // while testing occurs to find the issue
     console.log("Signup Router Initiated");
-    const newUser = new User({firstName, lastName, userName, email, password});
+    // Format found from https://www.peachpit.com/articles/article.aspx?p=2252193&seqNum=4
+    const newUser = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
+        email: req.body.email,
+        password: req.body.password
+    });
     const saveUser = await newUser.save(function(err,result){
         if (err){
             console.log(err);
