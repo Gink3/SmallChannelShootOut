@@ -3,7 +3,7 @@ import {Video} from "../components/video.js";
 import axios from "axios"
 import VideoDetail from '../components/videoDetail';
 import {AiFillStar} from "react-icons/ai";
-import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import {Card, CardDeck, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 
 var cardbox=[];
 

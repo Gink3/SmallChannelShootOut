@@ -1,7 +1,8 @@
 import React, {useContext, useState} from 'react';
 import AuthContext from "../context/authcontext.js"
 import accountIcon from "../images/account-icon.png";
-import {CardDeck, Card, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import {Card, CardDeck, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+
 import axios from 'axios';
 import {Video} from "../components/video.js";
 

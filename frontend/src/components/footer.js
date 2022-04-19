@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../images/SCSLogo_SimpleBB.png";
+import logo from "../images/SCS_Target3_Transparent.svg";
 import {HiOutlineMail} from "react-icons/hi";
 import {FaRobot} from "react-icons/fa";
 
@@ -12,7 +12,7 @@ function footer(){
 
         {/*Logo*/}
         <a href="/"> 
-          <img src={logo} alt="logo" width="70px" style={{paddingTop: '20px'}}/>
+          <img src={logo} alt="logo" width="70px" style={{padding: '10px'}}/>
         </a>
 
         <footer className="footer" style={{color: 'white'}}>
@@ -21,23 +21,16 @@ function footer(){
           {/*Main Content*/}
           <div className= "footer"> 
             <span className="footer">
-              &nbsp; &copy; 2022 &nbsp;
-              <FaRobot className="footer_make" size="2em"/> 
-              &nbsp;HTML Coding
+              &nbsp; HTML Coding &nbsp; &copy; 2022 &nbsp;
             </span>
           </div>
-
-          {/*Mail Icon*/}
-          <div className="d-flex justify-content-center">
+          
+          {/*Mail Icon
+          
             <span className="footer_make"><HiOutlineMail className="footer_make" size="1em"/> 
               &nbsp;
-            </span>
-
-            {/*E-mail*/}
-            <a href="#n">
-              &nbsp;shootout@beepboop.com
-            </a> 
-          </div>
+            </span>*/}
+          
 
           <br/>
         </footer>
