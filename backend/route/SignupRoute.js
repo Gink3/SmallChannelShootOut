@@ -7,6 +7,30 @@ const router = express.Router();
 
 ///signup 
 export const signUpRouter = router.post('/signup',  async (req, res) => {
+    // This block does is made to test the database connection
+    // The try block was not being run so we are disregarding anything after this block
+    // while testing occurs to find the issue
+    console.log("Signup Router Initiated");
+    var hashedPass = bcrypt.hashSync(req.body.password,5);
+    console.log(hashedPass);
+
+    // Format found from https://www.peachpit.com/articles/article.aspx?p=2252193&seqNum=4
+    const newUser = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
+        email: req.body.email,
+        password: hashedPass
+    });
+    const saveUser = await newUser.save(function(err,result){
+        if (err){
+            console.log(err);
+        }
+        else{
+            console.log(result)
+        }
+    });
+
    var {firstName, lastName, userName, email, password, verifyPaswrd} = req.body; //storing the data got from frontend
    
 
@@ -34,8 +58,9 @@ if(!validateEmail(email)){
     return res.json({Message:"Invalid email address."})
 }
  try {
+        console.log("Try Block Initiated");
         //encrypting the password
-        password = bcrypt.hashSync(password, 12);
+        password = bcVideorypt.hashSync(password, 12);
         const newUser = new User({firstName, lastName, userName, email, password}); //setting up new user
         const oldUser = await User.findOne({email: email}); //see if the email address exists in database
         //error message
@@ -44,7 +69,14 @@ if(!validateEmail(email)){
         }
         else{
             //save user, store the saved user ID in token and pass it as cookie
-            const saveUser = await newUser.save(); 
+            const saveUser = await newUser.save(function(err,result){
+                if (err){
+                    console.log(err);
+                }
+                else{
+                    console.log(result)
+                }
+            }); 
             const token =  jwt.sign({
                 user: saveUser._id         
             }, process.env.JWT_PASS); 

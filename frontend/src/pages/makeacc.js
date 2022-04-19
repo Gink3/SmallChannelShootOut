@@ -17,20 +17,36 @@ function MakeAccount(){
         verifyPaswrd: "",
     }); 
 
-    const formSubmit= async (e) => {
-        e.preventDefault(); 
-      axios.post('http://localhost:5000/signup', postUser, {
+    const handleSubmit = event => {
+        event.preventDefault(); 
+
+        console.log("Handled submit");
+
+        axios.post('http://localhost:5000/signup', postUser, {
           withCredentials:true
         }).then(function(res){
-            history.push("/")
+            console.log(res);
+            history.push("/");
             history.go(0);
+        }).catch(function(error) {
+            console.log(error);
         }); 
       
     }
 
+    // Handles changes to input fields and updates
+    // postUser obj to later send to signup route
+    const handleChange = (event) => {
+        console.log(event);
+        setUserData({
+            ...postUser,
+            [event.target.name]: event.target.value
+        });
+    }
+
         return (
                  <>
-                 {loggedIn==false && (
+                 {loggedIn===false && (
                 <Container fluid>
                    
                     <Row className="justify-content-md-center " >
@@ -39,44 +55,44 @@ function MakeAccount(){
                         <div className="d-flex justify-content-center header"> 
                         <h2  style={{color:'white'}}>  Create your ShootOut Account</h2>
                          </div>
-                            <Form onSubmit={formSubmit}>
+                            <Form onSubmit={handleSubmit}>
                                 <br />
                                 <Form.Group controlId="firstName">
 
-                                    <Form.Control required type="text" className="input line" placeholder="First Name" 
-                                    value = {postUser.firstName} onChange={(e)=> setUserData({...postUser, firstName:e.target.value})}/>
+                                    <Form.Control required type="text" name="firstName" className="input line" placeholder="First Name" 
+                                    value={postUser.firstName} onChange={handleChange}/>
                                 </Form.Group>
 
                                 <Form.Group controlId="lastName">
 
-                                    <Form.Control required type="text" className="line" placeholder="Last Name" 
-                                    value = {postUser.lastName} onChange={(e)=> setUserData({...postUser, lastName:e.target.value})}/>
+                                    <Form.Control required type="text" name="lastName" className="line" placeholder="Last Name" 
+                                    value={postUser.lastName} onChange={handleChange}/>
                                 </Form.Group>
 
                                 <Form.Group controlId="userName">
 
-                                    <Form.Control required type="text" className="line" placeholder="Username" 
-                                    value = {postUser.userName} onChange={(e)=> setUserData({...postUser, userName:e.target.value})}/>
+                                    <Form.Control required type="text" name="userName" className="line" placeholder="Username" 
+                                    value={postUser.userName} onChange={handleChange}/>
                                 </Form.Group>
 
                                 <Form.Group controlId="email">
 
-                                    <Form.Control required type="email" className="line" placeholder="Enter email" 
-                                    value = {postUser.email} onChange={(e)=> setUserData({...postUser, email:e.target.value})}/>
+                                    <Form.Control required type="email" name="email" className="line" placeholder="Enter email" 
+                                    value={postUser.email} onChange={handleChange}/>
                                     <Form.Text className="text-muted">
                                         We'll never share your email with anyone else.
                                     </Form.Text>
                                 </Form.Group>
 
                                 <Form.Group controlId="password">
-                                    <Form.Control required type="password" className="line" placeholder="Password"
-                                     value = {postUser.password} onChange={(e)=> setUserData({...postUser, password:e.target.value})}/>
+                                    <Form.Control required type="password" name="password" className="line" placeholder="Password"
+                                     value={postUser.password} onChange={handleChange}/>
                                 </Form.Group>
 
 
                                 <Form.Group controlId="verifyPaswrd">
-                                    <Form.Control required type="password" className="line" placeholder="Verify Password"
-                                     value = {postUser.verifyPaswrd} onChange={(e)=> setUserData({...postUser, verifyPaswrd:e.target.value})}/>
+                                    <Form.Control required type="password" name="verifyPaswrd" className="line" placeholder="Verify Password"
+                                     value = {postUser.verifyPaswrd} onChange={handleChange}/>
                                 </Form.Group>
 
 
