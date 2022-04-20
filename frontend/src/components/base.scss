@@ -210,14 +210,14 @@ body {
   position: absolute;
   bottom:0;
   width: 100%;
-  background-color: black;
+  background-color: $nav-color;
 }
 .active-link {
-  color: $cust-lt-purple;
+  color: black;
   @media (min-width: 992px) {
-    border-bottom: 3px solid $cust-lt-purple;
+    border-bottom: 3px solid black;
     margin-bottom: -16px;
-    color: $cust-lt-purple;
+    color: black;
   }
 }
 .active-right {

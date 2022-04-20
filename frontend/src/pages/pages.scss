@@ -1,5 +1,23 @@
 $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
+.flex-container {
+	width: 90%;
+	min-height: 300px;
+	margin: 0 auto;
+	font-size: 32px;
+	display: -webkit-flex; /* Safari */		
+	display: flex; /* Standard syntax */
+	border: 1px solid #808080;
+}
+.flex-container div {
+	padding: 10px;
+	background: #dbdfe5;
+	-webkit-flex: 1; /* Safari */
+	-ms-flex: 1; /* IE 10 */
+	flex: 1; /* Standard syntax */
+}
+
+
 // Removes underline from hyperlinked text.
 a:link {
   text-decoration: none;
