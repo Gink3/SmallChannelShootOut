@@ -3,7 +3,7 @@ import {Video} from "../components/video.js";
 import axios from "axios"
 import VideoDetail from '../components/videoDetail';
 import {AiFillStar} from "react-icons/ai";
-import {Card, CardDeck, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
+import {Card, CardGroup, Button, Image, Tabs, Tab, Form, Row, Col, Container} from "react-bootstrap";
 
 var cardbox=[];
 
@@ -27,9 +27,9 @@ const BestChoice = () => {
           <Container fluid>
             <Row>
               <Col>
-                <CardDeck>
+                <CardGroup>
                   <Video cardbox={cardbox} />
-                </CardDeck>
+                </CardGroup>
               </Col>
             </Row>
           </Container> 

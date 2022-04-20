@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-//import { Button, Card,  Container, Row, Col, CardDeck,Tabs,Tab } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardGroup ,Tabs,Tab } from "react-bootstrap";
 import './pages.scss';
 import '../components/video.scss';
 import '../components/base.scss'
