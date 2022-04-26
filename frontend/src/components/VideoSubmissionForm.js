@@ -3,6 +3,15 @@
 
 
 import React from 'react';
+import axios from 'axios';
+
+
+axios.get('http://localhost:5000/userInfo', {
+  withCredentials:true
+}).then (function(response){
+ const userId = response.data._id;  //checks to see if the user is logged in
+ setUserId(userId);
+  });
 
 export default class FormSubmission extends React.Component {
   constructor(props) {
