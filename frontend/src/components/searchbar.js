@@ -18,14 +18,14 @@ class Searchbar extends React.Component {
         return (
             <>
             <Container fluid>
-              <Row className="justify-content-md-center ">
-                <Col md={5}>
-                <Form className='searchBarForm' onSubmit={this.handleSubmit}>
-                <Form.Control className='searchBarInput' onChange={this.handleChange} name='video-search' type="text" placeholder="Search..."/>
-                </Form>
-                </Col>
+                <Row className="justify-content-md-center ">
+                    <Col md={5}>
+                        <Form className='searchBarForm' onSubmit={this.handleSubmit}>
+                            <Form.Control className='searchBarInput' onChange={this.handleChange} name='video-search' type="text" placeholder="Search..."/>
+                        </Form>
+                    </Col>
                 </Row>
-                </Container>
+            </Container>
             </>
         )
     }
