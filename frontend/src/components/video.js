@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Button, Card,  Container, Row, Col, CardDeck } from "react-bootstrap";
+import { Button, Card,  Container, Row, Col, CardGroup } from "react-bootstrap";
 import './pages.scss';
 
 import thumbnail from "../images/thumbnail.png";
@@ -34,7 +34,7 @@ export function Video(object) {
 
   return (
     <>
-      <CardDeck style={{margin: '10px'}}>
+      <CardGroup style={{margin: '10px'}}>
         {object.cardbox.map((cards, i) => (
           <div style={{maxWidth: '20%'}}>
             
@@ -61,7 +61,7 @@ export function Video(object) {
             </a>
           </div>
         ))}
-      </CardDeck>
+      </CardGroup>
     </>
   );
 };
