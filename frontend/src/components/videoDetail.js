@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './video.scss';
+import logo from '../images/SCS_Block.svg';
 import { Button } from "react-bootstrap";
 import {BiStar} from "react-icons/bi";
 import axios from 'axios';
@@ -17,6 +18,20 @@ const [VideoDetail, setVideoDetail] = useState({
 })
   if (!video) {
     return <div className="landingPage">
+
+    <div class="row">
+      <div class="col-md">
+        <img src= {logo} alt="logo" />
+      </div>
+        
+      <div class="col-md">
+        <h1>A Place For Content To Grow</h1>
+      </div>
+    </div>
+
+
+
+
         <h1>Welcome to Small Channel Shootout!</h1>
         <h2 style={{color:'white'}}>Begin exploring by searching for your favorite videos above.</h2>
         <br/>

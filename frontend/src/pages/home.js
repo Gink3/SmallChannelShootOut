@@ -80,16 +80,20 @@ class Home extends React.Component {
         return (
           <>
             <div className="home1" >
-              <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'light coral'}}>
-                <SearchBar handleFormSubmit={this.handleSubmit}/>         
+              <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'#FCFCFF'}}>
+
+                <SearchBar handleFormSubmit={this.handleSubmit}/>  
+
                 <div className="homevideodetail" style={{}}>
                   <VideoDetail video={this.state.selectedVideo}/>
                 </div>
+                
               </div>
 
               <div className="homevideolist" style={{width: '80%'}}>
                 <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.validVideos}/>
               </div>
+
             </div>
           </>
         )

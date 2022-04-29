@@ -1,5 +1,12 @@
 $list-bg: lighten(rgb(8, 7, 7), 22%); // change the color of the list
 
+//Color Palette:
+$cust-red:       #A30B37;
+$cust-lt-red:    #BD6B73;
+$cust-purple:    #BBB6DF;
+$cust-lt-purple: #C6C8EE;
+$cust-white:     #FCFCFF;
+
 .flex-container {
 	width: 90%;
 	min-height: 300px;
