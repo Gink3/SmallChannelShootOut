@@ -10,10 +10,7 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
     // This block does is made to test the database connection
     // The try block was not being run so we are disregarding anything after this block
     // while testing occurs to find the issue
-    console.log("Signup Router Initiated");
     var hashedPass = bcrypt.hashSync(req.body.password,5);
-    console.log(hashedPass);
-
     // Format found from https://www.peachpit.com/articles/article.aspx?p=2252193&seqNum=4
     const newUser = new User({
         firstName: req.body.firstName,
@@ -22,22 +19,38 @@ export const signUpRouter = router.post('/signup',  async (req, res) => {
         email: req.body.email,
         password: hashedPass
     });
-    const saveUser = await newUser.save(function(err,result){
-        if (err){
-            console.log(err);
-        }
-        else{
-            console.log(result)
-        }
+
+    // Checks to see if a entry in the user collection
+    // already has the username
+    const doesUserNameExist = await User.exists({
+        userName: req.body.userName
+    });
+    // Checks to see if a entry in the user collection
+    // already has the Email
+    const doesEmailExist = await User.exists({
+        email: req.body.email
     });
 
-   var {firstName, lastName, userName, email, password, verifyPaswrd} = req.body; //storing the data got from frontend
-   
+    // If the email and usernames do not exist
+    // We will then sign up the new user
+    if (!doesUserNameExist || !doesEmailExist) {
+        const saveUser = await newUser.save(function(err,result){
+            if (err){
+                console.log(err);
+            }
+            else{
+                console.log(result)
+            }
+        });
+    } else {
+        // Username or email already signed up
+        // TODO create something to 
+        console.log("Email/UserName already registered")
+    }
 
-   //check to see if all fields have input
-   if (firstName == "" || userName == "" || email == "" || password == "" || verifyPaswrd == ""){
-        return res.json({Message:"Please enter all fields." });  
-   }
+    // for some reason this section is needed to route back
+    // to the home page after submitting the forms
+   var {firstName, lastName, userName, email, password, verifyPaswrd} = req.body; //storing the data got from frontend
 
    //password must be more than 8 letter long
    if (password.length < 8){
