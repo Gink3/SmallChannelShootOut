@@ -21,7 +21,7 @@ axios.get('http://localhost:5000/videoInfo', {
   console.log(error)
 })
 
-function about(){
+function leaderboard(){
   return(
     <>
       {/* <div class="row"> */}
@@ -88,4 +88,4 @@ function about(){
     </>
   );
 }
-export default about;
+export default leaderboard;

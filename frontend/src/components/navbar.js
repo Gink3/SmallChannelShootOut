@@ -105,7 +105,7 @@ function Topbar() {
             </Nav.Link> */}
 
             {/* Hall of Fame Link*/}
-          <NavLink to='/about' className="icon" exact activeClassName="active-link" onClick={handleLoadSomething} style={{marginTop:'6px' , marginLeft:'3px' }}>
+          <NavLink to='/leaderboard' className="icon" exact activeClassName="active-link" onClick={handleLoadSomething} style={{marginTop:'6px' , marginLeft:'3px' }}>
             <OverlayTrigger placement='bottom' overlay={<Tooltip id="tooltip-disabled">Hall of Fame</Tooltip>}>
                 <span className="d-inline-block">
                   <AiOutlineTrophy style={{marginLeft: '9px'}} size="2em"/>{/* &#8239; */}

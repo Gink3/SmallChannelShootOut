@@ -13,7 +13,7 @@ import VideoDetail from '../components/videoDetail';
 
 class Home extends React.Component {
     resultsPerPage = 50;
-
+    subscriberLimit = 2000000 // what to change when you want to change the upper limit of subscriber for a search
     state = {
         channelIdString: '',
         validVideos: [],
@@ -64,7 +64,7 @@ class Home extends React.Component {
         {
           if(response2.data.items[i] !== undefined && response.data.items[i].snippet.channelId == response2.data.items[j].id) // if response 2 item is not undefined and the channelID matches for video and channel continue
           {
-            if(response2.data.items[j].statistics.subscriberCount <= 100000){ // checks how many subscribers the channel has
+            if(response2.data.items[j].statistics.subscriberCount <= this.subscriberLimit){ // checks how many subscribers the channel has
               this.setState({
                 validVideos: this.state.validVideos.concat(response.data.items[i]) // adds to the array of valid videos
               })
@@ -105,34 +105,3 @@ class Home extends React.Component {
 }
 
 export default Home;
-
-
-///////////////////////////////Do not delete :)
-
-/*
-<div className="homebox">
-            <Intro videoboxes={videoboxObj} />
-
-            </div>
-const videobox=["First", "Second", "Third", "Fourth", "Fifth","Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh"];
-const videoboxObj= videobox.map((videobox, i)=>({id: i, title:videobox}));
-function Intro(props) {
-  return (
-    <section>
-      <ul>
-        {props.videoboxes.map((videobox) => (
-
-          <li key={videobox.id}>{videobox.title}
-
-          <button className="like">
-          <img src={starIcon} alt="star icon" width="30px" className="like-icon"/>
-            </button>
-
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-} 
-*/
-
