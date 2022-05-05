@@ -8,7 +8,7 @@ import VideoTemplate  from "./components/video-template";
 import MakeAccount    from './pages/makeacc';
 import Home           from './pages/home';
 import Talk           from './pages/talk';
-import About          from './pages/about';
+import Leaderboard          from './pages/leaderboard';
 import Account        from './pages/account';
 import BestChoice     from './pages/bestchoice';
 import CreateThread   from './pages/createthread';
@@ -34,7 +34,7 @@ function App() {
             
             <Route path="/talk" exact component={Talk}/>
       
-            <Route path="/about" exact component={About}/>
+            <Route path="/leaderboard" exact component={Leaderboard}/>
             <Route path="/account" exact component={Account}/>
             <Route path="/bestchoice" exact component={BestChoice}/>
             <Route path="/createthread" exact component={CreateThread}/>

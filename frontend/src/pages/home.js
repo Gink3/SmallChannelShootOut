@@ -9,9 +9,11 @@ import VideoList from '../components/videoList';
 import VideoDetail from '../components/videoDetail';
 /* import background from "../images/thumbnail.png"; */
 
-class Home extends React.Component {
-    resultsPerPage = 15;
 
+
+class Home extends React.Component {
+    resultsPerPage = 50;
+    subscriberLimit = 2000000 // what to change when you want to change the upper limit of subscriber for a search
     state = {
         channelIdString: '',
         validVideos: [],
@@ -47,7 +49,7 @@ class Home extends React.Component {
       })
       
       //csv string of all channel ids
-      console.log("channelStyring", this.state.channelIdString)
+      console.log("channelString", this.state.channelIdString)
 
       //GET all channel info from channel string
       const response2 = await youtube.get('/channels',{
@@ -56,31 +58,35 @@ class Home extends React.Component {
           id: this.state.channelIdString
         }
       })
-
       //only allows videos that have under 100,000 subscribers
-      for(var i = 0; i < this.resultsPerPage; i++){
-        if(response2.data.items[0].statistics.subscriberCount <= 1000000){
-          this.setState({
-            validVideos: this.state.validVideos.concat(response.data.items[i])
-          })
+      for(var i = 0; i < this.resultsPerPage; i++){ // this loop loops through response number 1 which contains the video information from the search
+        for(var j = 0; j < response2.data.items.length; j++) // this loops through response number 2 which contains the channel information from the search
+        {
+          if(response2.data.items[i] !== undefined && response.data.items[i].snippet.channelId == response2.data.items[j].id) // if response 2 item is not undefined and the channelID matches for video and channel continue
+          {
+            if(response2.data.items[j].statistics.subscriberCount <= this.subscriberLimit){ // checks how many subscribers the channel has
+              this.setState({
+                validVideos: this.state.validVideos.concat(response.data.items[i]) // adds to the array of valid videos
+              })
+            }
+          }
         }
       }
       
       this.setState({
-        channelIdString: ''
+        channelIdString: '' // resets channelIDString
       })
-      console.log(this.state.validVideos, this.state.selectedVideo)
     };
 
     handleVideoSelect = (video) => {
-      this.setState({selectedVideo: video});
+      this.setState({selectedVideo: video}); // used for when you click on a video
     }
 
     render() {
         return (
           <>
             <div className="home1" >
-            <div style={{/*  backgroundImage: `url(${background})` */backgroundColor:'light coral'}}>
+            <div style={{backgroundColor:'light coral'}}>
               <SearchBar handleFormSubmit={this.handleSubmit}/>         
               <div className="homevideodetail" style={{}}>
                 <VideoDetail video={this.state.selectedVideo}/>
@@ -90,42 +96,12 @@ class Home extends React.Component {
 
               <div className="homevideolist" style={{width: '80%'}}>
                 <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.validVideos}/>
-              </div>
+              </div> 
             </div>
           </>
         )
+        // when enter is pressed the handle form submit function is activated.
     }
 }
 
 export default Home;
-
-
-///////////////////////////////Do not delete :)
-
-/*
-<div className="homebox">
-            <Intro videoboxes={videoboxObj} />
-
-            </div>
-const videobox=["First", "Second", "Third", "Fourth", "Fifth","Sixth", "Seventh", "Eighth", "Ninth", "Tenth", "Eleventh"];
-const videoboxObj= videobox.map((videobox, i)=>({id: i, title:videobox}));
-function Intro(props) {
-  return (
-    <section>
-      <ul>
-        {props.videoboxes.map((videobox) => (
-
-          <li key={videobox.id}>{videobox.title}
-
-          <button className="like">
-          <img src={starIcon} alt="star icon" width="30px" className="like-icon"/>
-            </button>
-
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-} 
-*/
-
