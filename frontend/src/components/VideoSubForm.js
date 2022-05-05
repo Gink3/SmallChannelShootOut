@@ -1,3 +1,10 @@
+
+//This component file is not implemented on a page yet
+//The purpose of this file is to make a form for users to submit video links
+//The form currently asks the user for all the video info
+//This file will need to be implemented as a component for it to work
+
+
 import React, {useState, useContext} from 'react';
 import AuthContext from "../context/authcontext.js"
 import {Button, Form, Row, Col, Container} from "react-bootstrap";
@@ -37,7 +44,7 @@ function VideoSubForm(){
     }
 
     // Handles changes to input fields and updates
-    // postUser obj to later send to signup route
+    // postVideo obj to later send
     const handleChange = (event) => {
         console.log(event);
         setVideoData({
@@ -111,7 +118,7 @@ function VideoSubForm(){
 
                                 <br />
                                 <Button variant="" className="btn_createacc" size="lg" type="submit" block>
-                                    SIGN UP
+                                    Submit Video
                                 </Button>
                                 <br />
                             </Form>
